@@ -1,34 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FullStack Template
+
+> **Warning** <br> [WIP]: Not ready for deloyment
 
 ## Getting Started
 
-First, run the development server:
+The core of this template is built with Astro, Preact and Docker. It's adaptable and well documented, so a new project can be started easily. Also, there are various other smaller utilties setup like CI, Tests and a bundle visualiser. Plus, some UI packages to make designing a little quicker.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+After following the [Initial Setup](#initial-setup) below, execute `pnpm i` in the root of the repository to build the dependencies. Then, execute `pnpm start` and `pnpm run server` in split terminals (![vscode_light_split-vertical](https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/light/split-horizontal.svg?sanitize=true#gh-light-mode-only)![vscode_dark_split-vertical](https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/split-horizontal.svg?sanitize=true#gh-dark-mode-only)) to launch the app. Any further executions should use only the commands specified in the [Tailored Guides](#tailored-guides).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Initial Setup
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+> **Note** <br> [Windows Only]: [Install WSL2](https://learn.microsoft.com/en-gb/windows/wsl/install-manual). Any commands should be executed in the Linux subsystem.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. Install [Node Version Manager](https://github.com/nvm-sh/nvm#installing-and-updating) and execute `nvm install 16`
+2. Install [PNPM](https://pnpm.io/) via `npm install -g pnpm`
+3. Install [VS Code](https://code.visualstudio.com/) and access the repo via `code .` in the repository location
+4. Install the [recommended extensions](.vscode/extensions.json)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Project Structure
 
-## Learn More
+The main content has been divided into several parts to keep the root folder tidy.
 
-To learn more about Next.js, take a look at the following resources:
+- `.github` and `.vscode` contain some general configuration to make getting started easier.
+- `docs` is a collection of symlinks to README.md files located all across the repository.
+- `frontend` is the home for the UI, including all code, tests and assets.
+- `server` is the home for backend code and any filesystem/database configuration.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> / </br>
+> ├── [.github/](.github/) </br>
+> ├── [.vscode/](.vscode/) </br>
+> ├── [pages/](pages/) </br>
+> ├── [public/](public/) </br>
+> ├── [tests/](tests/) </br>
+> └── README.md </br>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## CLI
 
-## Deploy on Vercel
+| Command                 | Action                                       |
+| :---------------------- | :------------------------------------------- |
+| `pnpm i`                | Installs dependencies                        |
+| `pnpm start`            | Starts local dev server at `localhost:1234`  |
+| `pnpm run lint`         |                                              |
+| `pnpm run clean`        | Safely removes all built files/folders`      |
+| `pnpm run test`         | Runs the playwright e2e tests                |
+| `pnpm run test:codegen` | Records user actions as playwright e2e tests |
+| `pnpm run analyse`      |                                              |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notable Packages
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [ ] [Next.js]() - Compiler, bundler, build tools and configuration handled togther. Provides pre-fetching, static/server rending and API routes
+- [ ] [TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) (5 mins)
+- [ ] [React]() (x mins)
+<!-- - [ ] [Preact](https://preactjs.com/tutorial/01-vdom) (x mins) - Skip to `Now with more JSX!` -->
+- [Radix UI](https://www.radix-ui.com/docs/primitives/overview/getting-started) - Individually imported UI components
+
+### Testing
+
+[Installing Playwright](https://playwright.dev/docs/getting-started-vscode)

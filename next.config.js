@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+export const reactStrictMode = true
+export const swcMinify = true
 
-module.exports = nextConfig
+/** @type {import('next-sitemap').IConfig} */
+export const siteUrl = process.env.SITE_URL || "https://example.com"
+export const generateRobotsTxt = true
+// ✕ missing peer @next/env@"*"
