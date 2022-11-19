@@ -26,7 +26,7 @@ A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The cor
 
 ## Project Structure
 
-The main content is located in the `src` directory. The folders inside follow a structure equivalent of the URL, where navigating code is similar to navigating the app itself.
+The main content is located in the `pages` directory. The folders inside follow a structure equivalent of the URL, where navigating code is similar to navigating the app itself.
 
 - `pages/` contains all TypeScript and CSS relevant to the creation of the frontend
 - `public/` contains all static assets, including images, videos and fonts
