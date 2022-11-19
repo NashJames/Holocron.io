@@ -6,7 +6,7 @@ A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The cor
 
 ## Initial Setup
 
-> **Note** <br> [Windows Only]: [Install WSL2](https://learn.microsoft.com/en-gb/windows/wsl/install-manual). Any commands should be executed in the Linux subsystem.
+> **Note** <br> [Windows Only]: [Install WSL2](https://learn.microsoft.com/en-gb/windows/wsl/install-manual). Any commands below should be executed inside the Linux subsystem.
 
 1. Install [Node Version Manager](https://github.com/nvm-sh/nvm#installing-and-updating) and execute `nvm install 16`
 2. Install [PNPM](https://pnpm.io/installation) via `npm install -g pnpm`
