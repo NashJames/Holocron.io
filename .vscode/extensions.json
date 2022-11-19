@@ -1,10 +1,11 @@
 {
   "recommendations": [
-    "ms-playwright.playwright",
     "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
     "rbbit.typescript-hero",
     "graphql.vscode-graphql-syntax",
-    "styled-components.vscode-styled-components"
+    "styled-components.vscode-styled-components",
+    "ms-playwright.playwright"
   ],
   "unwantedRecommendations": []
 }
