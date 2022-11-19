@@ -1,59 +1,39 @@
-# FullStack Template
+# Holocron
 
 > **Warning** <br> [WIP]: Not ready for deloyment
 
-## Getting Started
+A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with Next.js, React and Radix UI. It also includes smaller utilities for CI, testing and linting.
 
-The core of this template is built with Astro, Preact and Docker. It's adaptable and well documented, so a new project can be started easily. Also, there are various other smaller utilties setup like CI, Tests and a bundle visualiser. Plus, some UI packages to make designing a little quicker.
-
-After following the [Initial Setup](#initial-setup) below, execute `pnpm i` in the root of the repository to build the dependencies. Then, execute `pnpm start` and `pnpm run server` in split terminals (![vscode_light_split-vertical](https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/light/split-horizontal.svg?sanitize=true#gh-light-mode-only)![vscode_dark_split-vertical](https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/split-horizontal.svg?sanitize=true#gh-dark-mode-only)) to launch the app. Any further executions should use only the commands specified in the [Tailored Guides](#tailored-guides).
-
-### Initial Setup
+## Initial Setup
 
 > **Note** <br> [Windows Only]: [Install WSL2](https://learn.microsoft.com/en-gb/windows/wsl/install-manual). Any commands should be executed in the Linux subsystem.
 
 1. Install [Node Version Manager](https://github.com/nvm-sh/nvm#installing-and-updating) and execute `nvm install 16`
-2. Install [PNPM](https://pnpm.io/) via `npm install -g pnpm`
-3. Install [VS Code](https://code.visualstudio.com/) and access the repo via `code .` in the repository location
-4. Install the [recommended extensions](.vscode/extensions.json)
+2. Install [PNPM](https://pnpm.io/installation) via `npm install -g pnpm`
+3. Install [Playwright](https://playwright.dev/docs/intro) via `pnpm dlx playwright install --with-deps chromium firefox webkit chrome msedge`
+4. Install the [VS Code extensions](.vscode/extensions.json)
+
+| Command             | Action                                            |
+| :------------------ | :------------------------------------------------ |
+| `pnpm i`            | Installs dependencies                             |
+| `pnpm dev`          | Compiles and starts dev build at `localhost:3000` |
+| `pnpm build`        | Compiles the code for production                  |
+| `pnpm start`        | Starts production build at `localhost:3000`       |
+| `pnpm lint`         | Runs ESLint                                       |
+| `pnpm clean`        | Safely removes all built files/folders            |
+| `pnpm test`         | Runs the playwright e2e tests                     |
+| `pnpm test:codegen` | Records user actions as playwright e2e tests      |
 
 ## Project Structure
 
-The main content has been divided into several parts to keep the root folder tidy.
+The main content is located in the `src` directory. The folders inside follow a structure equivalent of the URL, where navigating code is similar to navigating the app itself.
 
-- `.github` and `.vscode` contain some general configuration to make getting started easier.
-- `docs` is a collection of symlinks to README.md files located all across the repository.
-- `frontend` is the home for the UI, including all code, tests and assets.
-- `server` is the home for backend code and any filesystem/database configuration.
+- `pages/` contains all TypeScript and CSS relevant to the creation of the frontend
+- `public/` contains all static assets, including images, videos and fonts
+- `tests/` contains all written tests and is the output directory for any reports/results
 
-> / </br>
-> ├── [.github/](.github/) </br>
-> ├── [.vscode/](.vscode/) </br>
-> ├── [pages/](pages/) </br>
-> ├── [public/](public/) </br>
-> ├── [tests/](tests/) </br>
-> └── README.md </br>
+## Future Improvements
 
-## CLI
-
-| Command                 | Action                                       |
-| :---------------------- | :------------------------------------------- |
-| `pnpm i`                | Installs dependencies                        |
-| `pnpm start`            | Starts local dev server at `localhost:1234`  |
-| `pnpm run lint`         |                                              |
-| `pnpm run clean`        | Safely removes all built files/folders`      |
-| `pnpm run test`         | Runs the playwright e2e tests                |
-| `pnpm run test:codegen` | Records user actions as playwright e2e tests |
-| `pnpm run analyse`      |                                              |
-
-## Notable Packages
-
-- [ ] [Next.js]() - Compiler, bundler, build tools and configuration handled togther. Provides pre-fetching, static/server rending and API routes
-- [ ] [TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) (5 mins)
-- [ ] [React]() (x mins)
-<!-- - [ ] [Preact](https://preactjs.com/tutorial/01-vdom) (x mins) - Skip to `Now with more JSX!` -->
-- [Radix UI](https://www.radix-ui.com/docs/primitives/overview/getting-started) - Individually imported UI components
-
-### Testing
-
-[Installing Playwright](https://playwright.dev/docs/getting-started-vscode)
+- Migrate to Preact (waiting on turpopack preact integration)
+- Install turbopack bundle visualiser (waiting on release)
+- Install turbopack sitemap generator (waiting on release)
