@@ -19,7 +19,7 @@ A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The cor
 | `pnpm dev`          | Compiles and starts dev build at `localhost:3000` |
 | `pnpm build`        | Compiles the code for production                  |
 | `pnpm start`        | Starts production build at `localhost:3000`       |
-| `pnpm lint`         | Runs ESLint                                       |
+| `pnpm format`       | Runs prettier and ESLint                          |
 | `pnpm clean`        | Safely removes all built files/folders            |
 | `pnpm test`         | Runs the playwright e2e tests                     |
 | `pnpm test:codegen` | Records user actions as playwright e2e tests      |

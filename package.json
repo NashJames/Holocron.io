@@ -7,6 +7,8 @@
     "build": "tsc && next build",
     "start": "next start",
     "lint": "next lint",
+    "prettier": "pnpm dlx prettier --write .",
+    "format": "pnpm prettier && pnpm lint",
     "clean": "rm -rf node_modules .next tsconfig.tsbuildinfo next-env.d.ts",
     "test": "pnpm build && pnpm dlx playwright test",
     "test:codegen": "pnpm dlx playwright codegen"
@@ -29,6 +31,7 @@
     "@types/react-dom": "^18.0.9",
     "eslint": "^8.27.0",
     "eslint-config-next": "^13.0.3",
+    "eslint-config-prettier": "^8.5.0",
     "prettier": "^2.7.1",
     "sass": "^1.56.1",
     "typescript": "^4.9.0"
