@@ -26,25 +26,23 @@ A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The cor
 
 ## Project Structure
 
-The main content is located inside the `pages/` directory. The subfolders follow a structure equivalent of the URL, where navigating the code is similar to navigating the app itself. Any additions to the pages or tests should follow the same architecture.
+The main content is located inside the `app/` directory. The subfolders follow a structure equivalent of the URL, where navigating the code is similar to navigating the app itself. Any additions to the pages or tests should follow the same architecture.
 
-- `pages/` contains all TypeScript and CSS relevant to the creation of the frontend
-- `public/` contains all static assets, including images, videos and fonts
+- `app/` contains all TypeScript, CSS and static assets relevant to the creation of the frontend
+- `pages/` contains any API endpoints
 - `tests/` contains all written tests and is the output directory for any reports/results
 
-Additionally, each TypeScript XML (`.tsx`) file follows a code structure consisting of ESM imports, styled-components and the default function. In some cases, these are entire pages. In others, they are individual `components/` which form a larger page.
+Each TypeScript XML (`.tsx`) contains a new unique property from Next.js v13-beta, which makes use of React Server Components to favour rendering content on the server. Simply, if it requires any form of re-rendering, such as React Hooks or conditional HTML, the JavaScript should get sent to the client ([read more](https://beta.nextjs.org/docs/getting-started#thinking-in-server-components)).
 
 ```tsx
-import styled from 'styled-components'
+'use client'
+import styles from 'page.module.scss' /// CSS
 
-const CustomElement = styled.div`
-  /// CSS
-`
 export default function Home() {
   /// TypeScript
   return (
     /// XML
-    <CustomElement />
+    <CustomElement className={styles.customElement} />
   )
 }
 ```
