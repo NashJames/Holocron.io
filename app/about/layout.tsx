@@ -1,3 +1,4 @@
+import React from 'react'
 import AboutLayout from './aboutLayout'
 
 // This is a Server Component

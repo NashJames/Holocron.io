@@ -49,6 +49,5 @@ export default function Home() {
 
 ## Future Improvements
 
-- Migrate to Preact (waiting on turpopack preact integration)
 - Install turbopack bundle visualiser (waiting on release)
 - Install turbopack sitemap generator (waiting on release)

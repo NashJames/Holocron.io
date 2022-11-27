@@ -1,29 +1,37 @@
 'use Client'
-import { useCallback, useEffect, useState } from 'react'
-import CodeMirror from '@uiw/react-codemirror'
-import { createTheme } from '@uiw/codemirror-themes'
-import { json } from '@codemirror/lang-json'
+import { useEffect, useState } from 'react'
+import InitialFetch from './InitialFetch'
+import JSONMirror from './JSONMirror'
 
-// Add custom theme
-// Add CSS border etc.
+export default function FetchAPI() {
+  const [fetchURL] = useState<string>('https://swapi.dev/api/people/1/')
+  const [json, setJson] = useState<string>("{ error: 'Initial Fetch Failed' }")
 
-export default function Page() {
-  const [fetchURL, setFetchURL] = useState<string>('https://swapi.dev/api/people/1/')
-  const [data, setData] = useState<string | undefined>()
+  // Runs on page load
+  useEffect(() => {
+    const fetchInitialState = async () => setJson(await InitialFetch())
+    fetchInitialState()
+  }, [])
 
-  useCallback(async () => {
-    const res = await fetch(fetchURL, {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    })
-    const json = await res.json()
-    setData(json)
+  // Runs on each search request
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(fetchURL, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      })
+      setJson(await response.json())
+      console.log('fetchData')
+      console.log(await response.json())
+    }
+    fetchData()
   }, [fetchURL])
 
   return (
     <>
       {/* https://github.com/radix-ui/website/blob/main/components/PrimitivesDocsSearch.tsx */}
-      <CodeMirror value={data} height="200px" extensions={[json()]} readOnly />
+      {/* Search bar w/ https://github.com/algolia/autocomplete */}
+      <JSONMirror data={json} />
     </>
   )
 }

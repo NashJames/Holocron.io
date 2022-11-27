@@ -1,14 +1,14 @@
 import FetchAPI from './_components/FetchAPI'
-import JSONMirror from './_components/JSONMirror'
 
-export default async function Page() {
-  // Forward fetched data to your Client Component
-  const data: string = "{ test: 'data' }"
+// Fetch should add to the url under /data/[subject]/[id]#APISearch
 
+export default function Page() {
   return (
     <>
+      {/* Header? */}
+      {/* Title */}
       <FetchAPI />
-      <JSONMirror data={data} />
+      {/* Footer */}
     </>
   )
 }
