@@ -7,9 +7,7 @@
     "ecmaVersion": 13
   },
   "rules": {
-    "indent": ["warn", 2],
     "semi": ["warn", "never"],
-    "quotes": ["warn", "single"],
     "linebreak-style": ["error", "unix"]
   }
 }
