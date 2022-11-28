@@ -8,6 +8,7 @@
   },
   "rules": {
     "semi": ["warn", "never"],
-    "linebreak-style": ["error", "unix"]
+    "linebreak-style": ["error", "unix"],
+    "no-unused-vars": "warn"
   }
 }
