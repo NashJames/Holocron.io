@@ -1,30 +1,28 @@
-'use Client'
-import { useEffect, useState } from 'react'
+'use client'
+import { useCallback, useEffect, useState } from 'react'
 import InitialFetch from './InitialFetch'
 import JSONMirror from './JSONMirror'
 
 export default function FetchAPI() {
   const [fetchURL] = useState<string>('https://swapi.dev/api/people/1/')
-  const [json, setJson] = useState<string>("{ error: 'Initial Fetch Failed' }")
+  const [json, setJson] = useState<string>('')
 
   // Runs on page load
   useEffect(() => {
+    //+ Noticeable delay compared to setting default in useState
     const fetchInitialState = async () => setJson(await InitialFetch())
     fetchInitialState()
   }, [])
 
   // Runs on each search request
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(fetchURL, {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-      })
-      setJson(await response.json())
-      console.log('fetchData')
-      console.log(await response.json())
-    }
-    fetchData()
+  useCallback(async () => {
+    //+ Fetch is not yet officially supported in next.js client components
+    //+ May trigger additional re-renders
+    const res = await fetch(fetchURL, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    })
+    setJson(await res.text())
   }, [fetchURL])
 
   return (
