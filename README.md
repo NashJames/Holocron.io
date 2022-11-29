@@ -2,7 +2,7 @@
 
 > **Warning** <br> [WIP]: Not ready for deloyment
 
-A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with Next.js, React and Radix UI. It also includes smaller utilities for CI, testing and linting.
+A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with [Next.js v13-beta](https://beta.nextjs.org/docs), React 18 and Radix UI. It also includes smaller utilities for CI, testing and linting.
 
 ## Initial Setup
 
