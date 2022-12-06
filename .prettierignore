@@ -1,6 +1,6 @@
 # CSS files
 *.css
-*.scss
+app/global.scss
 
 # Logs
 logs
