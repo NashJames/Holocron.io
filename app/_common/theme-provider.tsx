@@ -1,5 +1,5 @@
 'use client'
-import { createContext } from 'react'
+import React, { createContext } from 'react'
 
 const ThemeContext = createContext('dark')
 
