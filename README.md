@@ -30,6 +30,7 @@ The main content is located inside the `app/` directory. The subfolders follow a
 
 - `app/` contains all TypeScript, CSS and static assets relevant to the creation of the frontend
 - `pages/` contains any API endpoints
+- `public/` contains all the static assets, including images, videos and fonts
 - `tests/` contains all written tests and is the output directory for any reports/results
 
 Each TypeScript XML (`.tsx`) contains a new unique property from Next.js v13-beta, which makes use of React Server Components to favour rendering content on the server. Simply, if it requires any form of re-rendering, such as React Hooks or conditional HTML, the JavaScript should get sent to the client ([read more](https://beta.nextjs.org/docs/getting-started#thinking-in-server-components)).
@@ -46,8 +47,3 @@ export default function Home() {
   )
 }
 ```
-
-## Future Improvements
-
-- Install turbopack bundle visualiser (waiting on release)
-- Install turbopack sitemap generator (waiting on release)
