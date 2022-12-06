@@ -7,5 +7,7 @@ export default async function InitialFetch() {
     next: { revalidate: 60 * 60 * 24 },
   })
 
-  return await res.text()
+  if (!res.ok) return res.status.toString()
+
+  return JSON.stringify(await res.json(), null, 2)
 }

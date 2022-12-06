@@ -1,10 +1,40 @@
 import CodeMirror from '@uiw/react-codemirror'
-// import { createTheme } from '@uiw/codemirror-themes'
+import styles from './FetchContainer.module.scss'
+import { createTheme } from '@uiw/codemirror-themes'
 import { json } from '@codemirror/lang-json'
+import { tags } from '@lezer/highlight'
 
-// Add custom theme - can we add this to a layout.tsx to prevent re-rendering?
-// Add CSS gradient border etc.
+// We define these outside the component for greater performance
+const extensions = [json()]
+const holocronTheme = createTheme({
+  theme: 'dark',
+  settings: {
+    background: '#141414',
+    foreground: '#ff8080',
+    selection: '#282828',
+    caret: '#141414',
+  },
+  styles: [
+    { tag: tags.string, color: '#80ffff' },
+    { tag: tags.bracket, color: '#8088ff' },
+    { tag: tags.squareBracket, color: '#ff80ff' },
+  ],
+})
 
 export default function JSONMirror({ data }: { data: string }) {
-  return <CodeMirror value={data} height="200px" extensions={[json()]} readOnly />
+  return (
+    <CodeMirror
+      readOnly
+      value={data}
+      height="42rem"
+      theme={holocronTheme}
+      extensions={extensions}
+      className={styles.CodeMirror}
+      basicSetup={{
+        highlightActiveLineGutter: false,
+        foldGutter: false,
+        highlightActiveLine: false,
+      }}
+    />
+  )
 }

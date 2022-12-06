@@ -1,9 +1,10 @@
 'use client'
+import styles from './FetchContainer.module.scss'
 import { useCallback, useEffect, useState } from 'react'
 import InitialFetch from './InitialFetch'
 import JSONMirror from './JSONMirror'
 
-export default function FetchAPI() {
+export default function FetchContainer() {
   const [fetchURL] = useState<string>('https://swapi.dev/api/people/1/')
   const [json, setJson] = useState<string>('')
 
@@ -22,14 +23,17 @@ export default function FetchAPI() {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     })
-    setJson(await res.text())
+
+    if (res.ok) {
+      setJson(JSON.stringify(await res.json(), null, 2))
+    } else setJson(res.status.toString())
   }, [fetchURL])
 
   return (
-    <>
+    <div className={styles.content}>
       {/* https://github.com/radix-ui/website/blob/main/components/PrimitivesDocsSearch.tsx */}
       {/* Search bar w/ https://github.com/algolia/autocomplete */}
       <JSONMirror data={json} />
-    </>
+    </div>
   )
 }
