@@ -4,10 +4,12 @@ import FetchSection from './home/FetchContainer/FetchSection'
 import { GetStaticProps, GetStaticPropsResult } from 'next'
 import { SWRConfig } from 'swr'
 import { fetchAPI } from './home/FetchContainer/fetchAPI'
+import { xWingAscii } from '@public/asciiArt/x-wing'
 
 // Fetch should add to the url under /data/[subject]/[id]#APISearch
 
 export default function HomePage({ fallback }: { fallback: FallbackProps }) {
+  if (process.env.NODE_ENV === 'production') console.log(xWingAscii())
   return (
     <>
       <Head>
