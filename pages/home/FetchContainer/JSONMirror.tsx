@@ -1,5 +1,5 @@
 import CodeMirror from '@uiw/react-codemirror'
-import styles from './FetchContainer.module.scss'
+import styles from './FetchSection.module.scss'
 import { createTheme } from '@uiw/codemirror-themes'
 import { json } from '@codemirror/lang-json'
 import { tags } from '@lezer/highlight'

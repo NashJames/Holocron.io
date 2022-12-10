@@ -1,0 +1,37 @@
+.content {
+  width: 61rem;
+  max-width: 90vw;
+}
+
+.CodeMirror {
+  // Spacing
+  margin-top: 1rem;
+
+  // Vertical Border
+  border-left: 3px solid;
+  border-right: 3px solid;
+  border-image: linear-gradient(to bottom, aqua, transparent) 1;
+
+  // Shadow
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+
+  // Scrollbar
+}
+
+.SearchTextField {
+  width: 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 10px;
+  height: 35px;
+  font-size: 15px;
+  line-height: 1;
+  color: white;
+  background-color: var(--blackA5);
+  box-shadow: 0 0 0 1px var(--blackA9);
+}
+.SearchTextField:focus {
+  box-shadow: 0 0 0 2px black;
+}
