@@ -2,10 +2,12 @@ import Head from 'next/head'
 import TitleSection from './home/TitleContainer/TitleSection'
 import FetchSection from './home/FetchContainer/FetchSection'
 import { GetStaticProps, GetStaticPropsResult } from 'next'
+import { SWRConfig } from 'swr'
+import { fetchAPI } from './home/FetchContainer/fetchAPI'
 
 // Fetch should add to the url under /data/[subject]/[id]#APISearch
 
-export default function HomePage({ staticFetch }: { staticFetch: string }) {
+export default function HomePage({ fallback }: { fallback: FallbackProps }) {
   return (
     <>
       <Head>
@@ -15,28 +17,29 @@ export default function HomePage({ staticFetch }: { staticFetch: string }) {
       </Head>
       {/* AppHeader?  with next/link */}
       <TitleSection />
-      <FetchSection data={staticFetch} />
+      <SWRConfig value={{ fallback }}>
+        <FetchSection />
+      </SWRConfig>
       {/* Footer? */}
     </>
   )
 }
 
-interface Props {
-  staticFetch: string
+interface FallbackProps {
+  fallback: {
+    'https://swapi.dev/api/people/1/': string
+  }
 }
 
 /// Fetches the example API request on the server to save client resources
 /// Data cached for 24 hours
-export const getStaticProps: GetStaticProps<Props> = async (): Promise<
-  GetStaticPropsResult<Props>
+export const getStaticProps: GetStaticProps<FallbackProps> = async (): Promise<
+  GetStaticPropsResult<FallbackProps>
 > => {
-  const res = await fetch('https://swapi.dev/api/people/1/', {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  })
+  const json = await fetchAPI('https://swapi.dev/api/people/1/')
 
-  if (!res.ok) return { props: { staticFetch: res.status.toString() } }
-  const staticFetch = JSON.stringify(await res.json(), null, 2)
-
-  return { props: { staticFetch }, revalidate: 60 * 60 * 24 }
+  return {
+    props: { fallback: { 'https://swapi.dev/api/people/1/': json } },
+    revalidate: 60 * 60 * 24,
+  }
 }
