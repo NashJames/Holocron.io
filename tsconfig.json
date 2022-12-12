@@ -16,7 +16,10 @@
     "incremental": true,
     "baseUrl": ".",
     "plugins": [{ "name": "next" }],
-    "paths": { "@public/*": ["public/*"] }
+    "paths": { "@public/*": ["public/*"] },
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
