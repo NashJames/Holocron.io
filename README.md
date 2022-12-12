@@ -1,8 +1,10 @@
-# Holocron
+# Holocron.io
 
-> **Warning** <br> [WIP]: Not ready for deloyment
+> **Warning** <br> [WIP]: Not ready for deployment
 
-A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with [Next.js v13-beta](https://beta.nextjs.org/docs), React 18 and Radix UI. It also includes smaller utilities for CI, testing and linting.
+A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with [Next.js v13](https://beta.nextjs.org/docs), React 18 and Material UI. It also includes smaller utilities for CI, testing and linting.
+
+In future, I may extend it with a POST API implementation and some docs to mimic the full functionality.
 
 ## Initial Setup
 
@@ -26,24 +28,8 @@ A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The cor
 
 ## Project Structure
 
-The main content is located inside the `app/` directory. The subfolders follow a structure equivalent of the URL, where navigating the code is similar to navigating the app itself. Any additions to the pages or tests should follow the same architecture.
+The main content is located inside the `pages/` directory. The subfolders follow a structure equivalent of the URL, where navigating the code is similar to navigating the app itself. It also includes some special files prefixed with an underscore, and the `api/` folder with in-built API routing.
 
-- `app/` contains all TypeScript, CSS and static assets relevant to the creation of the frontend
-- `pages/` contains any API endpoints
+- `pages/` contains all HTML, CSS and TypeScript used by both the server and client
 - `public/` contains all the static assets, including images, videos and fonts
 - `tests/` contains all written tests and is the output directory for any reports/results
-
-Each TypeScript XML (`.tsx`) contains a new unique property from Next.js v13-beta, which makes use of React Server Components to favour rendering content on the server. Simply, if it requires any form of re-rendering, such as React Hooks or conditional HTML, the JavaScript should get sent to the client ([read more](https://beta.nextjs.org/docs/getting-started#thinking-in-server-components)).
-
-```tsx
-'use client'
-import styles from 'page.module.scss' /// CSS
-
-export default function Home() {
-  /// TypeScript
-  return (
-    /// XML
-    <CustomElement className={styles.customElement} />
-  )
-}
-```
