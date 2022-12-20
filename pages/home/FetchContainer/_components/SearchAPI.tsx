@@ -1,3 +1,4 @@
+import styles from './SearchAPI.module.scss'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Search, Close } from '@mui/icons-material'
 import { Button, IconButton, InputAdornment, TextField, Tooltip } from '@mui/material'
@@ -38,47 +39,45 @@ export function SearchAPI({ searchRequest }: SearchAPIProps) {
   }, [validateSearchInput])
 
   return (
-    <>
-      <TextField
-        fullWidth
-        id="SearchBar"
-        variant="standard"
-        value={searchInput}
-        error={requestError}
-        inputRef={searchBarRef}
-        helperText={
-          requestError ? (
-            <span>
-              Requests must be a valid URL beginning with: `<code>https://swapi.dev/api/</code>`
-            </span>
-          ) : (
-            <></>
-          )
+    <TextField
+      fullWidth
+      id="SearchBar"
+      variant="standard"
+      value={searchInput}
+      error={requestError}
+      inputRef={searchBarRef}
+      helperText={
+        requestError ? (
+          <span>
+            Requests must be a valid URL beginning with: `<code>https://swapi.dev/api/</code>`
+          </span>
+        ) : (
+          <></>
+        )
+      }
+      onChange={({ target }) => {
+        setSearchInput(target.value)
+        if (requestError && target.value.startsWith('https://swapi.dev/api/')) {
+          setRequestError(false)
         }
-        onChange={({ target }) => {
-          setSearchInput(target.value)
-          if (requestError && target.value.startsWith('https://swapi.dev/api/')) {
-            setRequestError(false)
-          }
-        }}
-        InputProps={{
-          placeholder: 'Search...',
-          type: 'search',
-          startAdornment: (
-            <InputAdornment position="start">
-              <Search />
-            </InputAdornment>
-          ),
-          endAdornment: (
-            <SearchEndAdornment
-              submitSearch={() => validateSearchInput()}
-              resetSearch={() => setSearchInput('')}
-              searchInUse={searchInput !== ''}
-            />
-          ),
-        }}
-      />
-    </>
+      }}
+      InputProps={{
+        placeholder: 'Search...',
+        type: 'search',
+        startAdornment: (
+          <InputAdornment position="start">
+            <Search />
+          </InputAdornment>
+        ),
+        endAdornment: (
+          <SearchEndAdornment
+            submitSearch={() => validateSearchInput()}
+            resetSearch={() => setSearchInput('')}
+            searchInUse={searchInput !== ''}
+          />
+        ),
+      }}
+    />
   )
 }
 
@@ -95,25 +94,25 @@ const SearchEndAdornment = ({
   searchInUse,
 }: SearchEndAdornmentProps) => {
   return (
-    <>
+    <span className={styles.content}>
       <Tooltip arrow title="Click here or press the 'Enter' key">
-        <Button type="submit" variant="square" size="small" onClick={submitSearch}>
-          Request
+        <Button variant="square" size="small" type="submit" onClick={submitSearch}>
+          REQUEST
         </Button>
       </Tooltip>
       {searchInUse ? (
         <Tooltip arrow title="Click here to clear the search bar">
-          <IconButton type="reset" size="small" onClick={resetSearch}>
+          <IconButton className={styles.IconButton} size="small" type="reset" onClick={resetSearch}>
             <Close />
           </IconButton>
         </Tooltip>
       ) : (
         <Tooltip arrow title="Press the '/' key to begin searching">
-          <IconButton size="small">
+          <IconButton className={styles.IconButton} size="small">
             <kbd aria-hidden>/</kbd>
           </IconButton>
         </Tooltip>
       )}
-    </>
+    </span>
   )
 }
