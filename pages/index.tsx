@@ -26,9 +26,7 @@ export default function HomePage({ fallback }: { fallback: FallbackProps }) {
 }
 
 interface FallbackProps {
-  fallback: {
-    'https://swapi.dev/api/people/1/': string
-  }
+  fallback: { 'https://swapi.dev/api/people/1/': string }
 }
 
 /// Fetches the example API request on the server to save client resources
@@ -36,10 +34,12 @@ interface FallbackProps {
 export const getStaticProps: GetStaticProps<FallbackProps> = async (): Promise<
   GetStaticPropsResult<FallbackProps>
 > => {
-  const json = await fetchAPI('https://swapi.dev/api/people/1/')
+  const data = await fetchAPI('https://swapi.dev/api/people/1/')
 
+  // You can see this data in the browser console, sent in the HTML under the tag:
+  // <script id="__NEXT_DATA__" type="application/json">...</script>
   return {
-    props: { fallback: { 'https://swapi.dev/api/people/1/': json } },
+    props: { fallback: { 'https://swapi.dev/api/people/1/': data } },
     revalidate: 60 * 60 * 24,
   }
 }
