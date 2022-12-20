@@ -10,5 +10,13 @@
     "semi": ["warn", "never"],
     "linebreak-style": ["error", "unix"],
     "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
 }
