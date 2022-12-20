@@ -1,6 +1,12 @@
 .content {
   width: 61rem;
   max-width: 90vw;
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+
+  // Add space for header
+  margin-top: 5rem;
 }
 
 .CodeMirror {
@@ -14,6 +20,4 @@
 
   // Shadow
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
-
-  // Scrollbar
 }

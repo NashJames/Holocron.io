@@ -1,5 +1,5 @@
 import styles from './FetchSection.module.scss'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import JSONMirror from './_components/JSONMirror'
 import { SearchAPI } from './_components/SearchAPI'
 import useSWR from 'swr'
