@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
-import { createTheme, Theme } from '@mui/material'
 import { IBM_Plex_Mono } from '@next/font/google'
+import { createTheme, Theme } from '@mui/material'
 
 const IBMPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   weight: '400',
+  variable: '--ibm_plex_mono-font',
 })
 
 declare module '@mui/material/Button' {
@@ -16,12 +17,8 @@ declare module '@mui/material/Button' {
 export const darkTheme: Theme = createTheme({
   palette: {
     mode: 'dark',
-    primary: {
-      main: '#00ffff',
-      contrastText: 'rgba(255,255,255,0.87)',
-    },
     secondary: {
-      main: '#fb5f5f',
+      main: '#ff8080',
     },
     background: {
       default: '#191c20',
@@ -34,11 +31,7 @@ export const darkTheme: Theme = createTheme({
     MuiIconButton: {
       styleOverrides: {
         root: {
-          height: '26px',
-          width: '26px',
           borderRadius: '7px',
-          border: '1px solid #4d4f56',
-          margin: '4px',
           fontFamily: `${IBMPlexMono.style.fontFamily}`,
         },
       },
@@ -51,7 +44,6 @@ export const darkTheme: Theme = createTheme({
             height: '26px',
             borderRadius: '7px',
             border: '1px solid #4d4f56',
-            margin: '4px',
             fontFamily: `${IBMPlexMono.style.fontFamily}`,
             color: '#FFFFFF',
             paddingBottom: '5px',
