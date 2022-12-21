@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "tsc && next build",
     "start": "next start",
-    "lint": "next lint",
-    "prettier": "pnpm dlx prettier --write .",
-    "format": "pnpm prettier && pnpm lint",
+    "format": "pnpm dlx prettier --write . && next lint",
     "clean": "rm -rf node_modules .next tsconfig.tsbuildinfo next-env.d.ts",
     "test": "pnpm build && pnpm dlx playwright test",
     "test:codegen": "pnpm dlx playwright codegen"
