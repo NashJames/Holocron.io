@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
-import { IBM_Plex_Mono } from '@next/font/google'
-import { createTheme, Theme } from '@mui/material'
+import { IBM_Plex_Mono, Text_Me_One } from '@next/font/google'
+import { createTheme, responsiveFontSizes, Theme } from '@mui/material'
+
+const textMeOne = Text_Me_One({ weight: '400' })
 
 const IBMPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
@@ -14,42 +16,55 @@ declare module '@mui/material/Button' {
   }
 }
 
-export const darkTheme: Theme = createTheme({
-  palette: {
-    mode: 'dark',
-    secondary: {
-      main: '#ff8080',
+export const darkTheme: Theme = responsiveFontSizes(
+  createTheme({
+    typography: {
+      fontFamily: `${textMeOne.style.fontFamily}`,
     },
-    background: {
-      default: '#191c20',
-      paper: '#25292e',
+    palette: {
+      mode: 'dark',
+      secondary: {
+        main: '#ff8080',
+      },
+      background: {
+        default: '#191c20',
+        paper: '#25292e',
+      },
+      divider: 'rgba(255,255,255,0.78)',
+      contrastThreshold: 4.5,
     },
-    divider: 'rgba(255,255,255,0.78)',
-    contrastThreshold: 4.5,
-  },
-  components: {
-    MuiIconButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: '7px',
-          fontFamily: `${IBMPlexMono.style.fontFamily}`,
+    components: {
+      MuiIconButton: {
+        styleOverrides: {
+          root: {
+            borderRadius: '7px',
+            fontFamily: `${IBMPlexMono.style.fontFamily}`,
+          },
+        },
+      },
+      MuiButton: {
+        variants: [
+          {
+            props: { variant: 'square' },
+            style: {
+              height: '26px',
+              borderRadius: '7px',
+              border: '1px solid #4d4f56',
+              fontFamily: `${IBMPlexMono.style.fontFamily}`,
+              color: '#FFFFFF',
+              paddingBottom: '5px',
+            },
+          },
+        ],
+      },
+      MuiTooltip: {
+        styleOverrides: {
+          tooltip: {
+            fontFamily: `${IBMPlexMono.style.fontFamily}`,
+            fontSize: '0.8rem',
+          },
         },
       },
     },
-    MuiButton: {
-      variants: [
-        {
-          props: { variant: 'square' },
-          style: {
-            height: '26px',
-            borderRadius: '7px',
-            border: '1px solid #4d4f56',
-            fontFamily: `${IBMPlexMono.style.fontFamily}`,
-            color: '#FFFFFF',
-            paddingBottom: '5px',
-          },
-        },
-      ],
-    },
-  },
-})
+  })
+)
