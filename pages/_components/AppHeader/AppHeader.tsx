@@ -1,8 +1,9 @@
-import Image from 'next/image'
-import AppLogo from '@public/holocron.svg'
 import styles from './AppHeader.module.scss'
-import { IconButton, Tooltip } from '@mui/material'
+import { IconButton, Tooltip, Typography } from '@mui/material'
 import { GitHub, OpenInNew, Storage } from '@mui/icons-material'
+import { Oxanium } from '@next/font/google'
+
+const oxanium = Oxanium({ weight: '400', subsets: ['latin'] })
 
 // @next/link for internal nav
 
@@ -22,22 +23,26 @@ const headerNav: [string, () => void, boolean, JSX.Element][] = [
 
 export default function AppHeader() {
   return (
-    <header className={styles.AppHeader}>
-      <div>
-        <Image src={AppLogo} alt={'Holocron.io Logo'} width="30" />
-        <h2 className={styles.Title}>Holocron.io</h2>
+    <div className={styles.goldBorder}>
+      <div className={`${styles.goldBorder} ${styles.blackBorder}`}>
+        <header className={styles.AppHeader}>
+          <div className={styles.AppName}>
+            <Typography variant="h4" className={oxanium.className}>
+              Holocron.io
+            </Typography>
+          </div>
+          <div>
+            {headerNav.map(([tooltipLabel, navFunction, externalLink, icon], i) => (
+              <Tooltip key={i} title={tooltipLabel} className={styles.IconTooltip}>
+                <IconButton key={i} type="button" size="small" onClick={navFunction} color="info">
+                  {icon}
+                  {externalLink ? <OpenInNew className={styles.ExternalLinkIcon} /> : <></>}
+                </IconButton>
+              </Tooltip>
+            ))}
+          </div>
+        </header>
       </div>
-      {/* Small geometric design for a divider */}
-      <div>
-        {headerNav.map(([tooltipLabel, navFunction, externalLink, icon], i) => (
-          <Tooltip key={i} title={tooltipLabel} className={styles.IconNav}>
-            <IconButton key={i} type="button" size="small" onClick={navFunction} color="info">
-              {icon}
-              {externalLink ? <OpenInNew className={styles.ExternalLink} /> : <></>}
-            </IconButton>
-          </Tooltip>
-        ))}
-      </div>
-    </header>
+    </div>
   )
 }

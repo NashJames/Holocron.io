@@ -1,47 +1,90 @@
-.AppHeader {
-  // Header Box
+.goldBorder {
+  // Position
   position: fixed;
-  background-color: white;
-  width: 40rem;
-  height: 3rem;
-  max-width: 70vw;
+  margin: 1rem;
+
+  // Alignment
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Border
+  width: calc(70vw + 1.1rem);
+  height: calc(3rem + 1rem);
   border-radius: 2rem;
-  margin: 1.5rem;
-  padding: 1rem;
+  background: linear-gradient(to right, #cab381, #b48811, #a2790d, #bb9b49);
+
+  // Priority
+  z-index: 1;
+}
+
+.blackBorder {
+  // Border
+  width: calc(70vw + 0.5rem);
+  height: calc(3rem + 0.4rem);
+  border: 3px solid black;
+  padding: 27px 4px;
+}
+
+.AppHeader {
+  // Shape
+  width: 70vw;
+  height: 3rem;
+  border-radius: 2rem;
+  padding: 0 1rem;
+
+  // Colour
+  background-color: #101010;
+
+  // Text
   text-align: center;
 
-  // Align the split content
+  // Split Content
   display: flex;
+  align-items: center;
   * {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 5px;
   }
   > * {
     flex-grow: 1;
+    margin: 0 20px;
   }
   > :last-child {
     justify-content: flex-end;
+    gap: 5px;
   }
 }
 
-.Title {
-  // Inline with Logo
-  margin-top: -3px;
-  color: #191c20;
+.AppName {
+  // Fix centering
+  margin-top: 3px;
+
+  // Text
+  font-size: large;
 }
 
-.IconNav {
-  border: 1px solid #e0e3e7;
+.IconTooltip {
+  // Border
+  border: 1px dashed #4d4f56;
+
+  // Button Spacing
   margin: 0 5px;
+
+  // Icon colour
+  color: white;
 }
 
-.ExternalLink {
+.ExternalLinkIcon {
+  // Position
   position: absolute;
-  height: 12px;
-  width: 12px;
   margin-right: -32px;
   margin-top: -27px;
-  color: #191c20;
+
+  // Size
+  height: 12px;
+  width: 12px;
+
+  // Colour
+  color: white;
 }
