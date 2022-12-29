@@ -12,12 +12,9 @@
   -webkit-text-size-adjust: 100%;
 
   // Default background styling
-  color-scheme: light dark;
+  color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #191c20;
-  background-image: url(../public/illustrations/galaxy-bg.svg), linear-gradient(#191c20, #000);
-  background-repeat: repeat-x;
-  background-position: center 0, 0 0, 0 0;
+  background-color: #101010;
   overflow-x: hidden;
 
   // Root content organisation

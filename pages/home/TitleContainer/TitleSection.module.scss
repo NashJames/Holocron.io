@@ -1,11 +1,50 @@
 .content {
-  width: 60rem;
-  max-width: 90vw;
-  > * {
-    display: flex;
-    flex: 1 0 0;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  // Shape
+  height: 85vh;
+  width: 80vw;
+
+  // Alignment
+  display: flex;
+  align-items: center;
+}
+
+.Title {
+  // Alignment
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    // Prevent user highlighting text
+    user-select: none;
   }
+
+  span {
+    // Colour
+    background: linear-gradient(45deg, #cab381, #b48811, #a2790d, #bb9b49);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  span:nth-child(4) {
+    // Text
+    text-decoration: underline;
+  }
+}
+
+.Logo {
+  // Position
+  display: flex;
+  margin-top: 1rem;
+
+  // Shape
+  width: 30vw;
+  height: 15vw;
+
+  // Transparency
+  opacity: 0.8;
+
+  // Send to back
+  z-index: -1;
 }
