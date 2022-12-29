@@ -1,12 +1,32 @@
 .content {
-  width: 60rem;
-  max-width: 90vw;
+  // Shape
+  width: 95vw;
+  border-radius: 5rem 5rem 0 0;
+
+  // Background
+  background-image: url(../../../public/illustrations/galaxy-bg.svg), linear-gradient(#191c20, #000);
+  background-repeat: repeat-x;
+  background-position: center 0, 0 0, 0 0;
+
+  // Alignment
   display: flex;
   flex: 1 0 0;
   flex-direction: column;
+  align-items: center;
 
-  // Add space for header
-  margin-top: 7rem;
+  // Children Width
+  > * {
+    width: 60rem;
+    max-width: 90vw;
+  }
+
+  // Spacing
+  padding: 2rem 0;
+
+  // Set CodeMirror below window height
+  h4 {
+    height: 12vh;
+  }
 }
 
 .CodeMirror {
@@ -20,4 +40,66 @@
 
   // Shadow
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+.SearchButtons {
+  // Alignment
+  display: flex;
+  gap: 8px;
+}
+
+.IconButton {
+  // Shape
+  height: 26px;
+  width: 26px;
+
+  // Square Border
+  border: 1px solid #4d4f56;
+}
+
+.scrollTip {
+  // Position
+  position: absolute;
+  bottom: 1rem;
+  text-align: center;
+
+  // Border
+  width: fit-content;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+
+  span {
+    // Position
+    position: absolute;
+    bottom: -2px;
+
+    // Border
+    width: 15px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+
+    // Animation
+    animation: scrollTipHighlight 3s infinite ease-in-out alternate;
+    @keyframes scrollTipHighlight {
+      from {
+        left: 0;
+      }
+      to {
+        left: calc(100% - 15px);
+      }
+    }
+  }
+}
+
+.DeathStar {
+  // Position
+  position: absolute;
+  right: -3vw;
+  top: calc(80vh + 25rem);
+
+  // Shape
+  width: 25vw;
+  height: 25vw;
+  clip-path: inset(0 5vw 0 0);
+
+  // Transparency
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
 }

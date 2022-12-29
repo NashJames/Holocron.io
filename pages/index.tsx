@@ -1,15 +1,13 @@
 import Head from 'next/head'
 import { SWRConfig } from 'swr'
 import { GetStaticProps, GetStaticPropsResult } from 'next'
-import TitleSection from './home/TitleContainer/TitleSection'
-import FetchSection from './home/FetchContainer/FetchSection'
 import { fetchAPI } from './home/FetchContainer/_data/fetchAPI'
 import { xWingAscii } from '@public/asciiArt/x-wing'
+import HomePage from './home/HomePage'
 
-// Fetch should add to the url under /data/[subject]/[id]#APISearch
-
-export default function HomePage({ fallback }: { fallback: FallbackProps }) {
+export default function Index({ fallback }: { fallback: FallbackProps }) {
   if (process.env.NODE_ENV === 'production') console.log(xWingAscii())
+
   return (
     <>
       <Head>
@@ -18,16 +16,15 @@ export default function HomePage({ fallback }: { fallback: FallbackProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/svg+xml" href="/holocron.svg" />
       </Head>
-      <TitleSection />
       <SWRConfig value={{ fallback }}>
-        <FetchSection />
+        <HomePage />
       </SWRConfig>
     </>
   )
 }
 
 interface FallbackProps {
-  fallback: { 'https://swapi.dev/api/people/1/': string }
+  fallback: { 'https://swapi.dev/api/starships/10/': string }
 }
 
 /// Fetches the example API request on the server to save client resources
@@ -35,12 +32,12 @@ interface FallbackProps {
 export const getStaticProps: GetStaticProps<FallbackProps> = async (): Promise<
   GetStaticPropsResult<FallbackProps>
 > => {
-  const data = await fetchAPI('https://swapi.dev/api/people/1/')
+  const data = await fetchAPI('https://swapi.dev/api/starships/10/')
 
   // You can see this data in the browser console, sent in the HTML under the tag:
   // <script id="__NEXT_DATA__" type="application/json">...</script>
   return {
-    props: { fallback: { 'https://swapi.dev/api/people/1/': data } },
+    props: { fallback: { 'https://swapi.dev/api/starships/10/': data } },
     revalidate: 60 * 60 * 24,
   }
 }

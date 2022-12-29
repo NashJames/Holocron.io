@@ -1,12 +1,19 @@
-import styles from './SearchAPI.module.scss'
+import styles from '../FetchSection.module.scss'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Search, Close } from '@mui/icons-material'
-import { Button, IconButton, InputAdornment, TextField, Tooltip } from '@mui/material'
+import { Button, IconButton, InputAdornment, TextField, Tooltip, Typography } from '@mui/material'
+import { IBM_Plex_Mono } from '@next/font/google'
+
+const IBMPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--ibm_plex_mono-font',
+})
 
 const URL_REGEX = /^https:\/\/swapi.dev\/api\/\b([-a-zA-Z0-9()!@:%_+.~#?&/=]*)$/
 
-type SearchAPIProps = { searchRequest: (_request: string) => void }
-export function SearchAPI({ searchRequest }: SearchAPIProps) {
+type SearchBarProps = { searchRequest: (_request: string) => void }
+export default function SearchBar({ searchRequest }: SearchBarProps) {
   const searchBarRef = useRef<HTMLInputElement>(null)
   const [searchInput, setSearchInput] = useState<string>('')
   const [requestError, setRequestError] = useState<boolean>(false)
@@ -48,9 +55,10 @@ export function SearchAPI({ searchRequest }: SearchAPIProps) {
       inputRef={searchBarRef}
       helperText={
         requestError ? (
-          <span>
-            Requests must be a valid URL beginning with: `<code>https://swapi.dev/api/</code>`
-          </span>
+          <Typography className={IBMPlexMono.className}>
+            Requests must be a valid URL beginning with:{' '}
+            <code style={{ color: 'azure' }}>https://swapi.dev/api/</code>
+          </Typography>
         ) : (
           <></>
         )
@@ -62,6 +70,7 @@ export function SearchAPI({ searchRequest }: SearchAPIProps) {
         }
       }}
       InputProps={{
+        className: IBMPlexMono.className,
         placeholder: 'Search...',
         type: 'search',
         startAdornment: (
@@ -94,7 +103,7 @@ const SearchEndAdornment = ({
   searchInUse,
 }: SearchEndAdornmentProps) => {
   return (
-    <span className={styles.content}>
+    <span className={styles.SearchButtons}>
       <Tooltip arrow title="Click here or press the 'Enter' key">
         <Button variant="square" size="small" type="submit" onClick={submitSearch}>
           REQUEST
