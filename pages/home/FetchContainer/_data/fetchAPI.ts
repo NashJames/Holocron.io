@@ -4,5 +4,8 @@ export const fetchAPI = async (url: string) => {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
   })
-  return JSON.stringify(await res.json(), null, 2)
+
+  const data = res.status === 200 ? await res.json() : { status: `${res.status} ${res.statusText}` }
+
+  return JSON.stringify(data, null, 2)
 }
