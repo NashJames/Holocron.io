@@ -8,16 +8,16 @@ import SearchAPI from './_components/SearchBar'
 import DeathStarSVG from '@public/illustrations/death-star-bg.svg'
 import { Typography } from '@mui/material'
 
+/// Section for the search bar and codemirror
 export default function FetchSection() {
-  // const scrollTipRef = useRef<HTMLInputElement>(null)
   const [url, setURL] = useState<string>('https://swapi.dev/api/starships/10/')
   const { data, error } = useSWR(url, fetchAPI)
 
+  // const scrollTipRef = useRef<HTMLInputElement>(null)
   // useEffect(() => {
   //   const fadeScrollTip = () => {
   //     if (scrollTipRef.current) scrollTipRef.current.style.opacity = '0'
   //   }
-
   //   document.addEventListener('scroll', fadeScrollTip, { once: true })
   // })
 
@@ -28,12 +28,10 @@ export default function FetchSection() {
       <SearchAPI searchRequest={(request) => setURL(request)} />
       <JSONMirror data={data ?? error} />
 
-      {/* 
-      <div id="scrollTip" className={styles.scrollTip} ref={scrollTipRef}>
+      {/* <div id="scrollTip" className={styles.scrollTip} ref={scrollTipRef}>
         <Typography variant="h5">Scroll</Typography>
         <span />
-      </div>
-       */}
+      </div>  */}
 
       <Image
         alt={'An illustration of the Death Star'}

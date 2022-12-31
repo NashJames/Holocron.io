@@ -2,7 +2,8 @@ import { Html, Head, Main, NextScript } from 'next/document'
 import { StyledEngineProvider, getInitColorSchemeScript } from '@mui/material/styles'
 import { Experimental_CssVarsProvider } from '@mui/material/styles'
 
-export default function Document() {
+/// https://nextjs.org/docs/advanced-features/custom-document
+export default function _Document() {
   return (
     <Html lang="en">
       <Head />

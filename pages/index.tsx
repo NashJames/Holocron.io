@@ -3,8 +3,9 @@ import { SWRConfig } from 'swr'
 import { GetStaticProps, GetStaticPropsResult } from 'next'
 import { fetchAPI } from './home/FetchContainer/_data/fetchAPI'
 import { xWingAscii } from '@public/asciiArt/x-wing'
-import HomePage from './home/HomePage'
+import HomePage from './home'
 
+/// https://nextjs.org/docs/routing/introduction#index-routes
 export default function Index({ fallback }: { fallback: FallbackProps }) {
   if (process.env.NODE_ENV === 'production') console.log(xWingAscii())
 

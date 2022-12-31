@@ -1,6 +1,10 @@
 {
-  "name": "holocron",
+  "name": "holocron.io",
+  "license": "MIT",
   "version": "0.1.0",
+  "author": "James Nash (https://github.com/NashJames/)",
+  "homepage": "https://github.com/NashJames/Holocron.io/",
+  "repository": "github:NashJames/Holocron.io",
   "private": true,
   "scripts": {
     "dev": "next dev",

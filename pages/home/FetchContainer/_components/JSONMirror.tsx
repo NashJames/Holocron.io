@@ -20,6 +20,7 @@ const holocronTheme = createTheme({
   ],
 })
 
+/// CodeMirror library with configuration and styling
 export default function JSONMirror({ data }: { data: string }) {
   return (
     <CodeMirror

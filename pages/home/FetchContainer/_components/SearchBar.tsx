@@ -4,21 +4,19 @@ import { Search, Close } from '@mui/icons-material'
 import { Button, IconButton, InputAdornment, TextField, Tooltip, Typography } from '@mui/material'
 import { IBM_Plex_Mono } from '@next/font/google'
 
-const IBMPlexMono = IBM_Plex_Mono({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--ibm_plex_mono-font',
-})
+const IBMPlexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: '400' })
 
 const URL_REGEX = /^https:\/\/swapi.dev\/api\/\b([-a-zA-Z0-9()!@:%_+.~#?&/=]*)$/
 
 type SearchBarProps = { searchRequest: (_request: string) => void }
+
+/// Search Bar with styling and validation logic
 export default function SearchBar({ searchRequest }: SearchBarProps) {
   const searchBarRef = useRef<HTMLInputElement>(null)
   const [searchInput, setSearchInput] = useState<string>('')
   const [requestError, setRequestError] = useState<boolean>(false)
 
-  // Sets error if the user requests an invalid SWAPI URL
+  // Set error state if the user requests an invalid SWAPI URL
   const validateSearchInput = useCallback(() => {
     const searchInputTrim = searchInput.trim()
     URL_REGEX.test(searchInputTrim) ? searchRequest(searchInputTrim) : setRequestError(true)

@@ -4,12 +4,11 @@ import styles from './TitleSection.module.scss'
 import { Secular_One, Poiret_One, Text_Me_One } from '@next/font/google'
 import { Typography } from '@mui/material'
 
-const secularOne = Secular_One({ weight: '400' })
+const secularOne = Secular_One({ weight: '400', subsets: ['latin'] })
+const textMeOne = Text_Me_One({ weight: '400', subsets: ['latin'] })
+const poiretOne = Poiret_One({ weight: '400', subsets: ['latin'] })
 
-const poiretOne = Poiret_One({ weight: '400' })
-
-const textMeOne = Text_Me_One({ weight: '400' })
-
+/// Section for the title text and logo
 export default function TitleSection() {
   return (
     <section className={styles.content}>
@@ -22,11 +21,6 @@ export default function TitleSection() {
         </Typography>
       </div>
       <Image src={AppLogo} alt={'Holocron.io Logo'} className={styles.Logo} />
-      {/* 
-      <code>
-        Holocrons were designed as holographic storage devices, built to hold ancient lessons and
-        valuable information
-      </code> */}
     </section>
   )
 }

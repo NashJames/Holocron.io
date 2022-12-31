@@ -4,7 +4,8 @@ import { ThemeProvider } from '@mui/material'
 import { darkTheme } from './_libs/theme-provider'
 import AppHeader from './_components/AppHeader/AppHeader'
 
-export default function _app({ Component, pageProps }: AppProps) {
+/// https://nextjs.org/docs/advanced-features/custom-app
+export default function _App({ Component, pageProps }: AppProps) {
   return (
     <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <ThemeProvider theme={darkTheme}>

@@ -11,16 +11,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  // Default background styling
-  color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #101010;
+  color-scheme: dark;
   overflow-x: hidden;
-
-  // Root content organisation
-  display: flex;
-  flex: 1 0 0;
-  justify-content: center;
 }
 
 code {
