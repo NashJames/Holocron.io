@@ -4,7 +4,7 @@
 
 A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with [Next.js v13](https://beta.nextjs.org/docs), React 18 and Material UI. It also includes smaller utilities for CI, testing and linting.
 
-In future, I may extend it with a POST API implementation and some docs to mimic the full functionality.
+In future, I hope to extend it with a POST API implementation and some docs to mimic the full functionality.
 
 ## Initial Setup
 
@@ -28,8 +28,8 @@ In future, I may extend it with a POST API implementation and some docs to mimic
 
 ## Project Structure
 
-The main content is located inside the `pages/` directory. The subfolders follow a structure equivalent of the URL, where navigating the code is similar to navigating the app itself. It also includes some special files prefixed with an underscore, and the `api/` folder with in-built API routing.
+The main content is located inside the `pages/` directory. The subfolders follow a structure equivalent of the URL, where navigating the code is similar to navigating the app itself. It also includes some special files prefixed with an underscore, and the `pages/api/` folder with in-built API routing.
 
-- `pages/` contains all HTML, CSS and TypeScript used by both the server and client
+- `pages/` contains all the XML, CSS and TypeScript used by both the server and client
 - `public/` contains all the static assets, including images, videos and fonts
 - `tests/` contains all written tests and is the output directory for any reports/results
