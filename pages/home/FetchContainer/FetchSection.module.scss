@@ -106,3 +106,29 @@
   // Transparency
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
 }
+
+.subtitle {
+  // Clipped text background
+  background: linear-gradient(90deg, #fff, #171a1e);
+  background-position-x: -1000%;
+  background-repeat: no-repeat;
+  background-clip: text;
+  background-size: 80%;
+
+  // Transparent text
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  color: transparent;
+
+  // Animation
+  animation: fadeInSubtitle 6s linear 3s forwards;
+  @keyframes fadeInSubtitle {
+    from {
+      background-position-x: -1000%;
+    }
+    to {
+      background: white;
+      background-clip: text;
+      background-position-x: 1000%;
+    }
+  }
+}

@@ -6,6 +6,17 @@
   // Alignment
   display: flex;
   align-items: center;
+
+  // Animation
+  animation: translateFetchSection 3s;
+  @keyframes translateFetchSection {
+    from {
+      height: 100vh;
+    }
+    to {
+      height: 85vh;
+    }
+  }
 }
 
 .Title {
@@ -44,4 +55,18 @@
 
   // Transparency
   opacity: 0.8;
+}
+
+.Title,
+.Logo {
+  // Animation
+  animation: translateTitleSection 3s;
+  @keyframes translateTitleSection {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }

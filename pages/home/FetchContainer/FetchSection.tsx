@@ -23,7 +23,9 @@ export default function FetchSection() {
 
   return (
     <section className={styles.content}>
-      <Typography variant="h4">Take a look at the data below...</Typography>
+      <Typography variant="h4" className={styles.subtitle}>
+        Take a look at the data below...
+      </Typography>
 
       <SearchAPI searchRequest={(request) => setURL(request)} />
       <JSONMirror data={data ?? error} />
