@@ -13,14 +13,6 @@ export default function FetchSection() {
   const [url, setURL] = useState<string>('https://swapi.dev/api/starships/10/')
   const { data, error } = useSWR(url, fetchAPI)
 
-  // const scrollTipRef = useRef<HTMLInputElement>(null)
-  // useEffect(() => {
-  //   const fadeScrollTip = () => {
-  //     if (scrollTipRef.current) scrollTipRef.current.style.opacity = '0'
-  //   }
-  //   document.addEventListener('scroll', fadeScrollTip, { once: true })
-  // })
-
   return (
     <section className={styles.content}>
       <Typography variant="h4" className={styles.subtitle}>
@@ -29,11 +21,6 @@ export default function FetchSection() {
 
       <SearchAPI searchRequest={(request) => setURL(request)} />
       <JSONMirror data={data ?? error} />
-
-      {/* <div id="scrollTip" className={styles.scrollTip} ref={scrollTipRef}>
-        <Typography variant="h5">Scroll</Typography>
-        <span />
-      </div>  */}
 
       <Image
         alt={'An illustration of the Death Star'}

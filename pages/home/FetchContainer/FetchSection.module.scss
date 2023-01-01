@@ -21,7 +21,7 @@
   }
 
   // Spacing
-  padding: 2rem 0;
+  padding: 3rem 0;
 
   // Set CodeMirror below window height
   h4 {
@@ -58,38 +58,6 @@
 
   // Square Border
   border: 1px solid #4d4f56;
-}
-
-.scrollTip {
-  // Position
-  position: absolute;
-  bottom: 1rem;
-  text-align: center;
-
-  // Border
-  width: fit-content;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
-
-  span {
-    // Position
-    position: absolute;
-    bottom: -2px;
-
-    // Border
-    width: 15px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
-
-    // Animation
-    animation: scrollTipHighlight 3s infinite ease-in-out alternate;
-    @keyframes scrollTipHighlight {
-      from {
-        left: 0;
-      }
-      to {
-        left: calc(100% - 15px);
-      }
-    }
-  }
 }
 
 .DeathStar {

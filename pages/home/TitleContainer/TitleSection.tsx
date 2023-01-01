@@ -1,8 +1,7 @@
-import Image from 'next/image'
-import AppLogo from '@public/holocron.svg'
-import styles from './TitleSection.module.scss'
-import { Secular_One, Poiret_One, Text_Me_One } from '@next/font/google'
 import { Typography } from '@mui/material'
+import styles from './TitleSection.module.scss'
+import HolocronCube from './_components/HolocronCube'
+import { Secular_One, Poiret_One, Text_Me_One } from '@next/font/google'
 
 const secularOne = Secular_One({ weight: '400', subsets: ['latin'] })
 const textMeOne = Text_Me_One({ weight: '400', subsets: ['latin'] })
@@ -20,7 +19,9 @@ export default function TitleSection() {
           for the <span className={poiretOne.className}>Jedi Archives</span>
         </Typography>
       </div>
-      <Image src={AppLogo} alt={'Holocron.io Logo'} className={styles.Logo} />
+      <div className={styles.Logo}>
+        <HolocronCube />
+      </div>
     </section>
   )
 }
