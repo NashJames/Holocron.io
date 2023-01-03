@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { IBM_Plex_Mono, Text_Me_One } from '@next/font/google'
-import { createTheme, responsiveFontSizes, Theme } from '@mui/material'
+import { responsiveFontSizes, experimental_extendTheme as extendTheme } from '@mui/material'
+import type {} from '@mui/material/themeCssVarsAugmentation' // extend the typings so that `theme.vars` is accessible.
 
 const textMeOne = Text_Me_One({ weight: '400', subsets: ['latin'] })
 const IBMPlexMono = IBM_Plex_Mono({ weight: '400', subsets: ['latin'] })
@@ -11,22 +12,25 @@ declare module '@mui/material/Button' {
   }
 }
 
-export const darkTheme: Theme = responsiveFontSizes(
-  createTheme({
+export const theme = responsiveFontSizes(
+  extendTheme({
     typography: {
       fontFamily: `${textMeOne.style.fontFamily}`,
     },
-    palette: {
-      mode: 'dark',
-      secondary: {
-        main: '#ff8080',
+    colorSchemes: {
+      dark: {
+        palette: {
+          secondary: {
+            main: '#ff8080',
+          },
+          background: {
+            default: '#191c20',
+            paper: '#25292e',
+          },
+          divider: 'rgba(255,255,255,0.78)',
+          contrastThreshold: 4.5,
+        },
       },
-      background: {
-        default: '#191c20',
-        paper: '#25292e',
-      },
-      divider: 'rgba(255,255,255,0.78)',
-      contrastThreshold: 4.5,
     },
     components: {
       MuiIconButton: {
@@ -62,4 +66,4 @@ export const darkTheme: Theme = responsiveFontSizes(
       },
     },
   })
-)
+) as ReturnType<typeof extendTheme>
