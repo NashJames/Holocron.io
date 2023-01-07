@@ -2,7 +2,7 @@ import Image from 'next/image'
 import JediHolocron from '@public/illustrations/jedi-holocron.png'
 import styles from './HolocronCube.module.scss'
 
-/// Floating cube of Holocron images
+/** Displays a rotating cube using multiple translated images */
 export default function HolocronCube() {
   return (
     <div className={styles.wrapper}>

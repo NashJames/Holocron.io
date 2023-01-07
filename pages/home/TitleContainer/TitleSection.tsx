@@ -7,7 +7,7 @@ const secularOne = Secular_One({ weight: '400', subsets: ['latin'] })
 const textMeOne = Text_Me_One({ weight: '400', subsets: ['latin'] })
 const poiretOne = Poiret_One({ weight: '400', subsets: ['latin'] })
 
-/// Section for the title text and logo
+/** Formatting for the Title text and Logo. Responsible for the positioning of `FetchSection()` */
 export default function TitleSection() {
   return (
     <section className={styles.content}>

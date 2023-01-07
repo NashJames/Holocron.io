@@ -1,4 +1,4 @@
-/// API fetch with predefined config, indentation formatting and status handling
+/**  Basic fetch() with predefined config, status handling and indentation formatting */
 export const fetchAPI = async (url: string) => {
   const res = await fetch(url, {
     method: 'GET',

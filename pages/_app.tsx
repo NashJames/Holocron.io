@@ -4,7 +4,7 @@ import { StyledEngineProvider, ThemeProvider } from '@mui/material'
 import { darkTheme } from './_libs/theme-provider'
 import AppHeader from './_components/AppHeader/AppHeader'
 
-/// https://nextjs.org/docs/advanced-features/custom-app
+/** https://nextjs.org/docs/advanced-features/custom-app */
 export default function _App({ Component, pageProps }: AppProps) {
   return (
     <StyledEngineProvider injectFirst>

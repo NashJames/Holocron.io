@@ -5,7 +5,7 @@ import { fetchAPI } from './home/FetchContainer/_data/fetchAPI'
 import { xWingAscii } from '@public/asciiArt/x-wing'
 import HomePage from './home'
 
-/// https://nextjs.org/docs/routing/introduction#index-routes
+/** https://nextjs.org/docs/routing/introduction#index-routes */
 export default function Index({ fallback }: { fallback: FallbackProps }) {
   if (process.env.NODE_ENV === 'production') console.log(xWingAscii())
 
@@ -28,8 +28,7 @@ interface FallbackProps {
   fallback: { 'https://swapi.dev/api/starships/10/': string }
 }
 
-/// Fetches the example API request on the server to save client resources
-/// Data cached for 24 hours
+/** Fetches the example API request on the server to save client resources. Data cached for 24 hours */
 export const getStaticProps: GetStaticProps<FallbackProps> = async (): Promise<
   GetStaticPropsResult<FallbackProps>
 > => {

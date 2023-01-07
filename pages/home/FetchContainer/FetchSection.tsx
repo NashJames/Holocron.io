@@ -8,7 +8,7 @@ import SearchAPI from './_components/SearchBar'
 import DeathStarSVG from '@public/illustrations/death-star-bg.svg'
 import { Typography } from '@mui/material'
 
-/// Section for the search bar and codemirror
+/** Connects the SearchBar, CodeMirror and fetchAPI components */
 export default function FetchSection() {
   const [url, setURL] = useState<string>('https://swapi.dev/api/starships/10/')
   const { data, error } = useSWR(url, fetchAPI)
