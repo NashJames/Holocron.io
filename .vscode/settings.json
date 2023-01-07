@@ -1,7 +1,7 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.exclude": {
-    "**/.svg": true,
+    "**/*.svg": true,
     "pnpm-lock.yaml": true
   },
 }
