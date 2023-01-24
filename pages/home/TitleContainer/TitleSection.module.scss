@@ -32,14 +32,10 @@
   }
 
   span {
-    // Colour
+    // Text
     background: linear-gradient(45deg, #cab381, #b48811, #a2790d, #bb9b49);
     -webkit-text-fill-color: transparent;
     background-clip: text;
-  }
-
-  span:nth-child(4) {
-    // Text
     text-decoration: underline;
   }
 }
