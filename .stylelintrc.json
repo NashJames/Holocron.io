@@ -1,0 +1,23 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier-scss"],
+  "rules": {
+    "selector-class-pattern": [
+      "^[A-Z][a-zA-Z0-9]+$",
+      {
+        "message": "Expected class selector \"%s\" to be PascalCase"
+      }
+    ],
+    "keyframes-name-pattern": [
+      "^[A-Z][a-zA-Z0-9]+$",
+      {
+        "message": "Expected keyframe name \"%s\" to be PascalCase"
+      }
+    ],
+    "scss/dollar-variable-pattern": [
+      "^[A-Z][a-zA-Z0-9]+$",
+      {
+        "message": "Expected variable \"%s\" to be PascalCase"
+      }
+    ]
+  }
+}
