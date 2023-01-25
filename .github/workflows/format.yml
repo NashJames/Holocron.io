@@ -17,6 +17,8 @@ jobs:
           node-version: 16
       - name: Install PNPM
         run: npm i -g pnpm
+      - name: Install dependencies
+        run: pnpm install
       - name: Run eslint
         run: pnpm next lint
 
@@ -30,6 +32,8 @@ jobs:
           node-version: 16
       - name: Install PNPM
         run: npm i -g pnpm
+      - name: Install dependencies
+        run: pnpm install
       - name: Run stylelint
         run: pnpm lint:styles
 
@@ -43,5 +47,7 @@ jobs:
           node-version: 16
       - name: Install PNPM
         run: npm i -g pnpm
+      - name: Install dependencies
+        run: pnpm install
       - name: Run prettier
         run: pnpm prettier --check .
