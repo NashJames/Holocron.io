@@ -1,4 +1,4 @@
-.outerBorder {
+.OuterBorder {
   // Position
   position: fixed;
   top: 1rem;
@@ -20,12 +20,13 @@
   z-index: 10;
 
   // Animation
-  animation: translateHeader 3s;
-  @keyframes translateHeader {
+  animation: TranslateHeader 3s;
+  @keyframes TranslateHeader {
     from {
       top: 2rem;
       opacity: 0;
     }
+
     to {
       top: 1rem;
       opacity: 1;
@@ -33,7 +34,7 @@
   }
 }
 
-.innerBorder {
+.InnerBorder {
   // Shape
   width: 99.3%;
   height: 92%;
@@ -60,11 +61,13 @@
   // Split Content
   display: flex;
   align-items: center;
+
   > * {
     display: flex;
     flex-grow: 1;
     margin: 0 20px;
   }
+
   > :last-child {
     justify-content: flex-end;
     gap: 5px;

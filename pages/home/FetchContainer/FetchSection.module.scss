@@ -1,10 +1,11 @@
-.content {
+.Content {
   // Shape
   width: 95vw;
   border-radius: 5rem 5rem 0 0;
 
   // Background
-  background-image: url(../../../public/illustrations/galaxy-bg.svg), linear-gradient(#191c20, #000);
+  background-image: url('../../../public/illustrations/galaxy-bg.svg'),
+    linear-gradient(#191c20, #000);
   background-repeat: repeat-x;
   background-position: center 0, 0 0, 0 0;
 
@@ -39,7 +40,7 @@
   border-image: linear-gradient(to bottom, aqua, transparent) 1;
 
   // Shadow
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 10px 40px rgb(0 0 0 / 70%);
 
   // Priority
   z-index: 1;
@@ -72,10 +73,10 @@
   clip-path: inset(0 5vw 0 0);
 
   // Transparency
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+  mask-image: linear-gradient(to bottom, rgb(0 0 0 / 90%), transparent);
 }
 
-.subtitle {
+.Subtitle {
   // Clipped text background
   background: linear-gradient(90deg, #fff, #171a1e);
   background-position-x: -1000%;
@@ -84,15 +85,16 @@
   background-size: 80%;
 
   // Transparent text
-  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  -webkit-text-fill-color: rgb(255 255 255 / 0%);
   color: transparent;
 
   // Animation
-  animation: fadeInSubtitle 6s linear 3s forwards;
-  @keyframes fadeInSubtitle {
+  animation: FadeInSubtitle 6s linear 3s forwards;
+  @keyframes FadeInSubtitle {
     from {
       background-position-x: -1000%;
     }
+
     to {
       background: white;
       background-clip: text;

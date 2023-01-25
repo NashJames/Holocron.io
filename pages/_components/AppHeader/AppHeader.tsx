@@ -23,8 +23,8 @@ const headerNav: [string, () => void, boolean, JSX.Element][] = [
 
 export default function AppHeader() {
   return (
-    <div className={styles.outerBorder}>
-      <div className={styles.innerBorder}>
+    <div className={styles.OuterBorder}>
+      <div className={styles.InnerBorder}>
         <header className={styles.AppHeader}>
           <div className={styles.AppName}>
             <Typography variant="h4" className={oxanium.className}>
