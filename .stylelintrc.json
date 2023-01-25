@@ -16,7 +16,7 @@
     "scss/dollar-variable-pattern": [
       "^[A-Z][a-zA-Z0-9]+$",
       {
-        "message": "Expected variable \"%s\" to be PascalCase"
+        "message": "Expected variable to be PascalCase"
       }
     ]
   }
