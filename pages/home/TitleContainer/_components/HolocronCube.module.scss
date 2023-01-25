@@ -1,20 +1,20 @@
 @use 'sass:math';
 
-$cubeSize: 10vw;
+$CubeSize: 10vw;
 
-.wrapper {
+.Wrapper {
   perspective: 1000px;
   perspective-origin: 50% 50%;
   user-select: none;
 }
 
-.cube {
+.Cube {
   margin: auto;
   position: relative;
-  height: $cubeSize;
-  width: $cubeSize;
+  height: $CubeSize;
+  width: $CubeSize;
   transform-style: preserve-3d;
-  animation: rotate 20s infinite linear;
+  animation: Rotate 20s infinite linear;
   user-select: none;
 
   * {
@@ -22,58 +22,65 @@ $cubeSize: 10vw;
     box-sizing: border-box;
     height: $cubeSize;
     width: $cubeSize;
-    shape-rendering: geometricPrecision;
+    shape-rendering: geometricprecision;
     user-select: none;
   }
 }
 
-.front {
+.Front {
   transform: translateZ(math.div($cubeSize, 2));
 }
-.back {
+
+.Back {
   transform: translateZ(-(math.div($cubeSize, 2))) rotateY(180deg);
 }
-.right {
+
+.Right {
   transform: rotateY(-270deg) translateX(math.div($cubeSize, 2));
   transform-origin: top right;
 }
-.left {
+
+.Left {
   transform: rotateY(270deg) translateX(-(math.div($cubeSize, 2)));
   transform-origin: center left;
 }
-.top {
+
+.Top {
   transform: rotateX(-270deg) translateY(-(math.div($cubeSize, 2)));
   transform-origin: top center;
 }
-.bottom {
+
+.Bottom {
   transform: rotateX(270deg) translateY(math.div($cubeSize, 2));
   transform-origin: bottom center;
 }
 
-@keyframes rotate {
+@keyframes Rotate {
   from {
     transform: rotateX(-10deg) rotateY(0deg);
   }
+
   to {
     transform: rotateX(-10deg) rotateY(360deg);
   }
 }
 
-.shadow {
+.Shadow {
   position: relative;
   margin: calc($cubeSize * 0.2) auto;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   opacity: 0.9;
   box-shadow: 0 0 calc($cubeSize * 0.5) calc($cubeSize * 0.5) #10b6f4;
   animation: shadow 20s infinite linear;
   z-index: -1;
 }
 
-@keyframes shadow {
+@keyframes Shadow {
   0% {
     transform: rotateX(80deg) rotateZ(0deg);
   }
+
   100% {
     transform: rotateX(80deg) rotateZ(-360deg);
   }

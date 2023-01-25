@@ -14,8 +14,8 @@ export default function FetchSection() {
   const { data, error } = useSWR(url, fetchAPI)
 
   return (
-    <section className={styles.content}>
-      <Typography variant="h4" className={styles.subtitle}>
+    <section className={styles.Content}>
+      <Typography variant="h4" className={styles.Subtitle}>
         Take a look at the data below...
       </Typography>
 

@@ -9,7 +9,7 @@ const poiretOne = Poiret_One({ weight: '400', subsets: ['latin'] })
 /** Formatting for the Title text and Logo. Responsible for the positioning of `FetchSection()` */
 export default function TitleSection() {
   return (
-    <section className={styles.content}>
+    <section className={styles.Content}>
       <div className={styles.Title}>
         <Typography variant="h1" className={textMeOne.className}>
           A modern API
