@@ -2,7 +2,7 @@
 
 > **Warning** <br> [WIP]: Not ready for deployment
 
-A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with [Next.js v13](https://beta.nextjs.org/docs), React 18 and Material UI. It also includes smaller utilities for CI, testing and linting.
+A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with Next.js v13, React v18 and Material UI. It also includes smaller utilities for CI, testing and linting.
 
 In future, I hope to extend it with a POST API implementation and some docs to mimic the full functionality.
 
@@ -21,7 +21,7 @@ In future, I hope to extend it with a POST API implementation and some docs to m
 | `pnpm dev`          | Compiles and starts dev build at `localhost:3000` |
 | `pnpm build`        | Compiles the code for production                  |
 | `pnpm start`        | Starts production build at `localhost:3000`       |
-| `pnpm format`       | Runs prettier and ESLint                          |
+| `pnpm format`       | Runs ESLint, Stylelint and Prettier               |
 | `pnpm clean`        | Safely removes all built files/folders            |
 | `pnpm test`         | Runs the playwright e2e tests                     |
 | `pnpm test:codegen` | Records user actions as playwright e2e tests      |
