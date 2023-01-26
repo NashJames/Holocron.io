@@ -20,38 +20,38 @@ $CubeSize: 10vw;
   * {
     position: absolute;
     box-sizing: border-box;
-    height: $cubeSize;
-    width: $cubeSize;
+    height: $CubeSize;
+    width: $CubeSize;
     shape-rendering: geometricprecision;
     user-select: none;
   }
 }
 
 .Front {
-  transform: translateZ(math.div($cubeSize, 2));
+  transform: translateZ(math.div($CubeSize, 2));
 }
 
 .Back {
-  transform: translateZ(-(math.div($cubeSize, 2))) rotateY(180deg);
+  transform: translateZ(-(math.div($CubeSize, 2))) rotateY(180deg);
 }
 
 .Right {
-  transform: rotateY(-270deg) translateX(math.div($cubeSize, 2));
+  transform: rotateY(-270deg) translateX(math.div($CubeSize, 2));
   transform-origin: top right;
 }
 
 .Left {
-  transform: rotateY(270deg) translateX(-(math.div($cubeSize, 2)));
+  transform: rotateY(270deg) translateX(-(math.div($CubeSize, 2)));
   transform-origin: center left;
 }
 
 .Top {
-  transform: rotateX(-270deg) translateY(-(math.div($cubeSize, 2)));
+  transform: rotateX(-270deg) translateY(-(math.div($CubeSize, 2)));
   transform-origin: top center;
 }
 
 .Bottom {
-  transform: rotateX(270deg) translateY(math.div($cubeSize, 2));
+  transform: rotateX(270deg) translateY(math.div($CubeSize, 2));
   transform-origin: bottom center;
 }
 
@@ -67,11 +67,11 @@ $CubeSize: 10vw;
 
 .Shadow {
   position: relative;
-  margin: calc($cubeSize * 0.2) auto;
+  margin: calc($CubeSize * 0.2) auto;
   width: 0;
   height: 0;
   opacity: 0.9;
-  box-shadow: 0 0 calc($cubeSize * 0.5) calc($cubeSize * 0.5) #10b6f4;
+  box-shadow: 0 0 calc($CubeSize * 0.5) calc($CubeSize * 0.5) #10b6f4;
   animation: shadow 20s infinite linear;
   z-index: -1;
 }
