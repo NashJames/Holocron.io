@@ -14,8 +14,8 @@
     "format:diff": "next lint && pnpm lint:styles && prettier --check .",
     "lint:styles": "stylelint '**/*.{css,scss}' --report-needless-disables --report-invalid-scope-disables --allow-empty-input",
     "clean": "rm -rf node_modules .next tsconfig.tsbuildinfo next-env.d.ts",
-    "test": "pnpm build && pnpm dlx playwright test",
-    "test:codegen": "pnpm dlx playwright codegen"
+    "test": "pnpm build && pnpm exec playwright test",
+    "test:codegen": "pnpm exec playwright codegen"
   },
   "dependencies": {
     "@babel/core": "^7.20.12",
@@ -32,10 +32,11 @@
     "next": "^13.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "swr": "^2.0.1"
+    "sharp": "^0.31.3",
+    "swr": "^2.0.2"
   },
   "devDependencies": {
-    "@playwright/test": "^1.29.2",
+    "@playwright/test": "^1.30.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "eslint": "^8.32.0",
