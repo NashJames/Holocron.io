@@ -23,26 +23,25 @@ const headerNav: [string, () => void, boolean, JSX.Element][] = [
 
 export default function AppHeader() {
   return (
-    <div className={styles.OuterBorder}>
-      <div className={styles.InnerBorder}>
-        <header className={styles.AppHeader}>
-          <div className={styles.AppName}>
-            <Typography variant="h4" className={oxanium.className}>
-              Holocron.io
-            </Typography>
-          </div>
-          <div>
-            {headerNav.map(([tooltipLabel, navFunction, externalLink, icon], i) => (
-              <Tooltip key={i} title={tooltipLabel} className={styles.IconTooltip}>
-                <IconButton key={i} type="button" size="small" onClick={navFunction} color="info">
-                  {icon}
-                  {externalLink ? <OpenInNew className={styles.ExternalLinkIcon} /> : <></>}
-                </IconButton>
-              </Tooltip>
-            ))}
-          </div>
-        </header>
-      </div>
-    </div>
+    <>
+      <header className={styles.AppHeader}>
+        <div className={styles.AppName}>
+          <Typography variant="h4" className={oxanium.className}>
+            Holocron.io
+          </Typography>
+        </div>
+        <div>
+          {headerNav.map(([tooltipLabel, navFunction, externalLink, icon], i) => (
+            <Tooltip key={i} title={tooltipLabel} className={styles.IconTooltip}>
+              <IconButton key={i} type="button" size="small" onClick={navFunction} color="info">
+                {icon}
+                {externalLink ? <OpenInNew className={styles.ExternalLinkIcon} /> : <></>}
+              </IconButton>
+            </Tooltip>
+          ))}
+        </div>
+      </header>
+      <div className={styles.Border} />
+    </>
   )
 }
