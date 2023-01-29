@@ -1,11 +1,17 @@
 .Content {
   // Shape
   height: 85vh;
-  width: 80vw;
+  width: 100vw;
+  padding: 10vh 10vw;
 
   // Alignment
   display: flex;
   align-items: center;
+
+  // Background
+  background-image: url('../../../public/illustrations/lines.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
 
   // Animation
   animation: TranslateFetchSection 3s;
@@ -37,7 +43,8 @@
     background: linear-gradient(45deg, #cab381, #b48811, #a2790d, #bb9b49);
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-decoration: underline;
+    text-decoration: underline white 1px;
+    text-underline-offset: 6px; // (Required: Chromium)
   }
 }
 
