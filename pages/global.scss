@@ -15,18 +15,20 @@
   overflow-x: hidden;
 
   // Scrollbar (Required: Firefox)
-  scrollbar-color: rgba(180, 136, 17, 0.8) #202020;
+  scrollbar-color: rgb(180 136 17 / 80%) #202020;
   scrollbar-width: thin;
 
   // Scrollbar (Required: Webkit & Chromium)
   ::-webkit-scrollbar {
     width: 9px;
   }
+
   ::-webkit-scrollbar-track {
     background: #202020;
   }
+
   ::-webkit-scrollbar-thumb {
-    background: rgba(180, 136, 17, 0.8);
+    background: rgb(180 136 17 / 80%);
   }
 }
 
