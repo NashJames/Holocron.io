@@ -31,9 +31,15 @@ export default function AppHeader() {
           </Typography>
         </div>
         <div>
-          {headerNav.map(([tooltipLabel, navFunction, externalLink, icon], i) => (
-            <Tooltip key={i} title={tooltipLabel} className={styles.IconTooltip}>
-              <IconButton key={i} type="button" size="small" onClick={navFunction} color="info">
+          {headerNav.map(([tooltipLabel, navFunction, externalLink, icon]) => (
+            <Tooltip key={tooltipLabel} title={tooltipLabel} className={styles.IconTooltip}>
+              <IconButton
+                key={tooltipLabel}
+                type="button"
+                size="small"
+                onClick={navFunction}
+                color="info"
+              >
                 {icon}
                 {externalLink ? <OpenInNew className={styles.ExternalLinkIcon} /> : <></>}
               </IconButton>

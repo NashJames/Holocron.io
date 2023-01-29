@@ -26,16 +26,17 @@ const config: PlaywrightTestConfig = {
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html', { outputFolder: './tests/playwright-report' }]],
+  reporter: process.env.CI ? 'github' : [['html', { outputFolder: './tests/playwright-report' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'http://localhost:3000',
-
+    baseURL: 'http://localhost:1234',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    /* Define the screen-size for browser tests */
+    viewport: { width: 1920, height: 1080 },
   },
 
   /* Configure projects for major browsers */
@@ -54,10 +55,17 @@ const config: PlaywrightTestConfig = {
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  outputDir: './src/tests/playwright-results/',
+  outputDir: './tests/playwright-results/',
+
+  /* Folder for persistant artifacts such as screenshots, videos, traces, etc. */
+  snapshotDir: './tests/snapshots/',
 
   /* Run your local dev server before starting the tests */
-  webServer: { command: 'pnpm start', port: 3000 },
+  webServer: {
+    command: 'pnpm start --port=1234',
+    // reuseExistingServer: !process.env.CI,
+    port: 1234,
+  },
 }
 
 export default config

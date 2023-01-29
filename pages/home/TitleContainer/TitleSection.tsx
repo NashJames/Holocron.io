@@ -12,8 +12,7 @@ export default function TitleSection() {
     <section className={styles.Content}>
       <div className={styles.Title}>
         <Typography variant="h1" className={textMeOne.className}>
-          A modern API
-          <br />
+          A modern API <br />
           for the <span className={poiretOne.className}>Jedi Archives</span>
         </Typography>
       </div>
