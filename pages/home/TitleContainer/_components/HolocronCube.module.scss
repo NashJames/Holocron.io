@@ -3,27 +3,34 @@
 $CubeSize: 10vw;
 
 .Wrapper {
+  // Shape
   perspective: 1000px;
   perspective-origin: 50% 50%;
-  user-select: none;
+  pointer-events: none;
 }
 
 .Cube {
-  margin: auto;
+  // Position
   position: relative;
+  margin: auto;
+
+  // Shape
   height: $CubeSize;
   width: $CubeSize;
   transform-style: preserve-3d;
+
+  // Animation
   animation: Rotate 20s infinite linear;
-  user-select: none;
 
   * {
+    // Position
     position: absolute;
+
+    // Shape
+    shape-rendering: geometricprecision;
     box-sizing: border-box;
     height: $CubeSize;
     width: $CubeSize;
-    shape-rendering: geometricprecision;
-    user-select: none;
   }
 }
 
@@ -46,12 +53,12 @@ $CubeSize: 10vw;
 }
 
 .Top {
-  transform: rotateX(-270deg) translateY(-(math.div($CubeSize, 2)));
+  transform: rotateX(270deg) translateY(-(math.div($CubeSize, 2)));
   transform-origin: top center;
 }
 
 .Bottom {
-  transform: rotateX(270deg) translateY(math.div($CubeSize, 2));
+  transform: rotateX(-270deg) translateY(math.div($CubeSize, 2));
   transform-origin: bottom center;
 }
 
@@ -66,22 +73,30 @@ $CubeSize: 10vw;
 }
 
 .Shadow {
+  // Position
   position: relative;
-  margin: calc($CubeSize * 0.2) auto;
+  margin: calc($CubeSize * 0.3) auto;
+  transform: rotateX(-240deg);
+  z-index: -1;
+
+  // Shape
   width: 0;
   height: 0;
+
+  // Colour
+  box-shadow: 0 0 calc($CubeSize * 0.6) calc($CubeSize * 0.5) #10b6f4;
   opacity: 0.9;
-  box-shadow: 0 0 calc($CubeSize * 0.5) calc($CubeSize * 0.5) #10b6f4;
+
+  // Animation
   animation: shadow 20s infinite linear;
-  z-index: -1;
 }
 
 @keyframes Shadow {
-  0% {
+  from {
     transform: rotateX(80deg) rotateZ(0deg);
   }
 
-  100% {
+  to {
     transform: rotateX(80deg) rotateZ(-360deg);
   }
 }

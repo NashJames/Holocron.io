@@ -24,9 +24,9 @@
   // Spacing
   padding: 3rem 0;
 
-  // Set CodeMirror below window height
   h4 {
-    height: 12vh;
+    // Spacing (CodeMirror out of view)
+    height: 10vh;
   }
 }
 

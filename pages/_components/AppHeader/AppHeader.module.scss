@@ -1,62 +1,11 @@
-.OuterBorder {
-  // Position
-  position: fixed;
-  top: 1rem;
-
-  // Alignment
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  // Shape
-  width: 70vw;
-  height: 4rem;
-  border-radius: 2rem;
-
-  // Colour
-  background: linear-gradient(to right, #cab381, #b48811, #a2790d, #bb9b49);
-
-  // Priority
-  z-index: 10;
-
-  // Animation
-  animation: TranslateHeader 3s;
-  @keyframes TranslateHeader {
-    from {
-      top: 2rem;
-      opacity: 0;
-    }
-
-    to {
-      top: 1rem;
-      opacity: 1;
-    }
-  }
-}
-
-.InnerBorder {
-  // Shape
-  width: 99.3%;
-  height: 92%;
-  padding: 3px;
-  border-radius: 2rem;
-
-  // Border
-  border: 3px solid black;
-}
-
 .AppHeader {
+  // Position
+  position: absolute;
+
   // Shape
-  width: 100%;
-  height: 100%;
-  padding: 0 1rem;
-  border-radius: 2rem;
-
-  // Colour
+  width: 100vw;
+  padding: 0.5rem 1rem;
   background-color: #101010;
-
-  // Text
-  text-align: center;
 
   // Split Content
   display: flex;
@@ -71,6 +20,43 @@
   > :last-child {
     justify-content: flex-end;
     gap: 5px;
+  }
+
+  // Animation
+  animation: FadeInHeader 3s;
+  @keyframes FadeInHeader {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.Border {
+  // Position
+  position: absolute;
+
+  // Shape
+  width: 100vw;
+  margin-top: 3.5rem;
+
+  // Border
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to right, #cab381, #b48811, #a2790d, #bb9b49) 1;
+
+  // Animation
+  animation: GrowHeaderBorder 3s;
+  @keyframes GrowHeaderBorder {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100vw;
+    }
   }
 }
 
