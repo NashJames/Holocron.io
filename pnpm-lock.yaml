@@ -10,7 +10,7 @@ specifiers:
   '@mui/icons-material': ^5.11.0
   '@mui/material': ^5.11.6
   '@next/font': ^13.1.5
-  '@playwright/test': ^1.30.0
+  '@playwright/test': ^1.27.1
   '@types/react': ^18.0.27
   '@types/react-dom': ^18.0.10
   '@uiw/codemirror-themes': ^4.19.7
@@ -50,7 +50,7 @@ dependencies:
   swr: 2.0.2_react@18.2.0
 
 devDependencies:
-  '@playwright/test': 1.30.0
+  '@playwright/test': 1.27.1
   '@types/react': 18.0.27
   '@types/react-dom': 18.0.10
   eslint: 8.32.0
@@ -938,13 +938,13 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /@playwright/test/1.30.0:
-    resolution: {integrity: sha512-SVxkQw1xvn/Wk/EvBnqWIq6NLo1AppwbYOjNLmyU0R1RoQ3rLEBtmjTnElcnz8VEtn11fptj1ECxK0tgURhajw==}
+  /@playwright/test/1.27.1:
+    resolution: {integrity: sha512-mrL2q0an/7tVqniQQF6RBL2saskjljXzqNcCOVMUjRIgE6Y38nCNaP+Dc2FBW06bcpD3tqIws/HT9qiMHbNU0A==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
       '@types/node': 18.11.18
-      playwright-core: 1.30.0
+      playwright-core: 1.27.1
     dev: true
 
   /@popperjs/core/2.11.6:
@@ -3089,8 +3089,8 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
-  /playwright-core/1.30.0:
-    resolution: {integrity: sha512-7AnRmTCf+GVYhHbLJsGUtskWTE33SwMZkybJ0v6rqR1boxq2x36U7p1vDRV7HO2IwTZgmycracLxPEJI49wu4g==}
+  /playwright-core/1.27.1:
+    resolution: {integrity: sha512-9EmeXDncC2Pmp/z+teoVYlvmPWUC6ejSSYZUln7YaP89Z6lpAaiaAnqroUt/BoLo8tn7WYShcfaCh+xofZa44Q==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true

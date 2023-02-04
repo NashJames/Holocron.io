@@ -12,7 +12,7 @@ In future, I hope to extend it with a POST API implementation and some docs to m
 
 1. Install [Node Version Manager](https://github.com/nvm-sh/nvm#installing-and-updating) and execute `nvm install 16`
 2. Install [PNPM](https://pnpm.io/installation) via `npm install -g pnpm`
-3. Install [Playwright](https://playwright.dev/docs/intro) via `pnpm exec playwright install --with-deps chromium firefox webkit chrome msedge`
+3. Install [Playwright Browsers](https://playwright.dev/docs/intro) via `pnpm exec playwright install --with-deps chromium firefox webkit chrome msedge`
 4. Install the [VS Code extensions](.vscode/extensions.json)
 
 | Command             | Action                                            |

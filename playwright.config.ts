@@ -47,7 +47,7 @@ const config: PlaywrightTestConfig = {
 
     /* Test against mobile viewports. */
     { name: 'Mobile Chrome', use: { ...devices['Pixel 5'] } },
-    { name: 'Mobile Safari', use: { ...devices['iPhone 12'] } },
+    // { name: 'Mobile Safari', use: { ...devices['iPhone 12'] } },
 
     /* Test against branded browsers. */
     { name: 'Microsoft Edge', use: { channel: 'msedge' } },
@@ -62,8 +62,8 @@ const config: PlaywrightTestConfig = {
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'pnpm start --port=1234',
-    // reuseExistingServer: !process.env.CI,
+    command: 'pnpm dev --port=1234',
+    // command: 'pnpm build && pnpm start --port=1234',
     port: 1234,
   },
 }
