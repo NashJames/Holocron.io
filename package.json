@@ -14,8 +14,7 @@
     "format:diff": "next lint && pnpm lint:styles && prettier --check .",
     "lint:styles": "stylelint '**/*.{css,scss}' --report-needless-disables --report-invalid-scope-disables --allow-empty-input",
     "clean": "rm -rf node_modules .next tsconfig.tsbuildinfo next-env.d.ts",
-    "test": "pnpm build && pnpm dlx playwright test",
-    "test:codegen": "pnpm dlx playwright codegen"
+    "test": "pnpm exec playwright test"
   },
   "dependencies": {
     "@babel/core": "^7.20.12",
@@ -25,16 +24,18 @@
     "@emotion/styled": "^11.10.5",
     "@lezer/highlight": "^1.1.3",
     "@mui/icons-material": "^5.11.0",
-    "@mui/material": "^5.11.6",
+    "@mui/material": "^5.11.7",
     "@next/font": "^13.1.6",
     "@uiw/codemirror-themes": "^4.19.7",
     "@uiw/react-codemirror": "^4.19.7",
     "next": "^13.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sharp": "^0.31.3",
     "swr": "^2.0.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.30.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "eslint": "^8.33.0",
@@ -42,11 +43,11 @@
     "eslint-config-prettier": "^8.6.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.3",
-    "sass": "^1.57.1",
+    "sass": "^1.58.0",
     "stylelint": "^14.16.1",
     "stylelint-config-prettier-scss": "^0.0.1",
     "stylelint-config-standard-scss": "^6.1.0",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.5"
   },
   "engines": {
     "node": "^16",
