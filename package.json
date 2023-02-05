@@ -14,7 +14,7 @@
     "format": "next lint --fix && pnpm lint:styles --fix && prettier --write .",
     "format:diff": "next lint && pnpm lint:styles && prettier --check .",
     "lint:styles": "stylelint '**/*.{css,scss}' --report-needless-disables --report-invalid-scope-disables --allow-empty-input",
-    "test": "pnpm jest && pnpm playwright",
+    "test": "pnpm test:jest && pnpm test:playwright",
     "test:jest": "pnpm exec jest",
     "test:playwright": "pnpm exec playwright test"
   },
