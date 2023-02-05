@@ -8,10 +8,12 @@ import SearchAPI from './_components/SearchBar'
 import DeathStarSVG from '@public/illustrations/death-star-bg.svg'
 import { Typography } from '@mui/material'
 
+const DATA_UNDEFINED = '{\n  "error": "data undefined"\n}'
+
 /** Connects the SearchBar, CodeMirror and fetchAPI components */
 export default function FetchSection() {
   const [url, setURL] = useState<string>('https://swapi.dev/api/starships/10/')
-  const { data, error } = useSWR(url, fetchAPI)
+  const { data } = useSWR(url, fetchAPI)
 
   return (
     <section className={styles.Content}>
@@ -20,7 +22,7 @@ export default function FetchSection() {
       </Typography>
 
       <SearchAPI searchRequest={(request) => setURL(request)} />
-      <JSONMirror data={data ?? error} />
+      <JSONMirror data={data ?? DATA_UNDEFINED} />
 
       <Image
         alt={'An illustration of the Death Star'}
