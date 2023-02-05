@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Tests
 
 on:
   push:
@@ -7,7 +7,22 @@ on:
     branches: [main, master]
 
 jobs:
-  test:
+  jest:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install PNPM
+        run: npm i -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run Jest tests
+        run: pnpm test:jest
+
+  playwright:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -22,7 +37,7 @@ jobs:
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps chromium firefox webkit chrome msedge
       - name: Run Playwright tests
-        run: pnpm test
+        run: pnpm test:playwright
       - uses: actions/upload-artifact@v3
         if: always()
         with:
