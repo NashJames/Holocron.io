@@ -47,7 +47,6 @@ export const darkTheme: Theme = responsiveFontSizes(
               border: '1px solid #4d4f56',
               fontFamily: IBMPlexMono.style.fontFamily,
               color: '#FFFFFF',
-              paddingBottom: '5px',
             },
           },
         ],

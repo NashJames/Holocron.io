@@ -54,45 +54,24 @@
 .CodeMirrorOptions {
   // Alignment
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  gap: 0.5rem;
 
   // Position
   position: absolute;
   align-self: flex-end;
   margin: 0.5rem 0.5rem 0 0;
-  gap: 0.5rem;
 
   // Priority
   z-index: 2;
 
-  > * {
-    // Shape
-    border-radius: 0.6rem;
-    width: fit-content;
-
-    // Colour
-    border: 1px solid rgb(255 255 255 / 20%);
+  button {
+    text-transform: lowercase;
+    gap: 4px;
   }
-}
-
-.ResponseTime {
-  // Alignment
-  display: flex;
-  padding: 0 0.5rem;
 
   svg {
-    // Icon styling
-    margin: 1px 4px 0 0;
-  }
-}
-
-.CopyClipboard {
-  padding: 0 1px 0 2px;
-  cursor: pointer;
-  svg {
-    margin-top: 5px;
-    height: 18px;
+    height: 20px;
+    width: 20px;
   }
 }
 
