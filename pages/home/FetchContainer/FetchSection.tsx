@@ -25,6 +25,7 @@ export default function FetchSection() {
       <JSONMirror
         data={data?.fetchResponse ?? DATA_UNDEFINED}
         responseTime={data?.fetchElapsed ?? 0}
+        dataURL={url}
       />
 
       <Image

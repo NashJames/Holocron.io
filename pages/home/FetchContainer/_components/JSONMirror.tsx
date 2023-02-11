@@ -2,7 +2,7 @@ import CodeMirror from '@uiw/react-codemirror'
 import styles from '../FetchSection.module.scss'
 import { createTheme } from '@uiw/codemirror-themes'
 import { json } from '@codemirror/lang-json'
-import { ContentCopy, Update } from '@mui/icons-material'
+import { ContentCopy, FileCopy, Update } from '@mui/icons-material'
 import { Button, IconButton, Tooltip, Typography } from '@mui/material'
 import { tags } from '@lezer/highlight'
 
@@ -22,8 +22,10 @@ const holocronTheme = createTheme({
   ],
 })
 
+type JSONMirrorParams = { data: string; responseTime: number; dataURL: string }
+
 /** React CodeMirror library with configuration and styling */
-export default function JSONMirror({ data, responseTime }: { data: string; responseTime: number }) {
+export default function JSONMirror({ data, responseTime, dataURL }: JSONMirrorParams) {
   return (
     <CodeMirror
       readOnly
@@ -49,9 +51,23 @@ export default function JSONMirror({ data, responseTime }: { data: string; respo
             </Button>
           </Tooltip>
 
-          <Tooltip arrow title="Copy to Clipboard">
-            <IconButton size="small" className={styles.IconButton}>
+          <Tooltip arrow title="Copy URL to Clipboard">
+            <IconButton
+              size="small"
+              className={styles.IconButton}
+              onClick={() => navigator.clipboard.writeText(dataURL)}
+            >
               <ContentCopy />
+            </IconButton>
+          </Tooltip>
+
+          <Tooltip arrow title="Copy JSON to Clipboard">
+            <IconButton
+              size="small"
+              className={styles.IconButton}
+              onClick={() => navigator.clipboard.writeText(data)}
+            >
+              <FileCopy />
             </IconButton>
           </Tooltip>
         </div>
