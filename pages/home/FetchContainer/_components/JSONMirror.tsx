@@ -3,7 +3,7 @@ import styles from '../FetchSection.module.scss'
 import { createTheme } from '@uiw/codemirror-themes'
 import { json } from '@codemirror/lang-json'
 import { ContentCopy, FileCopy, Update } from '@mui/icons-material'
-import { Button, IconButton, Tooltip, Typography } from '@mui/material'
+import { Button, CircularProgress, IconButton, Tooltip, Typography } from '@mui/material'
 import { tags } from '@lezer/highlight'
 
 const extensions = [json()]
@@ -22,14 +22,14 @@ const holocronTheme = createTheme({
   ],
 })
 
-type JSONMirrorParams = { data: string; responseTime: number; dataURL: string }
+type JSONMirrorParams = { data: string; isLoading: boolean; responseTime: number; dataURL: string }
 
 /** React CodeMirror library with configuration and styling */
-export default function JSONMirror({ data, responseTime, dataURL }: JSONMirrorParams) {
+export default function JSONMirror({ data, isLoading, responseTime, dataURL }: JSONMirrorParams) {
   return (
     <CodeMirror
       readOnly
-      value={data}
+      value={isLoading ? undefined : data}
       height="42rem"
       theme={holocronTheme}
       extensions={extensions}
@@ -40,6 +40,8 @@ export default function JSONMirror({ data, responseTime, dataURL }: JSONMirrorPa
         highlightActiveLine: false,
       }}
     >
+      {isLoading && <CircularProgress className={styles.LoadingCircle} />}
+
       {responseTime > 0 && (
         <div className={styles.CodeMirrorOptions}>
           <Tooltip arrow title="API Response Time">

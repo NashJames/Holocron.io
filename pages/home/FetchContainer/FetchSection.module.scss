@@ -49,6 +49,18 @@
 
   // Priority
   z-index: 1;
+
+  > {
+    // Children Priority
+    z-index: 2;
+  }
+}
+
+.LoadingCircle {
+  // Position
+  position: absolute;
+  align-self: center;
+  margin-top: 21rem;
 }
 
 .CodeMirrorOptions {
@@ -60,9 +72,6 @@
   position: absolute;
   align-self: flex-end;
   margin: 0.5rem 0.5rem 0 0;
-
-  // Priority
-  z-index: 2;
 
   button {
     text-transform: lowercase;
