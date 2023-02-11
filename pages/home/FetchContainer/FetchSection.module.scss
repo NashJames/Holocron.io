@@ -51,30 +51,48 @@
   z-index: 1;
 }
 
-.ResponseTime {
+.CodeMirrorOptions {
+  // Alignment
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
   // Position
   position: absolute;
   align-self: flex-end;
   margin: 0.5rem 0.5rem 0 0;
-
-  // Shape
-  border-radius: 0.6rem;
-  width: fit-content;
-  padding: 0 0.5rem;
-
-  // Colour
-  border: 1px solid rgb(255 255 255 / 20%);
+  gap: 0.5rem;
 
   // Priority
   z-index: 2;
 
+  > * {
+    // Shape
+    border-radius: 0.6rem;
+    width: fit-content;
+
+    // Colour
+    border: 1px solid rgb(255 255 255 / 20%);
+  }
+}
+
+.ResponseTime {
   // Alignment
   display: flex;
+  padding: 0 0.5rem;
 
   svg {
     // Icon styling
     margin: 1px 4px 0 0;
-    opacity: 0.9;
+  }
+}
+
+.CopyClipboard {
+  padding: 0 1px 0 2px;
+  cursor: pointer;
+  svg {
+    margin-top: 5px;
+    height: 18px;
   }
 }
 

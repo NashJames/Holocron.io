@@ -2,9 +2,12 @@ import CodeMirror from '@uiw/react-codemirror'
 import styles from '../FetchSection.module.scss'
 import { createTheme } from '@uiw/codemirror-themes'
 import { json } from '@codemirror/lang-json'
-import { Update } from '@mui/icons-material'
-import { Typography } from '@mui/material'
+import { ContentCopy, Update } from '@mui/icons-material'
+import { Button, IconButton, Typography } from '@mui/material'
 import { tags } from '@lezer/highlight'
+import { Text_Me_One } from '@next/font/google'
+
+const TextMeOne = Text_Me_One({ weight: '400', subsets: ['latin'] })
 
 const extensions = [json()]
 const holocronTheme = createTheme({
@@ -39,9 +42,33 @@ export default function JSONMirror({ data, responseTime }: { data: string; respo
       }}
     >
       {responseTime > 0 && (
-        <div className={styles.ResponseTime}>
-          <Update />
-          <Typography variant="subtitle1">{new Date(responseTime).getMilliseconds()}ms</Typography>
+        <div className={styles.CodeMirrorOptions}>
+          {/* <Button variant="square" size="small">
+            <Update />
+            <Typography variant="subtitle1">
+              {new Date(responseTime).getMilliseconds()}ms
+            </Typography>
+          </Button>
+          <IconButton size="small" className={styles.IconButton}>
+            <ContentCopy />
+          </IconButton> */}
+          <div className={styles.ResponseTime}>
+            <Update />
+            <Typography variant="subtitle1">
+              {new Date(responseTime).getMilliseconds()}ms
+            </Typography>
+          </div>
+          <div className={styles.CopyClipboard}>
+            {/* <IconButton>
+              <ContentCopy />
+            </IconButton> */}
+            <ContentCopy
+              onClick={() => {
+                navigator.clipboard.writeText(data)
+                // setTimeout(() => , 500)
+              }}
+            />
+          </div>
         </div>
       )}
     </CodeMirror>
