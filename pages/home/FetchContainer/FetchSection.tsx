@@ -22,7 +22,10 @@ export default function FetchSection() {
       </Typography>
 
       <SearchAPI searchRequest={(request) => setURL(request)} />
-      <JSONMirror data={data ?? DATA_UNDEFINED} />
+      <JSONMirror
+        data={data?.fetchResponse ?? DATA_UNDEFINED}
+        responseTime={data?.fetchElapsed ?? 0}
+      />
 
       <Image
         alt={'An illustration of the Death Star'}

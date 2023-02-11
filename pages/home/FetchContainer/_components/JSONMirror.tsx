@@ -2,6 +2,8 @@ import CodeMirror from '@uiw/react-codemirror'
 import styles from '../FetchSection.module.scss'
 import { createTheme } from '@uiw/codemirror-themes'
 import { json } from '@codemirror/lang-json'
+import { Update } from '@mui/icons-material'
+import { Typography } from '@mui/material'
 import { tags } from '@lezer/highlight'
 
 const extensions = [json()]
@@ -21,7 +23,7 @@ const holocronTheme = createTheme({
 })
 
 /** React CodeMirror library with configuration and styling */
-export default function JSONMirror({ data }: { data: string }) {
+export default function JSONMirror({ data, responseTime }: { data: string; responseTime: number }) {
   return (
     <CodeMirror
       readOnly
@@ -35,6 +37,13 @@ export default function JSONMirror({ data }: { data: string }) {
         foldGutter: false,
         highlightActiveLine: false,
       }}
-    />
+    >
+      {responseTime > 0 && (
+        <div className={styles.ResponseTime}>
+          <Update />
+          <Typography variant="subtitle1">{new Date(responseTime).getMilliseconds()}ms</Typography>
+        </div>
+      )}
+    </CodeMirror>
   )
 }

@@ -25,12 +25,17 @@
   padding: 3rem 0;
 
   h4 {
-    // Spacing (CodeMirror out of view)
+    // Spacing (Move CodeMirror out of view)
+    min-height: 3rem;
     height: 10vh;
   }
 }
 
 .CodeMirror {
+  // Alignment
+  display: flex;
+  flex-direction: column;
+
   // Spacing
   margin-top: 1rem;
 
@@ -44,6 +49,33 @@
 
   // Priority
   z-index: 1;
+}
+
+.ResponseTime {
+  // Position
+  position: absolute;
+  align-self: flex-end;
+  margin: 0.5rem 0.5rem 0 0;
+
+  // Shape
+  border-radius: 0.6rem;
+  width: fit-content;
+  padding: 0 0.5rem;
+
+  // Colour
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  // Priority
+  z-index: 2;
+
+  // Alignment
+  display: flex;
+
+  svg {
+    // Icon styling
+    margin: 1px 4px 0 0;
+    opacity: 0.9;
+  }
 }
 
 .SearchButtons {
