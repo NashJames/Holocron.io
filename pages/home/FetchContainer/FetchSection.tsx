@@ -6,6 +6,7 @@ import { fetchAPI } from './_data/fetchAPI'
 import styles from './FetchSection.module.scss'
 import JSONMirror from './_components/JSONMirror'
 import SearchAPI from './_components/SearchBar'
+import Asteroids from './_components/Asteroids'
 import DeathStarSVG from '@public/illustrations/death-star-bg.svg'
 
 const DATA_UNDEFINED = '{\n  "error": "data undefined"\n}'
@@ -36,6 +37,8 @@ export default function FetchSection() {
         src={DeathStarSVG}
         draggable={false}
       />
+
+      <Asteroids />
     </section>
   )
 }
