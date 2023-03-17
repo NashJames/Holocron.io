@@ -193,6 +193,25 @@ exports[`renders home 1`] = `
     <div
       class="cm-theme CodeMirror"
     >
+      <span
+        class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary LoadingCircle css-18lrjg1-MuiCircularProgress-root"
+        role="progressbar"
+        style="width: 40px; height: 40px;"
+      >
+        <svg
+          class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
+        >
+          <circle
+            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+            cx="44"
+            cy="44"
+            fill="none"
+            r="20.2"
+            stroke-width="3.6"
+          />
+        </svg>
+      </span>
       <div
         class="cm-editor ͼ1 ͼ3 ͼ4 ͼ1e ͼ15"
       >
@@ -207,7 +226,7 @@ exports[`renders home 1`] = `
           <div
             aria-hidden="true"
             class="cm-gutters"
-            style="min-height: 42px; position: sticky;"
+            style="min-height: 14px; position: sticky;"
           >
             <div
               class="cm-gutter cm-lineNumbers"
@@ -223,18 +242,6 @@ exports[`renders home 1`] = `
                 style="height: 14px;"
               >
                 1
-              </div>
-              <div
-                class="cm-gutterElement"
-                style="height: 14px;"
-              >
-                2
-              </div>
-              <div
-                class="cm-gutterElement"
-                style="height: 14px;"
-              >
-                3
               </div>
             </div>
           </div>
@@ -255,30 +262,7 @@ exports[`renders home 1`] = `
             <div
               class="cm-line"
             >
-              <span
-                class="ͼ17"
-              >
-                {
-              </span>
-            </div>
-            <div
-              class="cm-line"
-            >
-                "error": 
-              <span
-                class="ͼ16"
-              >
-                "data undefined"
-              </span>
-            </div>
-            <div
-              class="cm-line"
-            >
-              <span
-                class="ͼ17"
-              >
-                }
-              </span>
+              <br />
             </div>
           </div>
           <div
@@ -297,6 +281,84 @@ exports[`renders home 1`] = `
     <img
       alt="An illustration of the Death Star"
       class="DeathStar"
+      data-nimg="1"
+      decoding="async"
+      draggable="false"
+      height="40"
+      loading="lazy"
+      src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+      srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+      style="color: transparent;"
+      width="40"
+    />
+    <img
+      alt="An illustration of a red asteroid"
+      class="Asteroid AnimateAsteroidHigh delay6s"
+      data-nimg="1"
+      decoding="async"
+      draggable="false"
+      height="40"
+      loading="lazy"
+      src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+      srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+      style="color: transparent;"
+      width="40"
+    />
+    <img
+      alt="An illustration of a red asteroid"
+      class="Asteroid AnimateAsteroidLow delay12s"
+      data-nimg="1"
+      decoding="async"
+      draggable="false"
+      height="40"
+      loading="lazy"
+      src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+      srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+      style="color: transparent;"
+      width="40"
+    />
+    <img
+      alt="An illustration of a blue asteroid"
+      class="Asteroid AnimateAsteroidMid "
+      data-nimg="1"
+      decoding="async"
+      draggable="false"
+      height="40"
+      loading="lazy"
+      src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+      srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+      style="color: transparent;"
+      width="40"
+    />
+    <img
+      alt="An illustration of a blue asteroid"
+      class="Asteroid AnimateAsteroidLow delay9s"
+      data-nimg="1"
+      decoding="async"
+      draggable="false"
+      height="40"
+      loading="lazy"
+      src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+      srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+      style="color: transparent;"
+      width="40"
+    />
+    <img
+      alt="An illustration of a pink asteroid"
+      class="Asteroid AnimateAsteroidHigh delay12s"
+      data-nimg="1"
+      decoding="async"
+      draggable="false"
+      height="40"
+      loading="lazy"
+      src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+      srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+      style="color: transparent;"
+      width="40"
+    />
+    <img
+      alt="An illustration of a pink asteroid"
+      class="Asteroid AnimateAsteroidMid delay6s"
       data-nimg="1"
       decoding="async"
       draggable="false"
