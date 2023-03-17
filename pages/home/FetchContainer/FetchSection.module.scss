@@ -108,7 +108,7 @@
   // Shape
   width: 25vw;
   height: 25vw;
-  clip-path: inset(0 5vw 0 0);
+  clip-path: inset(0 calc(5vw + 5px) 0 0);
 
   // Transparency
   mask-image: linear-gradient(to bottom, rgb(0 0 0 / 90%), transparent);
