@@ -1,0 +1,90 @@
+.Asteroid {
+  // Position
+  position: absolute;
+  right: 0;
+
+  // Shape
+  height: 80px;
+  width: 80px;
+
+  // Colour
+  opacity: 0;
+}
+
+.AnimateAsteroidHigh {
+  // Position
+  top: 90vh;
+
+  // Animation
+  animation: TranslateHigh 6s linear infinite;
+  @keyframes TranslateHigh {
+    0% {
+      transform: translate(0, 0) rotate(70deg);
+      opacity: 0.5;
+    }
+
+    85% {
+      opacity: 0.5;
+    }
+
+    100% {
+      transform: translate(-94vw, 100vh) rotate(70deg);
+    }
+  }
+}
+
+.AnimateAsteroidMid {
+  // Position
+  top: 100vh;
+
+  // Animation
+  animation: TranslateHigh 6s linear infinite;
+  @keyframes TranslateHigh {
+    0% {
+      transform: translate(0, 0) rotate(70deg);
+      opacity: 0.5;
+    }
+
+    85% {
+      opacity: 0.5;
+    }
+
+    100% {
+      transform: translate(-94vw, 90vh) rotate(70deg);
+    }
+  }
+}
+
+.AnimateAsteroidLow {
+  // Position
+  top: 110vh;
+
+  // Animation
+  animation: TranslateLow 6s linear infinite;
+  @keyframes TranslateLow {
+    0% {
+      transform: translate(0, 0) rotate(70deg);
+      opacity: 0.5;
+    }
+
+    85% {
+      opacity: 0.5;
+    }
+
+    100% {
+      transform: translate(-94vw, 80vh) rotate(70deg);
+    }
+  }
+}
+
+.Delay6s {
+  animation-delay: 6s;
+}
+
+.Delay9s {
+  animation-delay: 9s;
+}
+
+.Delay12s {
+  animation-delay: 12s;
+}

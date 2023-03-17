@@ -2,7 +2,7 @@
 import { IBM_Plex_Mono, Text_Me_One } from '@next/font/google'
 import { createTheme, responsiveFontSizes, Theme } from '@mui/material'
 
-const textMeOne = Text_Me_One({ weight: '400', subsets: ['latin'] })
+const TextMeOne = Text_Me_One({ weight: '400', subsets: ['latin'] })
 const IBMPlexMono = IBM_Plex_Mono({ weight: '400', subsets: ['latin'] })
 
 declare module '@mui/material/Button' {
@@ -14,7 +14,7 @@ declare module '@mui/material/Button' {
 export const darkTheme: Theme = responsiveFontSizes(
   createTheme({
     typography: {
-      fontFamily: `${textMeOne.style.fontFamily}`,
+      fontFamily: TextMeOne.style.fontFamily,
     },
     palette: {
       mode: 'dark',
@@ -33,7 +33,7 @@ export const darkTheme: Theme = responsiveFontSizes(
         styleOverrides: {
           root: {
             borderRadius: '7px',
-            fontFamily: `${IBMPlexMono.style.fontFamily}`,
+            fontFamily: IBMPlexMono.style.fontFamily,
           },
         },
       },
@@ -45,9 +45,8 @@ export const darkTheme: Theme = responsiveFontSizes(
               height: '26px',
               borderRadius: '7px',
               border: '1px solid #4d4f56',
-              fontFamily: `${IBMPlexMono.style.fontFamily}`,
+              fontFamily: IBMPlexMono.style.fontFamily,
               color: '#FFFFFF',
-              paddingBottom: '5px',
             },
           },
         ],
@@ -55,7 +54,7 @@ export const darkTheme: Theme = responsiveFontSizes(
       MuiTooltip: {
         styleOverrides: {
           tooltip: {
-            fontFamily: `${IBMPlexMono.style.fontFamily}`,
+            fontFamily: IBMPlexMono.style.fontFamily,
             fontSize: '0.8rem',
           },
         },

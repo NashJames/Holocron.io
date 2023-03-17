@@ -2,6 +2,8 @@ import CodeMirror from '@uiw/react-codemirror'
 import styles from '../FetchSection.module.scss'
 import { createTheme } from '@uiw/codemirror-themes'
 import { json } from '@codemirror/lang-json'
+import { ContentCopy, FileCopy, Update } from '@mui/icons-material'
+import { Button, CircularProgress, IconButton, Tooltip, Typography } from '@mui/material'
 import { tags } from '@lezer/highlight'
 
 const extensions = [json()]
@@ -20,12 +22,14 @@ const holocronTheme = createTheme({
   ],
 })
 
+type JSONMirrorParams = { data: string; isLoading: boolean; responseTime: number; dataURL: string }
+
 /** React CodeMirror library with configuration and styling */
-export default function JSONMirror({ data }: { data: string }) {
+export default function JSONMirror({ data, isLoading, responseTime, dataURL }: JSONMirrorParams) {
   return (
     <CodeMirror
       readOnly
-      value={data}
+      value={isLoading ? undefined : data}
       height="42rem"
       theme={holocronTheme}
       extensions={extensions}
@@ -35,6 +39,41 @@ export default function JSONMirror({ data }: { data: string }) {
         foldGutter: false,
         highlightActiveLine: false,
       }}
-    />
+    >
+      {isLoading && <CircularProgress className={styles.LoadingCircle} />}
+
+      {responseTime > 0 && (
+        <div className={styles.CodeMirrorOptions}>
+          <Tooltip arrow title="API Response Time">
+            <Button variant="square" size="small">
+              <Update />
+              <Typography variant="subtitle1">
+                {new Date(responseTime).getMilliseconds()}ms
+              </Typography>
+            </Button>
+          </Tooltip>
+
+          <Tooltip arrow title="Copy URL to Clipboard">
+            <IconButton
+              size="small"
+              className={styles.IconButton}
+              onClick={() => navigator.clipboard.writeText(dataURL)}
+            >
+              <ContentCopy />
+            </IconButton>
+          </Tooltip>
+
+          <Tooltip arrow title="Copy JSON to Clipboard">
+            <IconButton
+              size="small"
+              className={styles.IconButton}
+              onClick={() => navigator.clipboard.writeText(data)}
+            >
+              <FileCopy />
+            </IconButton>
+          </Tooltip>
+        </div>
+      )}
+    </CodeMirror>
   )
 }
