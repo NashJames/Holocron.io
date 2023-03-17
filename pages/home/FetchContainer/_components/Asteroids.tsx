@@ -10,13 +10,13 @@ export default function Asteroids() {
     <>
       <Image
         alt={'An illustration of a red asteroid'}
-        className={`${styles.Asteroid} ${styles.AnimateAsteroidHigh} ${styles.delay6s}`}
+        className={`${styles.Asteroid} ${styles.AnimateAsteroidHigh} ${styles.Delay6s}`}
         src={AsteroidRedSVG}
         draggable={false}
       />
       <Image
         alt={'An illustration of a red asteroid'}
-        className={`${styles.Asteroid} ${styles.AnimateAsteroidLow} ${styles.delay12s}`}
+        className={`${styles.Asteroid} ${styles.AnimateAsteroidLow} ${styles.Delay12s}`}
         src={AsteroidRedSVG}
         draggable={false}
       />
@@ -29,20 +29,20 @@ export default function Asteroids() {
       />
       <Image
         alt={'An illustration of a blue asteroid'}
-        className={`${styles.Asteroid} ${styles.AnimateAsteroidLow} ${styles.delay9s}`}
+        className={`${styles.Asteroid} ${styles.AnimateAsteroidLow} ${styles.Delay9s}`}
         src={AsteroidBlueSVG}
         draggable={false}
       />
 
       <Image
         alt={'An illustration of a pink asteroid'}
-        className={`${styles.Asteroid} ${styles.AnimateAsteroidHigh} ${styles.delay12s}`}
+        className={`${styles.Asteroid} ${styles.AnimateAsteroidHigh} ${styles.Delay12s}`}
         src={AsteroidPinkSVG}
         draggable={false}
       />
       <Image
         alt={'An illustration of a pink asteroid'}
-        className={`${styles.Asteroid} ${styles.AnimateAsteroidMid} ${styles.delay6s}`}
+        className={`${styles.Asteroid} ${styles.AnimateAsteroidMid} ${styles.Delay6s}`}
         src={AsteroidPinkSVG}
         draggable={false}
       />
