@@ -1,4 +1,4 @@
-# Holocron.io
+# ![Banner](./public/readme/banner.svg)
 
 > **Warning** <br> [WIP]: Not ready for deployment
 
