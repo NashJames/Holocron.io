@@ -4,7 +4,7 @@ import AsteroidRedSVG from '@public/illustrations/asteroid-red.svg'
 import AsteroidBlueSVG from '@public/illustrations/asteroid-blue.svg'
 import AsteroidPinkSVG from '@public/illustrations/asteroid-pink.svg'
 
-/**  */
+/** Collection of animated SVGs */
 export default function Asteroids() {
   return (
     <>
