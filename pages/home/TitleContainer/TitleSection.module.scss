@@ -1,6 +1,12 @@
 .Content {
+  // Responsive Design
+  --SectionHeight: 85vh;
+  @media screen and (min-height: 1000px) and (min-width: 750px) {
+    --SectionHeight: 90vh;
+  }
+
   // Shape
-  height: 85vh;
+  height: var(--SectionHeight);
   width: 100vw;
   padding: 10vh 10vw;
 
@@ -21,7 +27,7 @@
     }
 
     to {
-      height: 85vh;
+      height: var(--SectionHeight);
     }
   }
 }
@@ -64,6 +70,32 @@
 
     to {
       opacity: 1;
+    }
+  }
+}
+
+// Responsive Design
+@media screen and (max-width: 500px) {
+  .Content {
+    flex-direction: column;
+    padding: 5vh 5vw;
+  }
+
+  .Title {
+    text-align: center;
+  }
+
+  .Logo {
+    margin-right: 0;
+  }
+}
+
+// Responsive Design
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .Title {
+    margin-top: 2rem;
+    h1 {
+      font-size: 3.5rem;
     }
   }
 }

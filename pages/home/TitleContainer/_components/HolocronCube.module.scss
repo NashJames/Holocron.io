@@ -1,8 +1,10 @@
-@use 'sass:math';
-
-$CubeSize: 10vw;
-
 .Wrapper {
+  // Responsive Design
+  --CubeSize: 10vw;
+  @media screen and (max-width: 500px) {
+    --CubeSize: 5rem;
+  }
+
   // Shape
   perspective: 1000px;
   perspective-origin: 50% 50%;
@@ -15,8 +17,8 @@ $CubeSize: 10vw;
   margin: auto;
 
   // Shape
-  height: $CubeSize;
-  width: $CubeSize;
+  height: var(--CubeSize);
+  width: var(--CubeSize);
   transform-style: preserve-3d;
 
   // Animation
@@ -29,36 +31,36 @@ $CubeSize: 10vw;
     // Shape
     shape-rendering: geometricprecision;
     box-sizing: border-box;
-    height: $CubeSize;
-    width: $CubeSize;
+    height: var(--CubeSize);
+    width: var(--CubeSize);
   }
 }
 
 .Front {
-  transform: translateZ(math.div($CubeSize, 2));
+  transform: translateZ(calc(var(--CubeSize) / 2));
 }
 
 .Back {
-  transform: translateZ(-(math.div($CubeSize, 2))) rotateY(180deg);
+  transform: rotateY(180deg) translateZ(calc(var(--CubeSize) / 2));
 }
 
 .Right {
-  transform: rotateY(-270deg) translateX(math.div($CubeSize, 2));
+  transform: rotateY(-270deg) translateX(calc(var(--CubeSize) / 2));
   transform-origin: top right;
 }
 
 .Left {
-  transform: rotateY(270deg) translateX(-(math.div($CubeSize, 2)));
+  transform: rotateY(270deg) translateX(calc(var(--CubeSize) / 2 * -1));
   transform-origin: center left;
 }
 
 .Top {
-  transform: rotateX(270deg) translateY(-(math.div($CubeSize, 2)));
+  transform: rotateX(270deg) translateY(calc(var(--CubeSize) / 2 * -1));
   transform-origin: top center;
 }
 
 .Bottom {
-  transform: rotateX(-270deg) translateY(math.div($CubeSize, 2));
+  transform: rotateX(-270deg) translateY(calc(var(--CubeSize) / 2));
   transform-origin: bottom center;
 }
 
@@ -75,7 +77,7 @@ $CubeSize: 10vw;
 .Shadow {
   // Position
   position: relative;
-  margin: calc($CubeSize * 0.3) auto;
+  margin: calc(var(--CubeSize) * 0.3) auto;
   transform: rotateX(-240deg);
   z-index: -1;
 
@@ -84,7 +86,7 @@ $CubeSize: 10vw;
   height: 0;
 
   // Colour
-  box-shadow: 0 0 calc($CubeSize * 0.6) calc($CubeSize * 0.5) #10b6f4;
+  box-shadow: 0 0 calc(var(--CubeSize) * 0.6) calc(var(--CubeSize) / 2) #10b6f4;
   opacity: 0.9;
 
   // Animation

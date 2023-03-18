@@ -9,72 +9,35 @@
 
   // Colour
   opacity: 0;
-}
 
-.AnimateAsteroidHigh {
-  // Position
-  top: 90vh;
-
-  // Animation
-  animation: TranslateHigh 6s linear infinite;
-  @keyframes TranslateHigh {
-    0% {
-      transform: translate(0, 0) rotate(70deg);
-      opacity: 0.5;
-    }
-
-    85% {
-      opacity: 0.5;
-    }
-
-    100% {
-      transform: translate(-94vw, 100vh) rotate(70deg);
-    }
+  // Responsive Design
+  @media screen and (min-width: 1200px) and (orientation: landscape) {
+    animation: TranslateAsteroid 6s linear infinite;
   }
 }
 
-.AnimateAsteroidMid {
-  // Position
+.HighPosition {
   top: 100vh;
-
-  // Animation
-  animation: TranslateHigh 6s linear infinite;
-  @keyframes TranslateHigh {
-    0% {
-      transform: translate(0, 0) rotate(70deg);
-      opacity: 0.5;
-    }
-
-    85% {
-      opacity: 0.5;
-    }
-
-    100% {
-      transform: translate(-94vw, 90vh) rotate(70deg);
-    }
-  }
 }
 
-.AnimateAsteroidLow {
-  // Position
+.MidPosition {
+  top: 105vh;
+}
+
+.LowPosition {
   top: 110vh;
+}
 
-  // Animation
-  animation: TranslateLow 6s linear infinite;
-  @keyframes TranslateLow {
-    0% {
-      transform: translate(0, 0) rotate(70deg);
-      opacity: 0.5;
-    }
+.Delay1s {
+  animation-delay: 1s;
+}
 
-    85% {
-      opacity: 0.5;
-    }
+.Delay3s {
+  animation-delay: 3s;
+}
 
-    100% {
-      transform: translate(-94vw, 80vh) rotate(70deg);
-    }
-  }
+.Delay5s {
+  animation-delay: 5s;
 }
 
 .Delay6s {
@@ -85,6 +48,17 @@
   animation-delay: 9s;
 }
 
-.Delay12s {
-  animation-delay: 12s;
+@keyframes TranslateAsteroid {
+  0% {
+    transform: translate(0, 0) rotate(75deg);
+    opacity: 0.5;
+  }
+
+  85% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate(-94vw, 30vw) rotate(75deg);
+  }
 }
