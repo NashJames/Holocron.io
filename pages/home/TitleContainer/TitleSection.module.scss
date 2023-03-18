@@ -1,12 +1,12 @@
 .Content {
   // Responsive Design
-  --SectionHeight: 85vh;
+  --section-height: 85vh;
   @media screen and (min-height: 1000px) and (min-width: 750px) {
-    --SectionHeight: 90vh;
+    --section-height: 90vh;
   }
 
   // Shape
-  height: var(--SectionHeight);
+  height: var(--section-height);
   width: 100vw;
   padding: 10vh 10vw;
 
@@ -27,7 +27,7 @@
     }
 
     to {
-      height: var(--SectionHeight);
+      height: var(--section-height);
     }
   }
 }
@@ -94,6 +94,7 @@
 @media screen and (max-height: 500px) and (orientation: landscape) {
   .Title {
     margin-top: 2rem;
+
     h1 {
       font-size: 3.5rem;
     }
