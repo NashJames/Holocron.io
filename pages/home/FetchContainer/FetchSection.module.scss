@@ -28,6 +28,11 @@
     // Spacing (Move CodeMirror out of view)
     min-height: 3rem;
     height: 10vh;
+
+    // Responsive Design
+    @media screen and (min-height: 1000px) and (min-width: 750px) {
+      height: 6.5vh;
+    }
   }
 }
 
@@ -138,5 +143,16 @@
       background-clip: text;
       background-position-x: 1000%;
     }
+  }
+}
+
+// Responsive Design
+@media screen and (max-width: 500px) {
+  .Content {
+    border-radius: 3rem 3rem 0 0;
+  }
+
+  .Subtitle {
+    font-size: x-large;
   }
 }

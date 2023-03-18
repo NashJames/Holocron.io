@@ -293,7 +293,7 @@ exports[`renders home 1`] = `
     />
     <img
       alt="An illustration of a red asteroid"
-      class="Asteroid AnimateAsteroidHigh Delay6s"
+      class="Asteroid HighPosition Delay6s"
       data-nimg="1"
       decoding="async"
       draggable="false"
@@ -306,7 +306,7 @@ exports[`renders home 1`] = `
     />
     <img
       alt="An illustration of a red asteroid"
-      class="Asteroid AnimateAsteroidLow Delay12s"
+      class="Asteroid LowPosition Delay3s"
       data-nimg="1"
       decoding="async"
       draggable="false"
@@ -319,7 +319,7 @@ exports[`renders home 1`] = `
     />
     <img
       alt="An illustration of a blue asteroid"
-      class="Asteroid AnimateAsteroidMid "
+      class="Asteroid MidPosition "
       data-nimg="1"
       decoding="async"
       draggable="false"
@@ -332,7 +332,7 @@ exports[`renders home 1`] = `
     />
     <img
       alt="An illustration of a blue asteroid"
-      class="Asteroid AnimateAsteroidLow Delay9s"
+      class="Asteroid LowPosition Delay9s"
       data-nimg="1"
       decoding="async"
       draggable="false"
@@ -345,7 +345,7 @@ exports[`renders home 1`] = `
     />
     <img
       alt="An illustration of a pink asteroid"
-      class="Asteroid AnimateAsteroidHigh Delay12s"
+      class="Asteroid HighPosition Delay5s"
       data-nimg="1"
       decoding="async"
       draggable="false"
@@ -358,7 +358,7 @@ exports[`renders home 1`] = `
     />
     <img
       alt="An illustration of a pink asteroid"
-      class="Asteroid AnimateAsteroidMid Delay6s"
+      class="Asteroid MidPosition Delay1s"
       data-nimg="1"
       decoding="async"
       draggable="false"

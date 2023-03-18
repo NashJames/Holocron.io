@@ -40,9 +40,9 @@ export default function JSONMirror({ data, isLoading, responseTime, dataURL }: J
         highlightActiveLine: false,
       }}
     >
-      {isLoading && <CircularProgress className={styles.LoadingCircle} />}
-
-      {responseTime > 0 && (
+      {isLoading ? (
+        <CircularProgress className={styles.LoadingCircle} />
+      ) : (
         <div className={styles.CodeMirrorOptions}>
           <Tooltip arrow title="API Response Time">
             <Button variant="square" size="small">
