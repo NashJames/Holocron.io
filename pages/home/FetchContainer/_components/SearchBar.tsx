@@ -2,7 +2,7 @@ import styles from '../FetchSection.module.scss'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Search, Close } from '@mui/icons-material'
 import { Button, IconButton, InputAdornment, TextField, Tooltip, Typography } from '@mui/material'
-import { IBM_Plex_Mono } from '@next/font/google'
+import { IBM_Plex_Mono } from 'next/font/google'
 
 const IBMPlexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: '400' })
 

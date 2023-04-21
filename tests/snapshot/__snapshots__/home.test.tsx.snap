@@ -213,7 +213,7 @@ exports[`renders home 1`] = `
         </svg>
       </span>
       <div
-        class="cm-editor ͼ1 ͼ3 ͼ4 ͼ1e ͼ15"
+        class="cm-editor ͼ1 ͼ3 ͼ4 ͼ1d ͼ15"
       >
         <div
           aria-live="polite"
