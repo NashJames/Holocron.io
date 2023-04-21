@@ -14,9 +14,14 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
     "plugins": [{ "name": "next" }],
-    "paths": { "@public/*": ["public/*"] },
+    "paths": {
+      "@public/*": ["./public/*"],
+      "@components/*": ["./src/components/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@data/*": ["./src/data/*"],
+      "@lib/*": ["./src/lib/*"]
+    },
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictNullChecks": true

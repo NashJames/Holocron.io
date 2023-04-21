@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { SWRConfig } from 'swr'
 import { GetStaticProps, GetStaticPropsResult } from 'next'
-import { fetchAPI } from './home/FetchContainer/_data/fetchAPI'
 import { xWingAscii } from '@public/asciiArt/x-wing'
+import { fetchAPI } from '@data/fetchAPI'
 import HomePage from './home'
 
 /** https://nextjs.org/docs/routing/introduction#index-routes */

@@ -1,8 +1,8 @@
 import './global.scss'
 import { AppProps } from 'next/app'
+import { darkTheme } from '@lib/theme-provider'
 import { StyledEngineProvider, ThemeProvider } from '@mui/material'
-import { darkTheme } from './_libs/theme-provider'
-import AppHeader from './_components/AppHeader/AppHeader'
+import AppHeader from '@components/AppHeader/AppHeader'
 
 /** https://nextjs.org/docs/advanced-features/custom-app */
 export default function _App({ Component, pageProps }: AppProps) {
