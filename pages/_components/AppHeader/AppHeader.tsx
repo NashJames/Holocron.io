@@ -1,7 +1,7 @@
 import styles from './AppHeader.module.scss'
 import { IconButton, Tooltip, Typography } from '@mui/material'
 import { GitHub, OpenInNew, Storage } from '@mui/icons-material'
-import { Oxanium } from '@next/font/google'
+import { Oxanium } from 'next/font/google'
 
 const oxanium = Oxanium({ weight: '400', subsets: ['latin'] })
 
