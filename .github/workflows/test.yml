@@ -36,6 +36,8 @@ jobs:
         run: pnpm install
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps chromium firefox webkit chrome msedge
+      - name: Create production build
+        run: pnpm build
       - name: Run Playwright tests
         run: pnpm test:playwright
       - uses: actions/upload-artifact@v3

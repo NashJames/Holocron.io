@@ -62,8 +62,7 @@ const config: PlaywrightTestConfig = {
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'pnpm dev --port=1234',
-    // command: 'pnpm build && pnpm start --port=1234',
+    command: 'pnpm start --port=1234',
     port: 1234,
   },
 }
