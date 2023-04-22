@@ -1,9 +1,13 @@
 # `tests/` Directory
 
-## Folder Structure
-
-The tests are organised as a mirror of the `app/` directory. They are split into small individual files, which emulate the TypeScript forming the various pages and components. As the project grows, the readability of the testing structure should remain consistent.
-
 ## Running Tests
 
-## Interpreting Results
+`pnpm build` is required to run the e2e tests, and again after each `src/` update. The tests can have a flaky pass/fail rate, especially on less powerful systems. They appear more reliable when using an optimised build.
+
+| Command                | Action                    |
+| :--------------------- | :------------------------ |
+| `pnpm test`            | Runs both                 |
+| `pnpm test:jest`       | Runs Jest snapshots       |
+| `pnpm test:playwright` | Runs Playwright e2e tests |
+
+<!-- ## Interpreting Results -->
