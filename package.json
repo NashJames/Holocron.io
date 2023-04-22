@@ -10,7 +10,7 @@
     "dev": "next dev",
     "start": "next start",
     "build": "tsc && next build",
-    "clean": "rm -rf node_modules .next tsconfig.tsbuildinfo next-env.d.ts",
+    "clean": "rm -rf node_modules .next tsconfig.tsbuildinfo next-env.d.ts logs .swc",
     "format": "next lint --fix && pnpm lint:styles --fix && prettier --write .",
     "format:diff": "next lint && pnpm lint:styles && prettier --check .",
     "lint:styles": "stylelint '**/*.{css,scss}' --report-needless-disables --report-invalid-scope-disables --allow-empty-input",
@@ -37,7 +37,6 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.32.3",
-    "@svgr/webpack": "^7.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/jest": "^29.5.1",
