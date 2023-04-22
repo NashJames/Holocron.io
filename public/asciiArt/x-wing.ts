@@ -1,4 +1,4 @@
-export const xWingAscii = () => `
+export const xWingAscii = `
 .-.__        .-.  ___
 |_|  '--.-.-(   \\/\\;;\\_ .-._______.-.
 (-)___     \\ \\ .-\\ \\;;\\(   \\       \\ \\
