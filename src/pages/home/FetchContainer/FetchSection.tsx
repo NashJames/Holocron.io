@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import Image from 'next/image'
 import { useState } from 'react'
-import { fetchAPI } from '@data/fetchAPI'
+import { fetchAPI } from '../../../data/fetchAPI'
 import { Typography } from '@mui/material'
 import styles from './FetchSection.module.scss'
 import JSONMirror from './_components/JSONMirror'
