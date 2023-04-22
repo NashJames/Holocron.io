@@ -30,12 +30,12 @@ In future, I hope to extend it with a POST API implementation and some docs to m
 The main content is located inside the `src/` directory. The immediate subfolders organise code utilised across multiple pages into specific roles. Finally, the `src/pages/` directory renders both static and server-side code used in page generation. All further folders use a structure equivalent of navigating the URL, where following the code is similar to exploring the website itself. The exceptions are any special files/folders prefixed with an underscore (e.g. `_components`), and the `src/pages/api` directory with pre-built API route handling.
 
 ```yml
-`/public`: Static assets (e.g. images, videos and fonts)
-`/tests`: Tests, Jest snapshots and Playwright reports/results
-`/src`: XML, CSS and TypeScript
-  `/components`: Global React components
-  `/data`: Shared data fetch functions
-  `/lib`: Library specific handlers
-  `/pages`: Client/Server page generation
-    `/api`: API Routing
+/public: Static assets (e.g. images, videos and fonts)
+/tests: Tests, Jest snapshots and Playwright reports/results
+/src: XML, CSS and TypeScript
+  ├── /lib: Library specific handlers
+  ├── /data: Commmon HTTP fetch functions
+  ├── /components: Shared React components
+  └── /pages: Client/Server page generation
+        └── /api: API Routing
 ```
