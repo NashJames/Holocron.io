@@ -23,12 +23,19 @@ In future, I hope to extend it with a POST API implementation and some docs to m
 | `pnpm start`  | Starts production build at `localhost:3000`       |
 | `pnpm clean`  | Safely removes all built files/folders            |
 | `pnpm format` | Runs ESLint, Stylelint and Prettier               |
-| `pnpm test`   | Runs Jest snapshot and Playwright e2e tests       |
+| `pnpm test`   | Runs Jest snapshots and Playwright e2e tests      |
 
 ## Project Structure
 
-The main content is located inside the `pages/` directory. The subfolders follow a structure equivalent of the URL, where navigating the code is similar to navigating the app itself. It also includes some special files prefixed with an underscore, and the `pages/api/` folder with in-built API routing.
+The main content is located inside the `src/` directory. The immediate subfolders organise code utilised across multiple pages into specific roles. Finally, the `src/pages/` directory renders both static and server-side code used in page generation. All further folders use a structure equivalent of navigating the URL, where following the code is similar to exploring the website itself. The exceptions are any special files/folders prefixed with an underscore (e.g. `_components`), and the `src/pages/api` directory with pre-built API route handling.
 
-- `pages/` contains all the XML, CSS and TypeScript used by both the server and client
-- `public/` contains all the static assets, including images, videos and fonts
-- `tests/` contains all written tests and is the output directory for any reports/results
+```yml
+`/public`: Static assets (e.g. images, videos and fonts)
+`/tests`: Tests, Jest snapshots and Playwright reports/results
+`/src`: XML, CSS and TypeScript
+  `/components`: Global React components
+  `/data`: Shared data fetch functions
+  `/lib`: Library specific handlers
+  `/pages`: Client/Server page generation
+    `/api`: API Routing
+```

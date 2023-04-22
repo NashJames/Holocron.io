@@ -26,7 +26,9 @@ const config: PlaywrightTestConfig = {
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: process.env.CI ? 'github' : [['html', { outputFolder: './tests/playwright-report' }]],
+  reporter: process.env.CI
+    ? 'github'
+    : [['html', { outputFolder: './tests/e2e/playwright-report' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
@@ -55,15 +57,14 @@ const config: PlaywrightTestConfig = {
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  outputDir: './tests/playwright-results/',
+  outputDir: './tests/e2e/playwright-results/',
 
   /* Folder for persistant artifacts such as screenshots, videos, traces, etc. */
   snapshotDir: './tests/snapshots/',
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'pnpm dev --port=1234',
-    // command: 'pnpm build && pnpm start --port=1234',
+    command: 'pnpm start --port=1234',
     port: 1234,
   },
 }

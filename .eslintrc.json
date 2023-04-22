@@ -1,20 +1,18 @@
 {
-  "extends": ["next/core-web-vitals", "eslint:recommended", "prettier"],
-  "parser": "@typescript-eslint/parser",
-  "ignorePatterns": [".next"],
   "root": true,
-  "parserOptions": {
-    "ecmaVersion": 13
-  },
-  "rules": {
-    "semi": ["warn", "never"],
-    "linebreak-style": ["error", "unix"],
-    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }]
-  },
+  "ignorePatterns": [".next"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "ecmaVersion": 13 },
+  "extends": ["next/core-web-vitals", "eslint:recommended", "prettier"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
       "rules": { "no-undef": "off" }
     }
-  ]
+  ],
+  "rules": {
+    "semi": ["warn", "never"],
+    "linebreak-style": ["error", "unix"],
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }]
+  }
 }
