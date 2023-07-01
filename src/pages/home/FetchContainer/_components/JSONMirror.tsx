@@ -1,10 +1,11 @@
 import CodeMirror from '@uiw/react-codemirror'
-import styles from '../FetchSection.module.scss'
-import { createTheme } from '@uiw/codemirror-themes'
 import { json } from '@codemirror/lang-json'
+import { tags } from '@lezer/highlight'
 import { ContentCopy, FileCopy, Update } from '@mui/icons-material'
 import { Button, CircularProgress, IconButton, Tooltip, Typography } from '@mui/material'
-import { tags } from '@lezer/highlight'
+import { createTheme } from '@uiw/codemirror-themes'
+
+import styles from '../FetchSection.module.scss'
 
 const extensions = [json()]
 const holocronTheme = createTheme({

@@ -1,7 +1,8 @@
 import { Typography } from '@mui/material'
-import styles from './TitleSection.module.scss'
-import HolocronCube from './_components/HolocronCube'
 import { Poiret_One, Text_Me_One } from 'next/font/google'
+
+import HolocronCube from './_components/HolocronCube'
+import styles from './TitleSection.module.scss'
 
 const textMeOne = Text_Me_One({ weight: '400', subsets: ['latin'] })
 const poiretOne = Poiret_One({ weight: '400', subsets: ['latin'] })

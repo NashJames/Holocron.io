@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
-import { IBM_Plex_Mono, Text_Me_One } from 'next/font/google'
+
 import { createTheme, responsiveFontSizes, Theme } from '@mui/material'
+import { IBM_Plex_Mono, Text_Me_One } from 'next/font/google'
 
 const TextMeOne = Text_Me_One({ weight: '400', subsets: ['latin'] })
 const IBMPlexMono = IBM_Plex_Mono({ weight: '400', subsets: ['latin'] })

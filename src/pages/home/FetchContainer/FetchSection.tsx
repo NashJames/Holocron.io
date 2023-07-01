@@ -1,12 +1,14 @@
-import useSWR from 'swr'
-import Image from 'next/image'
 import { useState } from 'react'
-import { fetchAPI } from '@data/fetchAPI'
 import { Typography } from '@mui/material'
-import styles from './FetchSection.module.scss'
+import Image from 'next/image'
+import useSWR from 'swr'
+
+import Asteroids from './_components/Asteroids'
 import JSONMirror from './_components/JSONMirror'
 import SearchAPI from './_components/SearchBar'
-import Asteroids from './_components/Asteroids'
+import styles from './FetchSection.module.scss'
+
+import { fetchAPI } from '@data/fetchAPI'
 import DeathStarSVG from '@public/illustrations/death-star-bg.svg'
 
 const DATA_UNDEFINED = '{\n  "error": "data undefined"\n}'

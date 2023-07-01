@@ -1,5 +1,5 @@
-import { Html, Head, Main, NextScript } from 'next/document'
 import { getInitColorSchemeScript } from '@mui/material/styles'
+import { Head, Html, Main, NextScript } from 'next/document'
 
 /** https://nextjs.org/docs/advanced-features/custom-document */
 export default function _Document() {
