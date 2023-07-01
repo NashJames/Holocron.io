@@ -3,7 +3,6 @@ import { Typography } from '@mui/material'
 import Image from 'next/image'
 import useSWR from 'swr'
 
-import Asteroids from './_components/Asteroids'
 import JSONMirror from './_components/JSONMirror'
 import SearchAPI from './_components/SearchBar'
 import styles from './FetchSection.module.scss'
@@ -39,8 +38,6 @@ export default function FetchSection() {
         src={DeathStarSVG}
         draggable={false}
       />
-
-      <Asteroids />
     </section>
   )
 }
