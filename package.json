@@ -11,12 +11,14 @@
     "start": "next start",
     "build": "tsc && next build",
     "clean": "rm -rf node_modules .next tsconfig.tsbuildinfo next-env.d.ts logs .swc",
-    "format": "next lint --fix && pnpm lint:styles --fix && prettier --write .",
-    "format:diff": "next lint && pnpm lint:styles && prettier --check .",
-    "lint:styles": "stylelint '**/*.{css,scss}' --report-needless-disables --report-invalid-scope-disables --allow-empty-input",
+    "fmt": "pnpm fmt:lint --fix && pnpm fmt:prettier --write && pnpm fmt:stylelint --fix",
+    "fmt:diff": "pnpm fmt:lint && pnpm fmt:prettier && pnpm fmt:stylelint",
+    "fmt:eslint": "next lint --config config/.eslintrc.json",
+    "fmt:prettier": "prettier --config ./config/.prettierrc.json --ignore-path ./config/.prettierignore --check .",
+    "fmt:stylelint": "stylelint '**/*.{css,scss}' --config ./config/.stylelintrc.json",
     "test": "pnpm test:jest && pnpm test:playwright",
-    "test:jest": "pnpm exec jest",
-    "test:playwright": "pnpm exec playwright test"
+    "test:jest": "jest --config config/jest.config.ts",
+    "test:playwright": "playwright test --config config/playwright.config.ts"
   },
   "dependencies": {
     "@babel/core": "^7.22.5",
@@ -61,26 +63,5 @@
   "engines": {
     "node": ">=16",
     "pnpm": ">=7"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "printWidth": 100,
-    "tabWidth": 2,
-    "importOrder": [
-      "<TYPES>",
-      "",
-      "<BUILT_IN_MODULES>",
-      "",
-      "react",
-      "<THIRD_PARTY_MODULES>",
-      "",
-      "^[.]",
-      "",
-      "^(@public|@components|@pages|@data|@lib)"
-    ],
-    "plugins": [
-      "@ianvs/prettier-plugin-sort-imports"
-    ]
   }
 }

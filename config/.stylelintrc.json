@@ -1,4 +1,8 @@
 {
+  "allowEmptyInput": true,
+  "reportNedlessDisables": true,
+  "reportInvalidScopeDisables": true,
+  "reportDescriptionlessDisables": true,
   "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier-scss"],
   "rules": {
     "selector-class-pattern": [
