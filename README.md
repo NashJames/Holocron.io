@@ -35,7 +35,7 @@ The main content is located inside the `src/` directory. The immediate subfolder
 /src: XML, CSS and TypeScript
   ├── /lib: Library specific handlers
   ├── /data: Common HTTP fetch functions
-  ├── /components: Shared React components
+  ├── /components: Custom React components
   └── /pages: Client/Server page generation
         └── /api: API Routing
 ```
