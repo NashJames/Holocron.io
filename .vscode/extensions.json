@@ -4,7 +4,8 @@
     "dbaeumer.vscode-eslint",
     "rbbit.typescript-hero",
     "graphql.vscode-graphql-syntax",
-    "ms-playwright.playwright"
-  ],
-  "unwantedRecommendations": []
+    "ms-playwright.playwright",
+    "gruntfuggly.todo-tree",
+    "csstools.postcss"
+  ]
 }
