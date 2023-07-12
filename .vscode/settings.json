@@ -1,8 +1,9 @@
 {
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.configPath": "./config/.prettierrc.json",
   "editor.quickSuggestions": { "strings": true },
   "files.associations": { "*.scss": "postcss" },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
   "search.exclude": {
     "**/*.svg": true,
     "pnpm-lock.yaml": true

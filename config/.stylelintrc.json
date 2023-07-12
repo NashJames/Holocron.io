@@ -22,6 +22,13 @@
       {
         "message": "Expected variable to be PascalCase"
       }
-    ]
+    ],
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["config", "tailwind", "apply", "variants", "responsive", "screen"]
+      }
+    ],
+    "rule-empty-line-before": ["always", { "except": ["inside-block"] }]
   }
 }

@@ -1,9 +1,11 @@
 {
   "recommendations": [
+    "eamodio.gitlens",
     "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint",
-    "rbbit.typescript-hero",
+    "syler.sass-indented",
+    "graphql.vscode-graphql",
     "graphql.vscode-graphql-syntax",
+    "graphql.vscode-graphql-execution",
     "ms-playwright.playwright",
     "gruntfuggly.todo-tree",
     "csstools.postcss"
