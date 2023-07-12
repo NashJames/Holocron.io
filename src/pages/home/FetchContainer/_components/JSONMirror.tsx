@@ -7,6 +7,8 @@ import { createTheme } from '@uiw/codemirror-themes'
 
 import styles from '../FetchSection.module.scss'
 
+import { tw } from '@lib/tailwind-merge'
+
 const extensions = [json()]
 const holocronTheme = createTheme({
   theme: 'dark',
@@ -34,7 +36,7 @@ export default function JSONMirror({ data, isLoading, responseTime, dataURL }: J
       height="42rem"
       theme={holocronTheme}
       extensions={extensions}
-      className={styles.CodeMirror}
+      className={tw(styles.CodeMirror, 'text-base')}
       basicSetup={{
         highlightActiveLineGutter: false,
         foldGutter: false,
