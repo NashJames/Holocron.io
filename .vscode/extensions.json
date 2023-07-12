@@ -3,6 +3,7 @@
     "eamodio.gitlens",
     "esbenp.prettier-vscode",
     "syler.sass-indented",
+    "bradlc.vscode-tailwindcss",
     "graphql.vscode-graphql",
     "graphql.vscode-graphql-syntax",
     "graphql.vscode-graphql-execution",
