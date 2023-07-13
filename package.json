@@ -5,7 +5,6 @@
   "author": "James Nash (https://github.com/NashJames/)",
   "homepage": "https://github.com/NashJames/Holocron.io/",
   "repository": "github:NashJames/Holocron.io",
-  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
