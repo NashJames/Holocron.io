@@ -1,9 +1,10 @@
 import { Config } from 'jest'
 import nextJest from 'next/jest'
 
-const createJestConfig = nextJest({ dir: '../' })
+const createJestConfig = nextJest({ dir: './' })
 
 const customJestConfig: Config = {
+  rootDir: '../',
   moduleDirectories: ['node_modules'],
   moduleNameMapper: {
     '^@public/(.*)$': '<rootDir>/public/$1',

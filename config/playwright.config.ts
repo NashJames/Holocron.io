@@ -63,7 +63,7 @@ const config: PlaywrightTestConfig = {
   /* Folder for persistant artifacts such as screenshots, videos, traces, etc. */
   snapshotDir: '../tests/snapshots/',
 
-  /* Run your local dev server before starting the tests */
+  /* Run your local production server before starting the tests */
   webServer: {
     command: 'pnpm start --port=1234',
     port: 1234,
