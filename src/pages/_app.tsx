@@ -9,7 +9,7 @@ import { tw } from '@lib/tailwind-merge'
 import { darkTheme } from '@lib/theme-provider'
 
 const css = {
-  root: 'bg-base text-contrast-secondary flex flex-col items-center overflow-x-hidden',
+  root: 'bg-base text-contrast-secondary flex flex-col items-center',
   fonts: [
     TextMeOneFont.className,
     OxaniumFont.variable,
