@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global scrollbar styling for common browsers */
+/* Hide horizontal scrollbar for page root */
 :root {
   overflow-x: hidden;
+}
 
+/* Global scrollbar styling for common browsers */
+* {
   // Required: Gecko (Firefox)
   scrollbar-color: rgb(180 136 17 / 80%) #202020;
   scrollbar-width: thin;
