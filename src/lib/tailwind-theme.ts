@@ -20,10 +20,6 @@ const tailwindTheme = {
         DEFAULT: 'linear-gradient(45deg, #cab381, #b48811, #a2790d, #bb9b49)',
         secondary: '#7a5d0f',
       },
-      contrast: {
-        DEFAULT: '#ffffff',
-        secondary: '#f0f0f0',
-      },
       vibrant: {
         red: {
           DEFAULT: '#ff8080',
