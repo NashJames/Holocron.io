@@ -11,8 +11,9 @@
 /tests/e2e/playwright-results
 
 # next.js
-/.next/
-/out/
+/.next
+/.swc
+/out
 
 # production
 /build
