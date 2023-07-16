@@ -3,7 +3,7 @@ import './global.scss'
 import { StyledEngineProvider, ThemeProvider } from '@mui/material'
 import { AppProps } from 'next/app'
 
-import AppHeader from '@components/AppHeader/AppHeader'
+import { AppHeader } from '@components'
 import { IBMPlexMonoFont, OxaniumFont, PoiretOneFont, TextMeOneFont } from '@lib/next-font'
 import { tw } from '@lib/tailwind-merge'
 import { darkTheme } from '@lib/theme-provider'

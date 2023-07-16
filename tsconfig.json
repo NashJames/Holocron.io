@@ -17,7 +17,7 @@
     "plugins": [{ "name": "next" }],
     "paths": {
       "@public/*": ["./public/*"],
-      "@components/*": ["./src/components/*"],
+      "@components": ["./src/components/index"],
       "@pages/*": ["./src/pages/*"],
       "@data/*": ["./src/data/*"],
       "@lib/*": ["./src/lib/*"]
