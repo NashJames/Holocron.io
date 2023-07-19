@@ -10,7 +10,7 @@
 /* Global scrollbar styling for common browsers */
 * {
   // Required: Gecko (Firefox)
-  scrollbar-color: rgb(180 136 17 / 80%) #202020;
+  scrollbar-color: theme('colors.complement.tertiary') theme('colors.base.tertiary');
   scrollbar-width: thin;
 
   // Required: Webkit (Safari & Chromium)
@@ -19,9 +19,9 @@
     height: 9px;
   }
   ::-webkit-scrollbar-track {
-    background-color: #202020;
+    background-color: theme('colors.base.tertiary');
   }
   ::-webkit-scrollbar-thumb {
-    background-color: rgb(180 136 17 / 80%);
+    background-color: theme('colors.complement.tertiary');
   }
 }
