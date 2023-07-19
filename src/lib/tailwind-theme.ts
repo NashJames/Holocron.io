@@ -18,7 +18,8 @@ const tailwindTheme = {
       },
       complement: {
         DEFAULT: 'linear-gradient(45deg, #cab381, #b48811, #a2790d, #bb9b49)',
-        secondary: '#7a5d0f',
+        secondary: 'linear-gradient(90deg, #cab381, #b48811, #a2790d, #bb9b49)',
+        tertiary: '#7a5d0f',
       },
       vibrant: {
         red: {
