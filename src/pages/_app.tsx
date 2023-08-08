@@ -1,4 +1,4 @@
-import './global.scss'
+import '../styles/global.scss'
 
 import { StyledEngineProvider, ThemeProvider } from '@mui/material'
 import { AppProps } from 'next/app'
