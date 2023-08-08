@@ -36,6 +36,16 @@ const tailwindTheme = {
       18: '4.5rem',
       22: '5.5rem',
     },
+    keyframes: {
+      fadeIn: {
+        '0%': { opacity: '0' },
+        '100%': { opacity: '1' },
+      },
+      growHorizontal: {
+        '0%': { transform: 'scaleX(0)' },
+        '100%': { transform: 'scaleX(1)' },
+      },
+    },
   },
 } satisfies Config['theme']
 
