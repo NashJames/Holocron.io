@@ -5,7 +5,7 @@ import styles from './HolocronCube.module.scss'
 import JediHolocron from '@public/illustrations/jedi-holocron.png'
 
 /** Displays a rotating cube using multiple translated images */
-export default function HolocronCube() {
+export function HolocronCube() {
   return (
     <div className={styles.Wrapper}>
       <div className={styles.Cube}>
@@ -16,7 +16,7 @@ export default function HolocronCube() {
         <Image src={JediHolocron} alt={'Jedi Holocron SVG'} className={styles.Left} />
         <Image src={JediHolocron} alt={'Jedi Holocron SVG'} className={styles.Right} />
       </div>
-      <div className={styles.Shadow}></div>
+      <div className={styles.Shadow} />
     </div>
   )
 }

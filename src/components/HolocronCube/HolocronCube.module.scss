@@ -1,14 +1,18 @@
 .Wrapper {
   // Responsive Design
-  --cube-size: 10vw;
-  @media screen and (max-width: 500px) {
-    --cube-size: 5rem;
+  --cube-size: 16rem;
+  @media screen and (max-width: 1536px) {
+    --cube-size: 14rem;
+  }
+  @media screen and (max-width: 1024px) {
+    --cube-size: 12rem;
   }
 
   // Shape
   perspective: 1000px;
   perspective-origin: 50% 50%;
   pointer-events: none;
+  padding: 3rem;
 }
 
 .Cube {

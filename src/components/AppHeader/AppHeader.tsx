@@ -3,7 +3,7 @@ import { IconButton, Tooltip, Typography } from '@mui/material'
 
 const css = {
   root: 'fixed w-full bg-base/60 backdrop-blur z-50',
-  content: 'flex items-center px-8 animate-[fadeIn_3s_ease-in]',
+  content: 'flex items-center px-8 animate-fadeIn',
   title: 'font-title font-medium flex grow my-2',
   nav: {
     root: 'flex justify-end gap-2',
@@ -20,6 +20,7 @@ const headerNav: [string, JSX.Element, boolean, string][] = [
   ['GitHub Repository', <GitHub key={2} />, true, 'https://github.com/nashjames/holocron.io'],
 ]
 
+/** Fixed navigation bar visible above content on all pages */
 export function AppHeader() {
   return (
     <header className={css.root}>

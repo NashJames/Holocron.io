@@ -32,9 +32,19 @@ const tailwindTheme = {
         },
       },
     },
+    backgroundImage: {
+      complement: 'linear-gradient(45deg, #cab381, #b48811, #a2790d, #bb9b49)',
+    },
+    screens: {
+      '3xl': '1792px',
+      '4xl': '2048px',
+    },
     spacing: {
       18: '4.5rem',
       22: '5.5rem',
+    },
+    animation: {
+      fadeIn: 'fadeIn 3s ease-in',
     },
     keyframes: {
       fadeIn: {
