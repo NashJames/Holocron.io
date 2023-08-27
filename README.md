@@ -2,7 +2,7 @@
 
 > **Warning** <br> [WIP]: Not ready for deployment
 
-A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with Next.js v13, React v18 and Material UI. It also includes smaller utilities for CI, testing and linting.
+A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with Next.js v13, React v18, TailwindCSS and Material UI. It also includes smaller utilities for CI, testing and linting.
 
 In future, I hope to extend it with a POST API implementation and some docs to mimic the full functionality.
 
@@ -15,15 +15,16 @@ In future, I hope to extend it with a POST API implementation and some docs to m
 3. Install [Playwright Browsers](https://playwright.dev/docs/intro) via `pnpm exec playwright install --force --with-deps chromium firefox webkit chrome msedge`
 4. Install the [VS Code extensions](.vscode/extensions.json)
 
-| Command       | Action                                            |
-| :------------ | :------------------------------------------------ |
-| `pnpm i`      | Installs dependencies                             |
-| `pnpm dev`    | Compiles and starts dev build at `localhost:3000` |
-| `pnpm build`  | Compiles the code for production                  |
-| `pnpm start`  | Starts production build at `localhost:3000`       |
-| `pnpm clean`  | Safely removes all built files/folders            |
-| `pnpm format` | Runs ESLint, Stylelint and Prettier               |
-| `pnpm test`   | Runs Jest snapshots and Playwright e2e tests      |
+| Command        | Action                                                               |
+| :------------- | :------------------------------------------------------------------- |
+| `pnpm i`       | Installs dependencies                                                |
+| `pnpm dev`     | Compiles and starts dev build at `localhost:3000`                    |
+| `pnpm build`   | Compiles the code for production                                     |
+| `pnpm start`   | Starts production build at `localhost:3000`                          |
+| `pnpm clean`   | Safely removes all built files/folders                               |
+| `pnpm fmt`     | Runs ESLint, Stylelint and Prettier                                  |
+| `pnpm fmt:fix` | Runs ESLint, Stylelint and Prettier (with --fix)                     |
+| `pnpm test`    | Runs Jest snapshots and Playwright e2e tests (requires `pnpm build`) |
 
 ## Project Structure
 
