@@ -8,7 +8,7 @@ const tailwindTheme = {
     fontFamily: {
       title: ['var(--font-oxanium)'],
       code: ['var(--font-ibm-plex-mono)'],
-      jedi: ['var(--font-poiret-one)'],
+      jediArchives: ['var(--font-poiret-one)'],
     },
     colors: {
       base: {
@@ -34,6 +34,7 @@ const tailwindTheme = {
     },
     backgroundImage: {
       complement: 'linear-gradient(45deg, #cab381, #b48811, #a2790d, #bb9b49)',
+      fetchPlayground: "url('/illustrations/galaxy-bg.svg'), linear-gradient(#191c20, #000)",
     },
     screens: {
       '3xl': '1792px',
@@ -42,14 +43,21 @@ const tailwindTheme = {
     spacing: {
       18: '4.5rem',
       22: '5.5rem',
+      112: '28rem',
+      240: '60rem',
     },
     animation: {
       fadeIn: 'fadeIn 3s ease-in',
+      fadeInUp: 'fadeInUp 3s ease-in',
     },
     keyframes: {
       fadeIn: {
         '0%': { opacity: '0' },
         '100%': { opacity: '1' },
+      },
+      fadeInUp: {
+        '0%': { opacity: '0', transform: 'translateY(2rem)' },
+        '100%': { opacity: '1', transform: 'translateY(0)' },
       },
       growHorizontal: {
         '0%': { transform: 'scaleX(0)' },

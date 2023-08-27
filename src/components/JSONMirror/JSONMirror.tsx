@@ -5,12 +5,24 @@ import { ContentCopy, FileCopy, Update } from '@mui/icons-material'
 import { Button, CircularProgress, IconButton, Tooltip, Typography } from '@mui/material'
 import { createTheme } from '@uiw/codemirror-themes'
 
-import styles from '../FetchSection.module.scss'
-
 import { tw } from '@lib/tailwind-merge'
 
+const css = {
+  root: tw(
+    'flex flex-col mt-4 shadow-2xl relative z-10 text-sm sm:text-base',
+    'bg-gradient-to-b from-[#00FFFF] to-transparent px-1'
+  ),
+  loadingCircle: 'absolute self-center my-auto z-20',
+  actions: {
+    root: 'flex gap-2 absolute self-end mt-0 sm:mt-2 mr-2',
+    button: 'lowercase gap-2',
+    icon: 'h-5 w-5',
+    iconButtons: 'h-7 w-7 border border-solid border-gray-500',
+  },
+}
+
 const extensions = [json()]
-const holocronTheme = createTheme({
+const mirrorTheme = createTheme({
   theme: 'dark',
   settings: {
     background: '#141414',
@@ -28,15 +40,15 @@ const holocronTheme = createTheme({
 type JSONMirrorParams = { data: string; isLoading: boolean; responseTime: number; dataURL: string }
 
 /** React CodeMirror library with configuration and styling */
-export default function JSONMirror({ data, isLoading, responseTime, dataURL }: JSONMirrorParams) {
+export function JSONMirror({ data, isLoading, responseTime, dataURL }: JSONMirrorParams) {
   return (
     <CodeMirror
       readOnly
       value={isLoading ? undefined : data}
-      height="42rem"
-      theme={holocronTheme}
+      minHeight="30rem"
+      theme={mirrorTheme}
       extensions={extensions}
-      className={tw(styles.CodeMirror, 'text-base')}
+      className={tw(css.root, isLoading && 'justify-center')}
       basicSetup={{
         highlightActiveLineGutter: false,
         foldGutter: false,
@@ -44,12 +56,12 @@ export default function JSONMirror({ data, isLoading, responseTime, dataURL }: J
       }}
     >
       {isLoading ? (
-        <CircularProgress className={styles.LoadingCircle} />
+        <CircularProgress className={css.loadingCircle} />
       ) : (
-        <div className={styles.CodeMirrorOptions}>
+        <div className={css.actions.root}>
           <Tooltip arrow title="API Response Time">
-            <Button variant="square" size="small">
-              <Update />
+            <Button variant="square" size="small" className={css.actions.button}>
+              <Update className={css.actions.icon} />
               <Typography variant="subtitle1">
                 {new Date(responseTime).getMilliseconds()}ms
               </Typography>
@@ -59,20 +71,20 @@ export default function JSONMirror({ data, isLoading, responseTime, dataURL }: J
           <Tooltip arrow title="Copy URL to Clipboard">
             <IconButton
               size="small"
-              className={styles.IconButton}
+              className={css.actions.iconButtons}
               onClick={() => navigator.clipboard.writeText(dataURL)}
             >
-              <ContentCopy />
+              <ContentCopy className={css.actions.icon} />
             </IconButton>
           </Tooltip>
 
           <Tooltip arrow title="Copy JSON to Clipboard">
             <IconButton
               size="small"
-              className={styles.IconButton}
+              className={css.actions.iconButtons}
               onClick={() => navigator.clipboard.writeText(data)}
             >
-              <FileCopy />
+              <FileCopy className={css.actions.icon} />
             </IconButton>
           </Tooltip>
         </div>

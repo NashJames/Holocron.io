@@ -43,9 +43,9 @@ export const darkTheme: Theme = responsiveFontSizes(
           {
             props: { variant: 'square' },
             style: {
-              height: '26px',
+              height: '28px',
               borderRadius: '7px',
-              border: '1px solid #4d4f56',
+              border: '1px solid rgb(107 114 128)',
               fontFamily: IBMPlexMono.style.fontFamily,
               color: '#FFFFFF',
             },
