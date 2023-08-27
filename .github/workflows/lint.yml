@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Run eslint
-        run: pnpm next lint
+        run: pnpm fmt:eslint
 
   stylelint:
     timeout-minutes: 60
@@ -35,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Run stylelint
-        run: pnpm lint:styles
+        run: pnpm fmt:stylelint
 
   prettier:
     timeout-minutes: 60
@@ -50,4 +50,4 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Run prettier
-        run: pnpm prettier --check .
+        run: pnpm fmt:prettier

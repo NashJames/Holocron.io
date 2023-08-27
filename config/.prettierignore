@@ -7,14 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
 .idea
 .DS_Store
 *.suo
@@ -26,6 +19,20 @@ dist-ssr
 # Next.js
 .next
 next-env.d.ts
+dist
+dist-ssr
 
-# PNPM
+# Secrets
+*.local
+
+# Node
+node_modules
 pnpm-lock.yaml
+
+# Generated Files
+**/generated
+
+# testing
+../coverage
+../tests/e2e/playwright-report
+../tests/e2e/playwright-results

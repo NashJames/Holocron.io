@@ -1,4 +1,5 @@
 import type { PlaywrightTestConfig } from '@playwright/test'
+
 import { devices } from '@playwright/test'
 
 /**
@@ -11,7 +12,7 @@ import { devices } from '@playwright/test'
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  testDir: './tests/e2e',
+  testDir: '../tests/e2e',
   /* Maximum time one test can run for. */
   timeout: 60 * 1000,
   /* Maximum time expect() should wait for the condition to be met.
@@ -28,7 +29,7 @@ const config: PlaywrightTestConfig = {
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI
     ? 'github'
-    : [['html', { outputFolder: './tests/e2e/playwright-report' }]],
+    : [['html', { outputFolder: '../tests/e2e/playwright-report' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
@@ -57,12 +58,12 @@ const config: PlaywrightTestConfig = {
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-  outputDir: './tests/e2e/playwright-results/',
+  outputDir: '../tests/e2e/playwright-results/',
 
   /* Folder for persistant artifacts such as screenshots, videos, traces, etc. */
-  snapshotDir: './tests/snapshots/',
+  snapshotDir: '../tests/snapshots/',
 
-  /* Run your local dev server before starting the tests */
+  /* Run your local production server before starting the tests */
   webServer: {
     command: 'pnpm start --port=1234',
     port: 1234,

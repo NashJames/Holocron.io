@@ -1,20 +1,21 @@
-const nextJest = require('next/jest')
+import { Config } from 'jest'
+import nextJest from 'next/jest'
 
 const createJestConfig = nextJest({ dir: './' })
 
-/** @type {import('jest').Config} */
-const customJestConfig = {
+const customJestConfig: Config = {
+  rootDir: '../',
   moduleDirectories: ['node_modules'],
   moduleNameMapper: {
     '^@public/(.*)$': '<rootDir>/public/$1',
-    '^@components/(.*)$': '<rootDir>/src/components/$1',
+    '^@components$': '<rootDir>/src/components/index.ts',
     '^@pages/(.*)$': '<rootDir>/src/pages/$1',
     '^@data/(.*)$': '<rootDir>/src/data/$1',
     '^@lib/(.*)$': '<rootDir>/src/lib/$1',
   }, // Required for tsconfig paths
   testEnvironment: 'jest-environment-jsdom',
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/config/jest.setup.ts'],
   testPathIgnorePatterns: ['<rootDir>/tests/e2e/'],
 }
 
-module.exports = createJestConfig(customJestConfig)
+export default createJestConfig(customJestConfig)

@@ -1,0 +1,19 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "printWidth": 100,
+  "tabWidth": 2,
+  "importOrder": [
+    "<TYPES>",
+    "",
+    "<BUILT_IN_MODULES>",
+    "",
+    "react",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^[.]",
+    "",
+    "^(@public|@components|@pages|@data|@lib)"
+  ],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"]
+}

@@ -17,15 +17,16 @@
     "plugins": [{ "name": "next" }],
     "paths": {
       "@public/*": ["./public/*"],
-      "@components/*": ["./src/components/*"],
+      "@components": ["./src/components/index"],
       "@pages/*": ["./src/pages/*"],
       "@data/*": ["./src/data/*"],
       "@lib/*": ["./src/lib/*"]
     },
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "outDir": "./src/types/generated"
   },
-  "include": ["next-env.d.ts", "images.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

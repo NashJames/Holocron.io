@@ -1,9 +1,11 @@
+import { GetStaticProps, GetStaticPropsResult } from 'next'
 import Head from 'next/head'
 import { SWRConfig } from 'swr'
-import { GetStaticProps, GetStaticPropsResult } from 'next'
-import { xWingAscii } from '@public/asciiArt/x-wing'
-import { fetchAPI } from '@data/fetchAPI'
+
 import HomePage from './home'
+
+import { fetchAPI } from '@data/fetchAPI'
+import { xWingAscii } from '@public/asciiArt/x-wing'
 
 /** https://nextjs.org/docs/routing/introduction#index-routes */
 export default function Index({ fallback }: { fallback: FallbackProps }) {

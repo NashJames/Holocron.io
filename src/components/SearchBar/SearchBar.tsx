@@ -1,17 +1,24 @@
-import styles from '../FetchSection.module.scss'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Search, Close } from '@mui/icons-material'
+import { Close, Search } from '@mui/icons-material'
 import { Button, IconButton, InputAdornment, TextField, Tooltip, Typography } from '@mui/material'
-import { IBM_Plex_Mono } from 'next/font/google'
 
-const IBMPlexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: '400' })
+import { IBMPlexMonoFont } from '@lib/next-font'
+import { tw } from '@lib/tailwind-merge'
+
+const css = {
+  root: 'mt-12',
+  searchText: tw(IBMPlexMonoFont.className, 'text-sm md:text-base md:text-white'),
+  errorText: tw(IBMPlexMonoFont.className, 'text-sm md:text-base md:text-red-500'),
+  searchButtons: 'flex gap-2 mb-0.5 ml-1',
+  iconButtons: 'h-7 w-7 border border-solid border-gray-600',
+}
 
 const URL_REGEX = /^https:\/\/swapi.dev\/api\/\b([-a-zA-Z0-9()!@:%_+.~#?&/=]*)$/
 
 type SearchBarProps = { searchRequest: (_request: string) => void }
 
 /**  Basic Search Bar with keyboard listening, input validation and styling */
-export default function SearchBar({ searchRequest }: SearchBarProps) {
+export function SearchBar({ searchRequest }: SearchBarProps) {
   const searchBarRef = useRef<HTMLInputElement>(null)
   const [searchInput, setSearchInput] = useState<string>('')
   const [requestError, setRequestError] = useState<boolean>(false)
@@ -51,11 +58,12 @@ export default function SearchBar({ searchRequest }: SearchBarProps) {
       value={searchInput}
       error={requestError}
       inputRef={searchBarRef}
+      className={css.root}
       helperText={
         requestError ? (
-          <Typography className={IBMPlexMono.className}>
+          <Typography variant="h6" className={css.errorText}>
             Requests must be a valid URL beginning with:{' '}
-            <code style={{ color: 'azure' }}>https://swapi.dev/api/</code>
+            <code className="text-white">https://swapi.dev/api/</code>
           </Typography>
         ) : (
           <></>
@@ -68,7 +76,7 @@ export default function SearchBar({ searchRequest }: SearchBarProps) {
         }
       }}
       InputProps={{
-        className: IBMPlexMono.className,
+        className: css.searchText,
         placeholder: 'Search...',
         type: 'search',
         startAdornment: (
@@ -101,7 +109,7 @@ const SearchEndAdornment = ({
   searchInUse,
 }: SearchEndAdornmentProps) => {
   return (
-    <span className={styles.SearchButtons}>
+    <div className={css.searchButtons}>
       <Tooltip arrow title="Click here or press the 'Enter' key">
         <Button variant="square" size="small" type="submit" onClick={submitSearch}>
           REQUEST
@@ -109,17 +117,17 @@ const SearchEndAdornment = ({
       </Tooltip>
       {searchInUse ? (
         <Tooltip arrow title="Click here to clear the search bar">
-          <IconButton className={styles.IconButton} size="small" type="reset" onClick={resetSearch}>
+          <IconButton className={css.iconButtons} size="small" type="reset" onClick={resetSearch}>
             <Close />
           </IconButton>
         </Tooltip>
       ) : (
         <Tooltip arrow title="Press the '/' key to begin searching">
-          <IconButton className={styles.IconButton} size="small">
+          <IconButton className={css.iconButtons} size="small">
             <kbd aria-hidden>/</kbd>
           </IconButton>
         </Tooltip>
       )}
-    </span>
+    </div>
   )
 }
