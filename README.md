@@ -1,6 +1,8 @@
 # ![Banner](./public/readme/banner.svg)
 
-> **Warning** <br> [WIP]: Not ready for deployment
+<!-- prettier-ignore -->
+> **Warning**
+> [WIP]: Not ready for deployment
 
 A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with Next.js v13, React v18, TailwindCSS and Material UI. It also includes smaller utilities for CI, testing and linting.
 
@@ -8,7 +10,9 @@ In future, I hope to extend it with a POST API implementation and some docs to m
 
 ## Initial Setup
 
-> **Note** <br> [Windows Only]: [Install WSL2](https://learn.microsoft.com/en-gb/windows/wsl/install-manual). Any commands below should be executed inside the Linux subsystem.
+<!-- prettier-ignore -->
+> **Note**
+> [Windows Only]: [Install WSL2](https://learn.microsoft.com/en-gb/windows/wsl/install-manual). Any commands below should be executed inside the Linux subsystem.
 
 1. Install [Node Version Manager](https://github.com/nvm-sh/nvm#installing-and-updating) and execute `nvm install 18`
 2. Install [PNPM](https://pnpm.io/installation) via `npm install -g pnpm`
