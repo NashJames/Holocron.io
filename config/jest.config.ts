@@ -8,7 +8,7 @@ const customJestConfig: Config = {
   moduleDirectories: ['node_modules'],
   moduleNameMapper: {
     '^@public/(.*)$': '<rootDir>/public/$1',
-    '^@components$': '<rootDir>/src/components/index$1',
+    '^@components$': '<rootDir>/src/components/index.ts',
     '^@pages/(.*)$': '<rootDir>/src/pages/$1',
     '^@data/(.*)$': '<rootDir>/src/data/$1',
     '^@lib/(.*)$': '<rootDir>/src/lib/$1',
