@@ -29,6 +29,6 @@
         "ignoreAtRules": ["config", "tailwind", "apply", "variants", "responsive", "screen"]
       }
     ],
-    "rule-empty-line-before": ["always", { "except": ["inside-block"] }]
+    "rule-empty-line-before": null
   }
 }

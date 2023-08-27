@@ -31,3 +31,8 @@ pnpm-lock.yaml
 
 # Generated Files
 **/generated
+
+# testing
+../coverage
+../tests/e2e/playwright-report
+../tests/e2e/playwright-results

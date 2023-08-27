@@ -3,7 +3,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.configPath": "./config/.prettierrc.json",
   "stylelint.configFile": "./config/.stylelintrc.json",
-  "eslint.options": { "overrideConfigFile": "./config/.eslintrc.json" },
+  // "eslint.options": { "overrideConfigFile": "./config/.eslintrc.json" },
   "editor.quickSuggestions": { "strings": true },
   "files.associations": { "*.scss": "postcss" },
   "search.exclude": {
