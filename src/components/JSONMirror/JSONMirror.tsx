@@ -10,7 +10,7 @@ import { tw } from '@lib/tailwind-merge'
 const css = {
   root: tw(
     'flex flex-col mt-4 shadow-2xl relative z-10 text-sm sm:text-base',
-    'bg-gradient-to-b from-[#00FFFF] to-transparent px-1'
+    'bg-gradient-to-b from-[#00FFFF] to-transparent px-1',
   ),
   loadingCircle: 'absolute self-center my-auto z-20',
   actions: {

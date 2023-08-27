@@ -61,5 +61,5 @@ export const darkTheme: Theme = responsiveFontSizes(
         },
       },
     },
-  })
+  }),
 )

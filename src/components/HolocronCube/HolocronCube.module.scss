@@ -1,10 +1,10 @@
 .Wrapper {
   // Responsive Design
   --cube-size: 16rem;
-  @media screen and (max-width: 1536px) {
+  @media screen and (width <= 1536px) {
     --cube-size: 14rem;
   }
-  @media screen and (max-width: 1024px) {
+  @media screen and (width <= 1024px) {
     --cube-size: 12rem;
   }
 

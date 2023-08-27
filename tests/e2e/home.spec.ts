@@ -28,7 +28,7 @@ test.describe('Fetch API', () => {
 
     // Status Text: Firefox = 'Not Found' | Webkit = 'NOT FOUND' | Chromium = n/a
     await expect(page.getByRole('textbox')).toContainText(
-      /{ {2}"status": "404 ((Not Found)|(NOT FOUND))?"}/g
+      /{ {2}"status": "404 ((Not Found)|(NOT FOUND))?"}/g,
     )
   })
 
