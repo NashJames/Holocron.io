@@ -2,13 +2,10 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { Close, Search } from '@mui/icons-material'
 import { Button, IconButton, InputAdornment, TextField, Tooltip, Typography } from '@mui/material'
 
-import { IBMPlexMonoFont } from '@lib/next-font'
-import { tw } from '@lib/tailwind-merge'
-
 const css = {
   root: 'mt-12',
-  searchText: tw(IBMPlexMonoFont.className, 'text-sm md:text-base md:text-white'),
-  errorText: tw(IBMPlexMonoFont.className, 'text-sm md:text-base md:text-red-500'),
+  searchText: 'font-mono text-sm md:text-base md:text-white',
+  errorText: 'font-mono text-sm md:text-base md:text-red-500',
   searchButtons: 'flex gap-2 mb-0.5 ml-1',
   iconButtons: 'h-7 w-7 border border-solid border-gray-600',
 }
