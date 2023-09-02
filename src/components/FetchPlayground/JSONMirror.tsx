@@ -1,3 +1,5 @@
+'use client'
+
 import CodeMirror from '@uiw/react-codemirror'
 import { json } from '@codemirror/lang-json'
 import { tags } from '@lezer/highlight'
@@ -40,7 +42,7 @@ const mirrorTheme = createTheme({
 type JSONMirrorParams = { data: string; isLoading: boolean; responseTime: number; dataURL: string }
 
 /** React CodeMirror library with configuration and styling */
-export function JSONMirror({ data, isLoading, responseTime, dataURL }: JSONMirrorParams) {
+export default function JSONMirror({ data, isLoading, responseTime, dataURL }: JSONMirrorParams) {
   return (
     <CodeMirror
       readOnly

@@ -18,7 +18,7 @@
     "paths": {
       "@public/*": ["./public/*"],
       "@components": ["./src/components/index"],
-      "@pages/*": ["./src/pages/*"],
+      "@app/*": ["./src/app/*"],
       "@data/*": ["./src/data/*"],
       "@lib/*": ["./src/lib/*"]
     },
