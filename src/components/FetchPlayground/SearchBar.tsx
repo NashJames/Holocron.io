@@ -15,7 +15,7 @@ const css = {
   errorText: 'text-xs md:text-sm text-danger',
 }
 
-const URL_REGEX = /^https:\/\/swapi.dev\/api\/\b([-a-zA-Z0-9()!@:%_+.~#?&/=]*)$/
+const URL_REGEX = /^https:\/\/swapi.dev\/api\/\b([\w!#%&()+./:=?@~-]*)$/
 
 type SearchBarProps = { searchRequest: (_request: string) => void }
 
@@ -26,10 +26,10 @@ export default function SearchBar({ searchRequest }: SearchBarProps) {
   const [validationError, setValidationError] = useState<boolean>(false)
 
   // Set error state if the user requests an invalid SWAPI URL
-  const validateSearchInput = () => {
+  const validateSearchInput = useCallback(() => {
     const searchInputTrim = searchInput.trim()
     URL_REGEX.test(searchInputTrim) ? searchRequest(searchInputTrim) : setValidationError(true)
-  }
+  }, [searchInput, searchRequest])
 
   // Listens to keyboard input
   useEffect(() => {
@@ -70,7 +70,7 @@ export default function SearchBar({ searchRequest }: SearchBarProps) {
               Requests must be a valid URL beginning with:{' '}
               <Code className={tw(css.errorText, 'text-white')}>https://swapi.dev/api/</Code>
             </h6>
-          ) : null
+          ) : undefined
         }
         // Input handling
         ref={searchBarRef}

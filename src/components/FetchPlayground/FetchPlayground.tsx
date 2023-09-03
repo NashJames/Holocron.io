@@ -31,8 +31,8 @@ export function FetchPlayground({ fallbackData }: { fallbackData: FetchAPIType }
       <SearchBar searchRequest={(request: string) => setURL(request)} />
 
       <JSONMirror
-        data={!url ? fallbackData?.response : data?.response ?? DATA_UNDEFINED}
-        responseTime={!url ? fallbackData?.timeElapsed : data?.timeElapsed ?? 0}
+        data={(url ? data?.response : fallbackData?.response) ?? DATA_UNDEFINED}
+        responseTime={(url ? data?.timeElapsed : fallbackData?.timeElapsed) ?? 0}
         isLoading={isLoading}
         dataURL={url ?? 'https://swapi.dev/api/starships/10/'}
       />

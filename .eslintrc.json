@@ -3,16 +3,22 @@
   "ignorePatterns": [".next"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": { "ecmaVersion": 13 },
-  "extends": ["next/core-web-vitals", "eslint:recommended", "prettier"],
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx"],
-      "rules": { "no-undef": "off" }
-    }
+  "plugins": ["react", "unicorn", "playwright", "tailwindcss"],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:unicorn/recommended",
+    "plugin:playwright/recommended",
+    "plugin:tailwindcss/recommended",
+    "prettier"
   ],
+  "overrides": [{ "files": ["*.ts", "*.tsx"], "rules": { "no-undef": "off" } }],
   "rules": {
     "semi": ["warn", "never"],
     "linebreak-style": ["error", "unix"],
-    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }]
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "unicorn/filename-case": 0,
+    "unicorn/prevent-abbreviations": 0
   }
 }
