@@ -4,7 +4,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { Code, Textarea } from '@nextui-org/react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-import { SearchButtons } from './blocks/SearchButtons'
+import { SearchButtons } from './_components/SearchButtons'
 
 import { tw } from '@lib/tailwind-merge'
 
