@@ -10,7 +10,7 @@ import { tw } from '@lib/tailwind-merge'
 
 const css = {
   root: 'mt-12 flex [&_label]:self-end font-mono',
-  searchIcon: 'w-6 mx-1.5 -mt-3',
+  searchIcon: 'w-6 mr-1.5 -mt-5',
   textArea: 'text-xs md:text-sm h-18 [&_textarea]:pr-28',
   errorText: 'text-xs md:text-sm text-danger',
 }
