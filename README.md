@@ -19,16 +19,16 @@ In future, I hope to extend it with a POST API implementation and some docs to m
 3. Install [Playwright Browsers](https://playwright.dev/docs/intro) via `pnpm exec playwright install --force --with-deps chromium firefox webkit chrome msedge`
 4. Install the [VS Code extensions](.vscode/extensions.json)
 
-| Command        | Action                                                               |
-| :------------- | :------------------------------------------------------------------- |
-| `pnpm i`       | Installs dependencies                                                |
-| `pnpm dev`     | Compiles and starts dev build at `localhost:3000`                    |
-| `pnpm build`   | Compiles the code for production                                     |
-| `pnpm start`   | Starts production build at `localhost:3000`                          |
-| `pnpm clean`   | Safely removes all built files/folders                               |
-| `pnpm fmt`     | Runs ESLint, Stylelint and Prettier                                  |
-| `pnpm fmt:fix` | Runs ESLint, Stylelint and Prettier (with --fix)                     |
-| `pnpm test`    | Runs Jest snapshots and Playwright e2e tests (requires `pnpm build`) |
+| Command        | Action                                                           |
+| :------------- | :--------------------------------------------------------------- |
+| `pnpm i`       | Installs dependencies                                            |
+| `pnpm dev`     | Compiles and starts dev build at `localhost:3000`                |
+| `pnpm build`   | Compiles the code for production                                 |
+| `pnpm start`   | Starts production build at `localhost:3000`                      |
+| `pnpm clean`   | Safely removes all built files/folders                           |
+| `pnpm fmt`     | Runs ESLint, Stylelint and Prettier                              |
+| `pnpm fmt:fix` | Runs ESLint, Stylelint and Prettier (with --fix)                 |
+| `pnpm test`    | Runs Playwright e2e and regression tests (requires `pnpm build`) |
 
 ## Project Structure
 

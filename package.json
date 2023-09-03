@@ -9,16 +9,14 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start",
-    "build": "tsc && next build  && rm -rf .swc",
+    "build": "tsc && next build && rm -rf .swc",
     "clean": "rm -rf node_modules .next .swc next-env.d.ts logs ./src/types/generated",
     "fmt": "pnpm fmt:eslint && pnpm fmt:stylelint && pnpm fmt:prettier",
     "fmt:fix": "pnpm fmt:eslint --fix && pnpm fmt:stylelint --fix && pnpm fmt:prettier --write",
     "fmt:eslint": "next lint",
     "fmt:stylelint": "stylelint '**/*.{css,scss}' --config ./config/.stylelintrc.json",
     "fmt:prettier": "prettier --config ./config/.prettierrc.json --ignore-path ./config/.prettierignore --check .",
-    "test": "pnpm test:jest && pnpm test:playwright",
-    "test:jest": "jest --config ./config/jest.config.ts",
-    "test:playwright": "playwright test --config ./config/playwright.config.ts && rm -rf logs"
+    "test": "playwright test --config ./config/playwright.config.ts && rm -rf logs"
   },
   "dependencies": {
     "@codemirror/lang-json": "^6.0.1",
