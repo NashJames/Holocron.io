@@ -10,7 +10,7 @@ import SearchBar from './SearchBar'
 import { fetchAPI, FetchAPIType } from '@data/fetchAPI'
 
 const css = {
-  subtitle: 'text-lg sm:text-2xl lg:text-3xl block h-9',
+  subtitle: 'text-lg sm:text-2xl lg:text-3xl h-9 block',
 }
 
 const DATA_UNDEFINED = '{\n  "error": "data undefined"\n}'

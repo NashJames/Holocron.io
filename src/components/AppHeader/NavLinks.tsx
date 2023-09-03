@@ -1,33 +1,29 @@
 'use client'
 
-import { GitHub, OpenInNew, Storage } from '@mui/icons-material'
-import { IconButton, Tooltip } from '@mui/material'
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
+import { Button, Tooltip } from '@nextui-org/react'
+
+import { NavLinkType } from './AppHeader'
 
 const css = {
-  tooltip: 'border border-dashed border-white mx-1 text-white',
-  externalLinkIcon: 'absolute w-3 -mr-7 -mt-6',
+  tooltip: 'font-mono',
+  button: 'overflow-visible',
+  externalLinkIcon: 'absolute w-3.5 -mr-7 -mt-7',
 }
 
-// prettier-ignore
-// [tooltipLabel, icon, externalLink, navLink]
-const headerNav: [string, JSX.Element, boolean, string][] = [
-  ['Data Archives', <Storage key={1} />, true, 'https://github.com/Juriy/swapi/tree/master/resources/fixtures'],
-  ['GitHub Repository', <GitHub key={2} />, true, 'https://github.com/nashjames/holocron.io'],
-]
-
 /** Collection of links to be rendered in the AppHeader */
-export default function NavLinks() {
-  return headerNav.map(([tooltipLabel, icon, externalLink, navLink]) => (
-    <Tooltip key={tooltipLabel} title={tooltipLabel} className={css.tooltip}>
-      <IconButton
-        type="button"
-        size="small"
-        onClick={() => window.open(navLink, externalLink ? '_blank' : '_self')}
-        color="info"
+export default function NavLinks({ links }: { links: NavLinkType[] }) {
+  return links.map(([label, icon, isExternalLink, link]) => (
+    <Tooltip showArrow closeDelay={2000} key={label} content={label} className={css.tooltip}>
+      <Button
+        isIconOnly
+        variant="ghost"
+        className={css.button}
+        onClick={() => window.open(link, isExternalLink ? '_blank' : '_self')}
       >
         {icon}
-        {externalLink && <OpenInNew className={css.externalLinkIcon} />}
-      </IconButton>
+        {isExternalLink && <ArrowTopRightOnSquareIcon className={css.externalLinkIcon} />}
+      </Button>
     </Tooltip>
   ))
 }

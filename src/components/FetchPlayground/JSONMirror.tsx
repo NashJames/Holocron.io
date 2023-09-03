@@ -1,10 +1,10 @@
 'use client'
 
+import { ClockIcon, DocumentDuplicateIcon, LinkIcon } from '@heroicons/react/24/outline'
+import { Button, ButtonProps, Spinner, Tooltip } from '@nextui-org/react'
 import CodeMirror from '@uiw/react-codemirror'
 import { json } from '@codemirror/lang-json'
 import { tags } from '@lezer/highlight'
-import { ContentCopy, FileCopy, Update } from '@mui/icons-material'
-import { Button, CircularProgress, IconButton, Tooltip, Typography } from '@mui/material'
 import { createTheme } from '@uiw/codemirror-themes'
 
 import { tw } from '@lib/tailwind-merge'
@@ -16,14 +16,19 @@ const css = {
   ),
   loadingCircle: 'absolute self-center my-auto z-20',
   actions: {
-    root: 'flex gap-2 absolute self-end mt-0 sm:mt-2 mr-2',
+    root: 'flex gap-2 absolute self-end mt-0 sm:mt-2 mr-2 z-20 font-mono',
     button: 'lowercase gap-2',
     icon: 'h-5 w-5',
     iconButtons: 'h-7 w-7 border border-solid border-gray-500',
   },
 }
 
-const extensions = [json()]
+const mirrorExtensions = [json()]
+const mirrorSetup = {
+  highlightActiveLineGutter: false,
+  highlightActiveLine: false,
+  foldGutter: false,
+}
 const mirrorTheme = createTheme({
   theme: 'dark',
   settings: {
@@ -39,6 +44,13 @@ const mirrorTheme = createTheme({
   ],
 })
 
+const iconButtonProps = {
+  isIconOnly: true,
+  variant: 'ghost' as ButtonProps['variant'],
+  size: 'sm' as ButtonProps['size'],
+  className: css.actions.iconButtons,
+}
+
 type JSONMirrorParams = { data: string; isLoading: boolean; responseTime: number; dataURL: string }
 
 /** React CodeMirror library with configuration and styling */
@@ -46,48 +58,34 @@ export default function JSONMirror({ data, isLoading, responseTime, dataURL }: J
   return (
     <CodeMirror
       readOnly
-      value={isLoading ? undefined : data}
       minHeight="30rem"
       theme={mirrorTheme}
-      extensions={extensions}
+      basicSetup={mirrorSetup}
+      extensions={mirrorExtensions}
+      value={isLoading ? undefined : data}
       className={tw(css.root, isLoading && 'justify-center')}
-      basicSetup={{
-        highlightActiveLineGutter: false,
-        foldGutter: false,
-        highlightActiveLine: false,
-      }}
     >
       {isLoading ? (
-        <CircularProgress className={css.loadingCircle} />
+        <Spinner className={css.loadingCircle} />
       ) : (
         <div className={css.actions.root}>
-          <Tooltip arrow title="API Response Time">
-            <Button variant="square" size="small" className={css.actions.button}>
-              <Update className={css.actions.icon} />
-              <Typography variant="subtitle1">
-                {new Date(responseTime).getMilliseconds()}ms
-              </Typography>
+          <Tooltip showArrow closeDelay={2000} content="API Response Time (<5ms cached)">
+            <Button variant="bordered" disableRipple size="sm" className={css.actions.button}>
+              <ClockIcon className={css.actions.icon} />
+              <h5>{new Date(responseTime).getMilliseconds()}ms</h5>
             </Button>
           </Tooltip>
 
-          <Tooltip arrow title="Copy URL to Clipboard">
-            <IconButton
-              size="small"
-              className={css.actions.iconButtons}
-              onClick={() => navigator.clipboard.writeText(dataURL)}
-            >
-              <ContentCopy className={css.actions.icon} />
-            </IconButton>
+          <Tooltip showArrow closeDelay={2000} content="Copy request URL to Clipboard">
+            <Button onClick={() => navigator.clipboard.writeText(dataURL)} {...iconButtonProps}>
+              <LinkIcon className={css.actions.icon} />
+            </Button>
           </Tooltip>
 
-          <Tooltip arrow title="Copy JSON to Clipboard">
-            <IconButton
-              size="small"
-              className={css.actions.iconButtons}
-              onClick={() => navigator.clipboard.writeText(data)}
-            >
-              <FileCopy className={css.actions.icon} />
-            </IconButton>
+          <Tooltip showArrow closeDelay={2000} content="Copy JSON to Clipboard">
+            <Button onClick={() => navigator.clipboard.writeText(data)} {...iconButtonProps}>
+              <DocumentDuplicateIcon className={css.actions.icon} />
+            </Button>
           </Tooltip>
         </div>
       )}

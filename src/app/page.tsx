@@ -41,9 +41,7 @@ export default async function Page() {
   if (process.env.NODE_ENV === 'production') console.log(xWingAscii)
 
   // Fallback API request cached on each incremental build
-  const staticData = await fetchAPI('https://swapi.dev/api/starships/10/', {
-    next: { revalidate: 60 * 60 * 24 }, // 24 hours
-  })
+  const staticData = await fetchAPI('https://swapi.dev/api/starships/10/')
 
   return (
     <div className={css.background}>
