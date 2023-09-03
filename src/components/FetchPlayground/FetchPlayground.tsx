@@ -16,7 +16,7 @@ const css = {
 const DATA_UNDEFINED = '{\n  "error": "data undefined"\n}'
 
 /** A Fetch API Playground for https://swapi.dev/api/ */
-export function FetchPlayground({ fallbackData }: { fallbackData: FetchAPIType }) {
+export default function FetchPlayground({ fallbackData }: { fallbackData: FetchAPIType }) {
   const [url, setURL] = useState<string>()
   const { data, isLoading } = useSWR(url, fetchAPI)
 

@@ -1,10 +1,14 @@
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 
-import { FetchPlayground, HolocronCube } from '@components'
+import { HolocronCube } from '@components'
 import { fetchAPI } from '@data/fetchAPI'
 import { tw } from '@lib/tailwind-merge'
 import { xWingAscii } from '@public/asciiArt/x-wing'
 import DeathStarSVG from '@public/illustrations/death-star-bg.svg'
+
+// Default export required on Server Components for lazy loading
+const LazyFetchPlayground = dynamic(() => import('../components/FetchPlayground/FetchPlayground'))
 
 const css = {
   background: "w-screen bg-[url('/illustrations/lines.svg')]",
@@ -56,7 +60,7 @@ export default async function Page() {
 
       <section className={css.fetchPlayground.section}>
         <div className={css.fetchPlayground.content}>
-          <FetchPlayground fallbackData={staticData} />
+          <LazyFetchPlayground fallbackData={staticData} />
 
           <Image
             alt={'An illustration of the Death Star'}

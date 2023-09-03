@@ -1,8 +1,9 @@
 import { Square3Stack3DIcon } from '@heroicons/react/24/outline'
-
-import NavLinks from './NavLinks'
+import dynamic from 'next/dynamic'
 
 import GitHubIcon from '@public/icons/Github'
+
+const LazyNavLinks = dynamic(() => import('./NavLinks'))
 
 const css = {
   root: 'fixed w-full bg-base/60 backdrop-blur z-50',
@@ -29,7 +30,7 @@ export function AppHeader() {
         <h2 className={css.title}>Holocron.io</h2>
         <div>
           <div className={css.nav}>
-            <NavLinks links={linkData} />
+            <LazyNavLinks links={linkData} />
           </div>
         </div>
       </div>
