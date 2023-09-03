@@ -4,7 +4,7 @@
 > **Warning**
 > [WIP]: Not ready for deployment
 
-A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with Next.js v13, React v18, TailwindCSS and Material UI. It also includes smaller utilities for CI, testing and linting.
+A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with Next.js v13, React v18, TailwindCSS and NextUI. It also includes smaller utilities for CI, testing and linting.
 
 In future, I hope to extend it with a POST API implementation and some docs to mimic the full functionality.
 
