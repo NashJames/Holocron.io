@@ -23,7 +23,7 @@ export function middleware(_request: NextRequest) {
   requestHeaders.set(
     'Content-Security-Policy',
     // Replace newline characters and spaces
-    cspHeader.replaceAll(/\s{2,}/, ' ').trim(),
+    cspHeader.replaceAll(/\s{2,}/g, ' ').trim(),
   )
 
   return NextResponse.next({
