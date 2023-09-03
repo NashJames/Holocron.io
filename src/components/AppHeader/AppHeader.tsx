@@ -1,7 +1,7 @@
 import { Square3Stack3DIcon } from '@heroicons/react/24/outline'
 import dynamic from 'next/dynamic'
 
-import GitHubIcon from '@public/icons/Github'
+import GitHubIcon from '@public/icons/GithubLogo'
 
 const LazyNavLinks = dynamic(() => import('./NavLinks'))
 
