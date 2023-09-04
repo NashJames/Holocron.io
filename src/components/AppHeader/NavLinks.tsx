@@ -2,6 +2,7 @@
 
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 import { Button, Tooltip } from '@nextui-org/react'
+import Link from 'next/link'
 
 import { NavLinkType } from './AppHeader'
 
@@ -15,15 +16,12 @@ const css = {
 export default function NavLinks({ links }: { links: NavLinkType[] }) {
   return links.map(([label, icon, isExternalLink, link]) => (
     <Tooltip showArrow closeDelay={2000} key={label} content={label} className={css.tooltip}>
-      <Button
-        isIconOnly
-        variant="ghost"
-        className={css.button}
-        onClick={() => window.open(link, isExternalLink ? '_blank' : '_self')}
-      >
-        {icon}
-        {isExternalLink && <ArrowTopRightOnSquareIcon className={css.externalLinkIcon} />}
-      </Button>
+      <Link href={link} target={isExternalLink ? '_blank' : '_self'}>
+        <Button isIconOnly variant="ghost" className={css.button}>
+          {icon}
+          {isExternalLink && <ArrowTopRightOnSquareIcon className={css.externalLinkIcon} />}
+        </Button>
+      </Link>
     </Tooltip>
   ))
 }
