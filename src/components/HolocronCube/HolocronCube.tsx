@@ -10,6 +10,7 @@ export function HolocronCube() {
   return (
     <div className={styles.Wrapper}>
       <div className={styles.Cube}>
+        {/* eslint-disable jsx-a11y/alt-text */}
         <Image {...ImageProps} className={styles.Front} />
         <Image {...ImageProps} className={styles.Back} />
         <Image {...ImageProps} className={styles.Top} />
