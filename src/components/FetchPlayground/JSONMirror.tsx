@@ -14,12 +14,10 @@ const css = {
     'flex flex-col mt-4 shadow-2xl relative z-10 text-sm sm:text-base',
     'bg-gradient-to-b from-[#00FFFF] to-transparent px-1',
   ),
-  loadingCircle: 'absolute self-center my-auto z-20',
+  loadingCircle: 'absolute self-center my-auto z-20 [&_div]:w-20 [&_div]:h-20',
   actions: {
-    root: 'flex gap-2 absolute self-end mt-0 sm:mt-2 mr-2 z-20 font-mono',
-    button: 'lowercase gap-2',
+    root: 'flex gap-2 absolute self-end mt-0 sm:mt-2 mr-2 z-20 font-mono [&_button]:h-8',
     icon: 'h-5 w-5',
-    iconButtons: 'h-7 w-7 border border-solid border-gray-500',
   },
 }
 
@@ -48,7 +46,6 @@ const iconButtonProps = {
   isIconOnly: true,
   variant: 'ghost' as ButtonProps['variant'],
   size: 'sm' as ButtonProps['size'],
-  className: css.actions.iconButtons,
 }
 
 type JSONMirrorParams = { data: string; isLoading: boolean; responseTime: number; dataURL: string }
@@ -69,10 +66,10 @@ export default function JSONMirror({ data, isLoading, responseTime, dataURL }: J
         <Spinner className={css.loadingCircle} />
       ) : (
         <div className={css.actions.root}>
-          <Tooltip showArrow closeDelay={2000} content="API Response Time (<5ms cached)">
-            <Button variant="bordered" disableRipple size="sm" className={css.actions.button}>
+          <Tooltip showArrow closeDelay={2000} content="API Response Time (<10ms cached)">
+            <Button variant="bordered" disableRipple size="sm">
               <ClockIcon className={css.actions.icon} />
-              <h5>{new Date(responseTime).getMilliseconds()}ms</h5>
+              <h5>{responseTime > 0 ? `${responseTime}ms` : 'N/A'}</h5>
             </Button>
           </Tooltip>
 

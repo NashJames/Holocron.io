@@ -2,7 +2,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import { Button, ButtonProps, Tooltip } from '@nextui-org/react'
 
 const css = {
-  root: 'flex gap-2 -mb-8 mt-1 [&_button]:h-7',
+  root: 'flex gap-2 [&_button]:h-7',
   icons: 'w-7 [&_svg]:w-5',
 }
 
