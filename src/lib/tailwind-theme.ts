@@ -7,7 +7,7 @@ const tailwindTheme = {
   extend: {
     fontFamily: {
       title: ['var(--font-oxanium)'],
-      code: ['var(--font-ibm-plex-mono)'],
+      mono: ['var(--font-ibm-plex-mono)'],
       jediArchives: ['var(--font-poiret-one)'],
     },
     colors: {
