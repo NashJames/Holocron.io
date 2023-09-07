@@ -25,7 +25,6 @@ const css = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    // eslint-disable-next-line tailwindcss/no-custom-classname
     <html lang="en" className="dark">
       <body className={tw(css.root, css.fonts)}>
         <ThemeProvider>

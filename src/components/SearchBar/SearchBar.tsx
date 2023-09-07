@@ -18,7 +18,7 @@ const URL_REGEX = /^https:\/\/swapi.dev\/api\/\b([-a-zA-Z0-9()!@:%_+.~#?&/=]*)$/
 type SearchBarProps = { searchRequest: (_request: string) => void }
 
 /**  Basic Search Bar with keyboard listening, input validation and styling */
-export function SearchBar({ searchRequest }: SearchBarProps) {
+export default function SearchBar({ searchRequest }: SearchBarProps) {
   const searchBarRef = useRef<HTMLInputElement>(null)
   const [searchInput, setSearchInput] = useState<string>('')
   const [requestError, setRequestError] = useState<boolean>(false)

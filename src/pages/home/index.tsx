@@ -3,8 +3,10 @@ import { TypeAnimation } from 'react-type-animation'
 import Image from 'next/image'
 import useSWR from 'swr'
 
-import { HolocronCube, JSONMirror, SearchBar } from '@components'
-import { fetchAPI } from '@data/fetchAPI'
+import SearchBar from '../../components/SearchBar/SearchBar'
+
+import { HolocronCube, JSONMirror } from '@components'
+import { fetchAPI } from '@data/fetchAPI-old'
 import { tw } from '@lib/tailwind-merge'
 import DeathStarSVG from '@public/illustrations/death-star-bg.svg'
 

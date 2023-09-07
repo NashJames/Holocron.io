@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start",
-    "build": "tsc && next build && rm -rf .swc",
+    "build": "tsc && next build --experimental-app-only && rm -rf .swc",
     "clean": "rm -rf node_modules .next .swc next-env.d.ts logs ./src/types/generated",
     "fmt": "pnpm fmt:eslint && pnpm fmt:stylelint && pnpm fmt:prettier",
     "fmt:fix": "pnpm fmt:eslint --fix && pnpm fmt:stylelint --fix && pnpm fmt:prettier --write",
