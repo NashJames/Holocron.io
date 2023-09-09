@@ -50,10 +50,12 @@ const iconButtonProps = {
   size: 'sm' as ButtonProps['size'],
 }
 
-type JSONMirrorParams = { data: string; isLoading: boolean; responseTime: number; dataURL: string }
+// prettier-ignore
+type JSONMirrorParams = { data: string; isLoading: boolean; responseTime: number; dataURL: string; nonce?: string }
 
+// prettier-ignore
 /** React CodeMirror library with configuration and styling */
-export default function JSONMirror({ data, isLoading, responseTime, dataURL }: JSONMirrorParams) {
+export default function JSONMirror({ data, isLoading, responseTime, dataURL, nonce }: JSONMirrorParams) {
   return (
     <CodeMirror
       readOnly
@@ -63,6 +65,7 @@ export default function JSONMirror({ data, isLoading, responseTime, dataURL }: J
       extensions={mirrorExtensions}
       value={isLoading ? undefined : data}
       className={tw(css.root, isLoading && 'justify-center')}
+      nonce={nonce}
     >
       {isLoading ? (
         <Spinner className={css.loadingCircle} />

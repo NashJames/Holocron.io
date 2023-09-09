@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import { headers } from 'next/headers'
 import Image from 'next/image'
 
 import { HolocronCube } from '@components'
@@ -41,6 +42,8 @@ const css = {
 
 /** A collection of landing page elements and an API fetch playground */
 export default async function Page() {
+  const nonce = headers().get('x-nonce') ?? undefined
+
   // Fallback API request cached on each incremental build
   const staticData = await fetchAPI('https://swapi.dev/api/starships/10/')
 
@@ -57,13 +60,14 @@ export default async function Page() {
 
       <section className={css.fetchPlayground.section}>
         <div className={css.fetchPlayground.content}>
-          <LazyFetchPlayground fallbackData={staticData} />
+          <LazyFetchPlayground fallbackData={staticData} nonce={nonce} />
 
           <Image
             alt={'An illustration of the Death Star'}
             className={css.fetchPlayground.deathStar}
             src={DeathStarSVG}
             draggable={false}
+            nonce={nonce}
           />
         </div>
       </section>

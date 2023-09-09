@@ -20,8 +20,10 @@ const css = {
 const SWR_CONFIG = { revalidateOnFocus: false, revalidateOnReconnect: false, revalidateIfStale: false }
 const DATA_UNDEFINED = '{\n  "error": "data undefined"\n}'
 
+type FetchPlaygroundProps = { fallbackData: FetchAPIType; nonce?: string }
+
 /** A Fetch API Playground for https://swapi.dev/api/ */
-export default function FetchPlayground({ fallbackData }: { fallbackData: FetchAPIType }) {
+export default function FetchPlayground({ fallbackData, nonce }: FetchPlaygroundProps) {
   const [url, setURL] = useState<string>()
   const { data, isLoading } = useSWR(url, fetchAPI, SWR_CONFIG)
   const [logXWing, setLogXWing] = useState<boolean>(true)
@@ -48,6 +50,7 @@ export default function FetchPlayground({ fallbackData }: { fallbackData: FetchA
         responseTime={(url ? data?.timeElapsed : fallbackData?.timeElapsed) ?? 0}
         isLoading={isLoading}
         dataURL={url ?? 'https://swapi.dev/api/starships/10/'}
+        nonce={nonce}
       />
 
       <AnimatePresence>

@@ -13,11 +13,11 @@ const css = {
 }
 
 /** Collection of links to be rendered in the AppHeader */
-export default function NavLinks({ links }: { links: NavLinkType[] }) {
+export default function NavLinks({ links, nonce }: { links: NavLinkType[]; nonce?: string }) {
   return links.map(([label, icon, isExternalLink, link]) => (
     <Tooltip showArrow closeDelay={2000} key={label} content={label} className={css.tooltip}>
       <Link href={link} target={isExternalLink ? '_blank' : '_self'}>
-        <Button isIconOnly variant="ghost" className={css.button}>
+        <Button isIconOnly variant="ghost" className={css.button} nonce={nonce}>
           {icon}
           {isExternalLink && <ArrowTopRightOnSquareIcon className={css.externalLinkIcon} />}
         </Button>

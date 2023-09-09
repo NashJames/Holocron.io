@@ -1,3 +1,4 @@
+import { headers } from 'next/headers'
 import Image from 'next/image'
 
 import styles from './HolocronCube.module.scss'
@@ -6,7 +7,9 @@ import JediHolocron from '@public/illustrations/jedi-holocron.png'
 
 /** Displays a rotating cube using multiple translated images */
 export function HolocronCube() {
-  const ImageProps = { src: JediHolocron, alt: 'Jedi Holocron Cube Face' }
+  const nonce = headers().get('x-nonce') ?? undefined
+  const ImageProps = { src: JediHolocron, alt: 'Jedi Holocron Cube Face', nonce }
+
   return (
     <div className={styles.Wrapper}>
       <div className={styles.Cube}>

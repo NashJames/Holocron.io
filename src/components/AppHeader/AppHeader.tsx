@@ -1,5 +1,6 @@
 import { Square3Stack3DIcon } from '@heroicons/react/24/outline'
 import dynamic from 'next/dynamic'
+import { headers } from 'next/headers'
 
 import GitHubIcon from '@public/icons/GithubLogo'
 
@@ -24,13 +25,15 @@ const linkData: NavLinkType[] = [
 
 /** Fixed navigation bar visible above content on all pages */
 export function AppHeader() {
+  const nonce = headers().get('x-nonce') ?? undefined
+
   return (
     <header className={css.root}>
       <div className={css.content}>
         <h2 className={css.title}>Holocron.io</h2>
         <div>
           <div className={css.nav}>
-            <LazyNavLinks links={linkData} />
+            <LazyNavLinks links={linkData} nonce={nonce} />
           </div>
         </div>
       </div>
