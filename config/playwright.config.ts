@@ -1,4 +1,4 @@
-import type { PlaywrightTestConfig } from '@playwright/test'
+import type { PlaywrightTestConfig, ReporterDescription } from '@playwright/test'
 
 import { devices } from '@playwright/test'
 
@@ -28,7 +28,7 @@ const config: PlaywrightTestConfig = {
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI
-    ? 'github'
+    ? [['github'], ['html', { outputFolder: '../tests/e2e/playwright-report' }]]
     : [['html', { outputFolder: '../tests/e2e/playwright-report' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
