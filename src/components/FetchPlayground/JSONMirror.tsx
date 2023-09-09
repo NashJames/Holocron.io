@@ -42,6 +42,8 @@ const mirrorTheme = createTheme({
   ],
 })
 
+const copyToClipboard = (value: string) => () => navigator.clipboard.writeText(value)
+
 const iconButtonProps = {
   isIconOnly: true,
   variant: 'ghost' as ButtonProps['variant'],
@@ -74,13 +76,13 @@ export default function JSONMirror({ data, isLoading, responseTime, dataURL }: J
           </Tooltip>
 
           <Tooltip showArrow closeDelay={2000} content="Copy request URL to Clipboard">
-            <Button onClick={() => navigator.clipboard.writeText(dataURL)} {...iconButtonProps}>
+            <Button onClick={copyToClipboard(dataURL)} aria-label="Copy URL" {...iconButtonProps}>
               <LinkIcon className={css.actions.icon} />
             </Button>
           </Tooltip>
 
           <Tooltip showArrow closeDelay={2000} content="Copy JSON to Clipboard">
-            <Button onClick={() => navigator.clipboard.writeText(data)} {...iconButtonProps}>
+            <Button onClick={copyToClipboard(data)} aria-label="Copy JSON" {...iconButtonProps}>
               <DocumentDuplicateIcon className={css.actions.icon} />
             </Button>
           </Tooltip>

@@ -22,8 +22,8 @@ In future, I hope to extend it with a POST API implementation and some docs to m
 | Command        | Action                                                           |
 | :------------- | :--------------------------------------------------------------- |
 | `pnpm i`       | Installs dependencies                                            |
-| `pnpm dev`     | Compiles and starts dev build at `localhost:3000`                |
-| `pnpm build`   | Compiles the code for production                                 |
+| `pnpm dev`     | Compiles an unoptimised app and exposes it on `localhost:3000`   |
+| `pnpm build`   | Compiles an optimised app for production                         |
 | `pnpm start`   | Starts production build at `localhost:3000`                      |
 | `pnpm clean`   | Safely removes all built files/folders                           |
 | `pnpm fmt`     | Runs ESLint, Stylelint and Prettier                              |
@@ -36,11 +36,10 @@ The main content is located inside the `src/` directory. The immediate subfolder
 
 ```yml
 /public: Static assets (e.g. images, videos and fonts)
-/tests: Tests, Jest snapshots and Playwright reports/results
+/tests: E2E Tests, Regression Tests and reports/results
 /src: XML, CSS and TypeScript
   ├── /lib: Library specific handlers
   ├── /data: Common HTTP fetch functions
   ├── /components: Custom React components
-  └── /pages: Client/Server page generation
-        └── /api: API Routing
+  └── /app: Client/Server page generation
 ```
