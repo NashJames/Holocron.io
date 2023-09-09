@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { HolocronCube } from '@components'
 import { fetchAPI } from '@data/fetchAPI'
 import { tw } from '@lib/tailwind-merge'
-import { xWingAscii } from '@public/asciiArt/x-wing'
 import DeathStarSVG from '@public/illustrations/death-star-bg.svg'
 
 // Default export required on Server Components for lazy loading
@@ -42,8 +41,6 @@ const css = {
 
 /** A collection of landing page elements and an API fetch playground */
 export default async function Page() {
-  if (process.env.NODE_ENV === 'production') console.log(xWingAscii)
-
   // Fallback API request cached on each incremental build
   const staticData = await fetchAPI('https://swapi.dev/api/starships/10/')
 

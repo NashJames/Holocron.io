@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import { AnimatePresence } from 'framer-motion'
 import useSWR from 'swr'
@@ -10,6 +10,7 @@ import JSONMirror from './JSONMirror'
 import SearchBar from './SearchBar'
 
 import { fetchAPI, FetchAPIType } from '@data/fetchAPI'
+import { xWingAscii } from '@public/asciiArt/x-wing'
 
 const css = {
   subtitle: 'text-lg sm:text-2xl lg:text-3xl h-9 block',
@@ -23,6 +24,14 @@ const DATA_UNDEFINED = '{\n  "error": "data undefined"\n}'
 export default function FetchPlayground({ fallbackData }: { fallbackData: FetchAPIType }) {
   const [url, setURL] = useState<string>()
   const { data, isLoading } = useSWR(url, fetchAPI, SWR_CONFIG)
+  const [logXWing, setLogXWing] = useState<boolean>(true)
+
+  useEffect(() => {
+    if (logXWing) {
+      if (process.env.NODE_ENV === 'production') console.log(xWingAscii)
+      setLogXWing(false)
+    }
+  }, [logXWing])
 
   return (
     <>
