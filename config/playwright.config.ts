@@ -1,4 +1,4 @@
-import type { PlaywrightTestConfig } from '@playwright/test'
+import type { PlaywrightTestConfig, ReporterDescription } from '@playwright/test'
 
 import { devices } from '@playwright/test'
 
@@ -23,12 +23,12 @@ const config: PlaywrightTestConfig = {
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 4 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI
-    ? 'github'
+    ? [['github'], ['html', { outputFolder: '../tests/e2e/playwright-report' }]]
     : [['html', { outputFolder: '../tests/e2e/playwright-report' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

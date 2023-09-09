@@ -4,7 +4,7 @@
 > **Warning**
 > [WIP]: Not ready for deployment
 
-A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with Next.js v13, React v18, TailwindCSS and Material UI. It also includes smaller utilities for CI, testing and linting.
+A simple frontend for accessing the [Star Wars API](https://swapi.dev/). The core of the app is built with Next.js v13, React v18, TailwindCSS and NextUI. It also includes smaller utilities for CI, testing and linting.
 
 In future, I hope to extend it with a POST API implementation and some docs to mimic the full functionality.
 
@@ -19,16 +19,16 @@ In future, I hope to extend it with a POST API implementation and some docs to m
 3. Install [Playwright Browsers](https://playwright.dev/docs/intro) via `pnpm exec playwright install --force --with-deps chromium firefox webkit chrome msedge`
 4. Install the [VS Code extensions](.vscode/extensions.json)
 
-| Command        | Action                                                               |
-| :------------- | :------------------------------------------------------------------- |
-| `pnpm i`       | Installs dependencies                                                |
-| `pnpm dev`     | Compiles and starts dev build at `localhost:3000`                    |
-| `pnpm build`   | Compiles the code for production                                     |
-| `pnpm start`   | Starts production build at `localhost:3000`                          |
-| `pnpm clean`   | Safely removes all built files/folders                               |
-| `pnpm fmt`     | Runs ESLint, Stylelint and Prettier                                  |
-| `pnpm fmt:fix` | Runs ESLint, Stylelint and Prettier (with --fix)                     |
-| `pnpm test`    | Runs Jest snapshots and Playwright e2e tests (requires `pnpm build`) |
+| Command        | Action                                                           |
+| :------------- | :--------------------------------------------------------------- |
+| `pnpm i`       | Installs dependencies                                            |
+| `pnpm dev`     | Compiles an unoptimised app and exposes it on `localhost:3000`   |
+| `pnpm build`   | Compiles an optimised app for production                         |
+| `pnpm start`   | Starts production build at `localhost:3000`                      |
+| `pnpm clean`   | Safely removes all built files/folders                           |
+| `pnpm fmt`     | Runs ESLint, Stylelint and Prettier                              |
+| `pnpm fmt:fix` | Runs ESLint, Stylelint and Prettier (with --fix)                 |
+| `pnpm test`    | Runs Playwright e2e and regression tests (requires `pnpm build`) |
 
 ## Project Structure
 
@@ -36,11 +36,10 @@ The main content is located inside the `src/` directory. The immediate subfolder
 
 ```yml
 /public: Static assets (e.g. images, videos and fonts)
-/tests: Tests, Jest snapshots and Playwright reports/results
+/tests: E2E Tests, Regression Tests and reports/results
 /src: XML, CSS and TypeScript
   ├── /lib: Library specific handlers
   ├── /data: Common HTTP fetch functions
   ├── /components: Custom React components
-  └── /pages: Client/Server page generation
-        └── /api: API Routing
+  └── /app: Client/Server page generation
 ```

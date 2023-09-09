@@ -1,12 +1,13 @@
-import { useState } from 'react'
-import { TypeAnimation } from 'react-type-animation'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import useSWR from 'swr'
 
-import { HolocronCube, JSONMirror, SearchBar } from '@components'
+import { HolocronCube } from '@components'
 import { fetchAPI } from '@data/fetchAPI'
 import { tw } from '@lib/tailwind-merge'
 import DeathStarSVG from '@public/illustrations/death-star-bg.svg'
+
+// Default export required on Server Components for lazy loading
+const LazyFetchPlayground = dynamic(() => import('../components/FetchPlayground/FetchPlayground'))
 
 const css = {
   background: "w-screen bg-[url('/illustrations/lines.svg')]",
@@ -31,7 +32,6 @@ const css = {
   fetchPlayground: {
     section: 'flex flex-col items-center w-[90vw] mx-auto rounded-t-3xl bg-fetchPlayground',
     content: 'py-12 w-240 max-w-[80vw]',
-    subtitle: 'text-lg sm:text-2xl lg:text-3xl block h-9',
     deathStar: tw(
       'absolute top-[calc(100vh+7rem)] -right-2 w-[25vw] h-[25vw] max-w-112 max-h-112',
       '[clip-path:inset(0_calc(5vw+5px)_0_0)] [mask-image:linear-gradient(to bottom,rgb(0_0_0_/_90%),transparent)]',
@@ -39,12 +39,10 @@ const css = {
   },
 }
 
-const DATA_UNDEFINED = '{\n  "error": "data undefined"\n}'
-
 /** A collection of landing page elements and an API fetch playground */
-export default function HomePage() {
-  const [url, setURL] = useState<string>('https://swapi.dev/api/starships/10/')
-  const { data, isLoading } = useSWR(url, fetchAPI)
+export default async function Page() {
+  // Fallback API request cached on each incremental build
+  const staticData = await fetchAPI('https://swapi.dev/api/starships/10/')
 
   return (
     <div className={css.background}>
@@ -59,20 +57,7 @@ export default function HomePage() {
 
       <section className={css.fetchPlayground.section}>
         <div className={css.fetchPlayground.content}>
-          <TypeAnimation
-            sequence={[3000, 'Take a look at the data below...']}
-            className={css.fetchPlayground.subtitle}
-            cursor={false}
-          />
-
-          <SearchBar searchRequest={(request: string) => setURL(request)} />
-
-          <JSONMirror
-            data={data?.fetchResponse ?? DATA_UNDEFINED}
-            responseTime={data?.fetchElapsed ?? 0}
-            isLoading={isLoading}
-            dataURL={url}
-          />
+          <LazyFetchPlayground fallbackData={staticData} />
 
           <Image
             alt={'An illustration of the Death Star'}

@@ -21,4 +21,5 @@ export const IBMPlexMonoFont = IBM_Plex_Mono({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-ibm-plex-mono',
+  preload: false, // Not immediately visible due to dynamic imports and tooltips
 })
