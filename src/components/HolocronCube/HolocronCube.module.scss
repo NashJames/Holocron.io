@@ -1,4 +1,4 @@
-.Wrapper {
+.wrapper {
   // Responsive Design
   --cube-size: 16rem;
   @media screen and (width <= 1536px) {
@@ -15,7 +15,7 @@
   padding: 3rem;
 }
 
-.Cube {
+.cube {
   // Position
   position: relative;
   margin: auto;
@@ -26,7 +26,7 @@
   transform-style: preserve-3d;
 
   // Animation
-  animation: Rotate 20s infinite linear;
+  animation: rotate 20s infinite linear;
 
   * {
     // Position
@@ -40,35 +40,35 @@
   }
 }
 
-.Front {
+.front {
   transform: translateZ(calc(var(--cube-size) / 2));
 }
 
-.Back {
+.back {
   transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2));
 }
 
-.Right {
+.right {
   transform: rotateY(-270deg) translateX(calc(var(--cube-size) / 2));
   transform-origin: top right;
 }
 
-.Left {
+.left {
   transform: rotateY(270deg) translateX(calc(var(--cube-size) / 2 * -1));
   transform-origin: center left;
 }
 
-.Top {
+.top {
   transform: rotateX(270deg) translateY(calc(var(--cube-size) / 2 * -1));
   transform-origin: top center;
 }
 
-.Bottom {
+.bottom {
   transform: rotateX(-270deg) translateY(calc(var(--cube-size) / 2));
   transform-origin: bottom center;
 }
 
-@keyframes Rotate {
+@keyframes rotate {
   from {
     transform: rotateX(-10deg) rotateY(0deg);
   }
@@ -78,7 +78,7 @@
   }
 }
 
-.Shadow {
+.shadow {
   // Position
   position: relative;
   margin: calc(var(--cube-size) * 0.3) auto;
@@ -97,7 +97,7 @@
   animation: shadow 20s infinite linear;
 }
 
-@keyframes Shadow {
+@keyframes shadow {
   from {
     transform: rotateX(80deg) rotateZ(0deg);
   }

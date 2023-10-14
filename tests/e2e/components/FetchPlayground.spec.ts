@@ -10,7 +10,12 @@ const HELPER_TEXT = 'Requests must be a valid URL beginning with: https://swapi.
 // Status Text: Firefox = '404 Not Found' | Webkit = '404 NOT FOUND' | Chromium = '404'
 const INVALID_RESPONSE = /{ {2}"status": "404 ((Not Found)|(NOT FOUND))?"}/
 
-test.beforeEach(({ page }) => page.goto('/'))
+test.beforeEach(async ({ page }) => {
+  page.goto('/')
+  await page.waitForLoadState('domcontentloaded', { timeout: 15000 })
+  await page.waitForLoadState('load', { timeout: 30000 })
+  await page.waitForLoadState('networkidle', { timeout: 5000 })
+})
 
 test.describe('SearchBar', () => {
   test('Button Click', async ({ page }) => {
@@ -64,8 +69,9 @@ test.describe('Fetch Mirror', () => {
 
 test.describe('Easter Egg', () => {
   test('Render Ascii X-Wing', async ({ page }) => {
-    const msg = await page.waitForEvent('console')
-    expect(msg.text().includes(xWingAscii)).toBeTruthy()
+    page.on('console', async (console) => {
+      expect(console.text().includes(xWingAscii)).toBeTruthy()
+    })
   })
 
   test('Toast Hint Visible', async ({ page }) => {

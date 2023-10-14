@@ -6,24 +6,50 @@
 
 /* Hide horizontal scrollbar for page root */
 :root {
-  overflow-x: hidden;
+  @apply overflow-x-hidden;
 }
 
-/* Global scrollbar styling for common browsers */
-* {
-  // Required: Gecko (Firefox)
-  scrollbar-color: theme('colors.complement.tertiary') theme('colors.base.tertiary');
-  scrollbar-width: thin;
+/* Custom scrollbar styling */
+@media (pointer: fine) {
+  /* Gecko: Firefox */
+  html {
+    // Page styling
+    scrollbar-color: theme('colors.complement.tertiary') theme('colors.base.tertiary');
+    scrollbar-width: thin;
 
-  // Required: Webkit (Safari & Chromium)
-  ::-webkit-scrollbar {
-    width: 9px;
-    height: 9px;
+    * {
+      // Component styling
+      scrollbar-color: theme('colors.complement.tertiary') transparent;
+      scrollbar-width: thin;
+    }
   }
-  ::-webkit-scrollbar-track {
-    background-color: theme('colors.base.tertiary');
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: theme('colors.complement.tertiary');
+
+  /* Webkit: Safari & Chromium */
+  .webkit-mouse-only-scrollbar {
+    // Page styling
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: theme('colors.base.tertiary');
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: theme('colors.complement.tertiary');
+      border: 4px solid transparent;
+      border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #472a00; /* 20% Darker than colors.complement.tertiary */
+    }
+
+    // Component styling
+    * {
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+        border: 4px solid transparent;
+        border-radius: 8px;
+      }
+    }
   }
 }
