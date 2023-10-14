@@ -8,17 +8,17 @@ import JediHolocron from '@public/illustrations/jedi-holocron.png'
 export function HolocronCube() {
   const ImageProps = { src: JediHolocron, alt: 'Jedi Holocron Cube Face' }
   return (
-    <div className={styles.Wrapper}>
-      <div className={styles.Cube}>
+    <div className={styles.wrapper}>
+      <div className={styles.cube}>
         {/* eslint-disable jsx-a11y/alt-text */}
-        <Image {...ImageProps} className={styles.Front} />
-        <Image {...ImageProps} className={styles.Back} />
-        <Image {...ImageProps} className={styles.Top} />
-        <Image {...ImageProps} className={styles.Bottom} />
-        <Image {...ImageProps} className={styles.Left} />
-        <Image {...ImageProps} className={styles.Right} />
+        <Image {...ImageProps} className={styles.front} />
+        <Image {...ImageProps} className={styles.back} />
+        <Image {...ImageProps} className={styles.top} />
+        <Image {...ImageProps} className={styles.bottom} />
+        <Image {...ImageProps} className={styles.left} />
+        <Image {...ImageProps} className={styles.right} />
       </div>
-      <div className={styles.Shadow} />
+      <div className={styles.shadow} />
     </div>
   )
 }
