@@ -13,7 +13,7 @@
     "",
     "^[.]",
     "",
-    "^(@public|@components|@pages|@data|@lib)"
+    "^(@public|@components|@pages|@data|@lib|@utils)"
   ],
   "plugins": ["@ianvs/prettier-plugin-sort-imports"]
 }
