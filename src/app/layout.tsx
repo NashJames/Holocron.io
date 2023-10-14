@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 }
 
 const css = {
-  root: 'bg-base text-white flex flex-col items-center',
+  root: 'dark bg-base text-white flex flex-col items-center',
   fonts: [
     TextMeOneFont.className,
     OxaniumFont.variable,
