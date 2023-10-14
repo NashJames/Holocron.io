@@ -6,9 +6,9 @@ import { useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { NavLinkType } from './AppHeader'
-
 import { getScrollbarVisible } from '@utils/getScrollbarVisible'
+
+import { NavLinkType } from './AppHeader'
 
 const css = {
   tooltip: 'font-mono',

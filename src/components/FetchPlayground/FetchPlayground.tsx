@@ -5,12 +5,12 @@ import { TypeAnimation } from 'react-type-animation'
 import { AnimatePresence } from 'framer-motion'
 import useSWR from 'swr'
 
+import { fetchAPI, FetchAPIType } from '@data/fetchAPI'
+import { xWingAscii } from '@public/asciiArt/x-wing'
+
 import EasterEggToast from './_components/EasterEggToast'
 import JSONMirror from './JSONMirror'
 import SearchBar from './SearchBar'
-
-import { fetchAPI, FetchAPIType } from '@data/fetchAPI'
-import { xWingAscii } from '@public/asciiArt/x-wing'
 
 const css = {
   subtitle: 'text-lg sm:text-2xl lg:text-3xl h-9 block',

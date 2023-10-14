@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-import styles from './HolocronCube.module.scss'
-
 import JediHolocron from '@public/illustrations/jedi-holocron.png'
+
+import styles from './HolocronCube.module.scss'
 
 /** Displays a rotating cube using multiple translated images */
 export function HolocronCube() {
