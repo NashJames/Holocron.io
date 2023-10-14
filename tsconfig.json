@@ -20,7 +20,8 @@
       "@components": ["./src/components/index"],
       "@app/*": ["./src/app/*"],
       "@data/*": ["./src/data/*"],
-      "@lib/*": ["./src/lib/*"]
+      "@lib/*": ["./src/lib/*"],
+      "@utils/*": ["./src/utils/*"]
     },
     "noImplicitAny": true,
     "noImplicitThis": true,

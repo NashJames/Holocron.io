@@ -4,9 +4,9 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { Code, Input } from '@nextui-org/react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-import { SearchButtons } from './_components/SearchButtons'
-
 import { tw } from '@lib/tailwind-merge'
+
+import { SearchButtons } from './_components/SearchButtons'
 
 const css = {
   input: 'mt-12 font-mono text-xs md:text-sm [&_input]:text-white',
