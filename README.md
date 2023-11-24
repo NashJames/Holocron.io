@@ -7,7 +7,7 @@
 ## Initial Setup
 
 <!-- prettier-ignore -->
-> **Note**
+> [!NOTE]
 > [Windows Only]: [Install WSL2](https://learn.microsoft.com/en-gb/windows/wsl/install-manual). Any commands below should be executed inside the Linux subsystem.
 
 1. Install [Node Version Manager](https://github.com/nvm-sh/nvm#installing-and-updating) and execute `nvm install 18`
